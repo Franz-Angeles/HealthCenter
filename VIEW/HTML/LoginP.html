@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="../SRC/output.css" rel="stylesheet" />
+    <link href="../SRC/input.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--NAV BAR-->
+    <nav
+      class="w-full h-[50px] border-1 border-zinc-950 flex justify-center font"
+    >
+      <div class="mt-[10px] border-r border-zinc-300 h-[28px] px-[8px]">
+        <a href="#">Home</a>
+      </div>
+      <div class="mt-[10px] border-r border-zinc-300 h-[28px] px-[8px]">
+        <a href="#">About</a>
+      </div>
+      <div class="mt-[10px] px-[8px]"><a href="#">Services</a></div>
+    </nav>
+    <!--NAV BAR-->
+
+    <!-- CONTENT -->
+    <div
+      id="Loginbox"
+      class="border-1 border-zinc-950 h-[450px] w-[330px] justify-self-center mt-[80px] rounded-3xl sm:w-[400px]"
+    >
+      <div class="justify-self-center mt-[40px] text-3xl">LOGIN</div>
+      <!--Input tags-->
+      <div
+        id="inputcontainer"
+        class="flex flex-col items-center justify-center mt-[40px]"
+      >
+        <input
+          class="border-1 border-zinc-950 w-[250px] mb-4 p-[5px] sm:w-[280px]"
+          type="text"
+          name="Username"
+          placeholder="Username"
+        />
+        <input
+          class="border-1 border-zinc-950 w-[250px] mb-4 p-[5px] sm:w-[280px]"
+          type="password"
+          name="Password"
+          placeholder="Password"
+        />
+
+        <div class="flex justify-start">
+          <label class="inline-flex"></label>
+            <input
+              type="checkbox"
+              name="remember"
+              class="form-checkbox text-blue-600"
+            />
+            <span class="ml-2 text-gray-700 text-[14px]">Remember me</span>
+          </label>
+        </div>
+
+        <button
+          class="border-1 border-zinc-950 mt-[20px] rounded-3xl w-[140px] p-[5px] cursor-pointer"
+        >
+          Login
+        </button>
+        <h6 class="text-[12px] mt-[10px]">
+          Forgot <a href="#">Username?</a> / <a href="#">Password?</a>
+        </h6>
+      </div>
+      <!--Input tags-->
+    </div>
+    <!-- CONTENT -->
+
+    <footer class="border border-zinc-950 mt-[200px]"></footer>
+  </body>
+</html>
