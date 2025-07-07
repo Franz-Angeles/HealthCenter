@@ -6,28 +6,47 @@
     <title>Landing Page</title>
     <link href="../SRC/output.css" rel="stylesheet" />
     <link href="../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../SRC/LandingPNativestyle.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .scrolling-banner {
+        animation: scroll 60s linear infinite;
+      }
+    </style>
   </head>
   <body>
     <nav class="bg-white shadow-md">
-      <div
-        class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center"
-      >
-        <img src="" alt="" />
-        <div class="text-xl font-bold">Bucal Health Center</div>
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <img
+          class="h-[50px] mr-[10px]"
+          src="../SRC/IMG/bucallogonobg.png"
+          alt=""
+        />
+        <div class="text-xl w-[600px] font-bold">Bucal Health Center</div>
 
         <!-- Desktop Nav -->
-        <div class="hidden md:flex space-x-6">
-          <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
-          <a href="#" class="text-gray-700 hover:text-blue-600">Services</a>
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-700 hover:text-blue-600">Home</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">Services</a>
+          </div>
         </div>
 
         <!-- Mobile Dropdown -->
-        <div class="md:hidden">
+        <div class="md:hidden w-full flex justify-end pr-4">
           <details class="relative">
             <summary class="cursor-pointer list-none">
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-8 h-7 text-zinc-950"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -41,7 +60,7 @@
               </svg>
             </summary>
             <div
-              class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md z-50"
+              class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md z-50 font-semibold"
             >
               <a
                 href="#"
@@ -63,5 +82,37 @@
         </div>
       </div>
     </nav>
+    <div class="overflow-hidden w-full">
+      <div class="flex whitespace-nowrap animate-scroll-slow items-center">
+        <!-- Responsive images: shrink or grow based on screen size -->
+        <img
+          src="../SRC/IMG/tanzalogo.png"
+          class="inline-block h-auto w-1/2 sm:w-[300px] md:w-[400px] lg:w-[600px] object-contain"
+        />
+        <img
+          src="../SRC/IMG/bucallogonobg.png"
+          class="inline-block h-auto w-1/2 sm:w-[400px] md:w-[600px] lg:w-[800px] object-contain"
+        />
+        <img
+          src="../SRC/IMG/tanzalogo.png"
+          class="inline-block h-auto w-1/2 sm:w-[300px] md:w-[400px] lg:w-[600px] object-contain"
+        />
+        <img
+          src="../SRC/IMG/bucallogonobg.png"
+          class="inline-block h-auto w-1/2 sm:w-[400px] md:w-[600px] lg:w-[800px] object-contain"
+        />
+        <img
+          src="../SRC/IMG/tanzalogo.png"
+          class="inline-block h-auto w-1/2 sm:w-[300px] md:w-[400px] lg:w-[600px] object-contain"
+        />
+        <img
+          src="../SRC/IMG/bucallogonobg.png"
+          class="inline-block h-auto w-1/2 sm:w-[400px] md:w-[600px] lg:w-[800px] object-contain"
+        />
+      </div>
+
+      <!-- Optional container -->
+      <div id="box" class="w-full h-[500px]"></div>
+    </div>
   </body>
 </html>
