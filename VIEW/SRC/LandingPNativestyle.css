@@ -1,3 +1,14 @@
 #box {
   box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.568);
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.scrolling-banner {
+  animation: scroll 20s linear infinite;
+}
