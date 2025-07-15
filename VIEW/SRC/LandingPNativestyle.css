@@ -15,17 +15,20 @@
 #white {
   box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.568);
 }
-#navbot {
+#navbot,
+#navbot2 {
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.425);
 }
 .buts {
-  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+.buts:hover {
+  border-bottom: 1px solid black;
 }
 .icons {
   height: 50px;
   width: 50px;
-}
-@media (max-width: 640px) {
-  #smallscreen {
-  }
+  display: flex;
+  justify-self: center;
 }
