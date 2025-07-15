@@ -19,12 +19,17 @@
 #navbot2 {
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.425);
 }
+@media (max-width: 1204px) {
+  #navbot {
+    height: 140px;
+  }
+}
 .buts {
   margin: 10px;
   padding: 10px;
 }
 .buts:hover {
-  border-bottom: 1px solid black;
+  border-bottom: 3px solid rgb(148, 148, 148);
 }
 .icons {
   height: 50px;

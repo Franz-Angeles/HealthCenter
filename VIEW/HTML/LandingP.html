@@ -10,6 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
+    <!--MAIN NAV BAR-->
     <nav class="bg-white shadow-md">
       <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
         <img
@@ -25,8 +26,10 @@
             <a href="#" class="text-gray-700 hover:text-blue-600 m-0">Home</a>
             <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
             <a href="#" class="text-gray-700 hover:text-blue-600">Services</a>
+            <a href="#" class="text-gray-700 hover:text-blue-600">Profile</a>
           </div>
         </div>
+        <!---->
 
         <!-- Mobile Dropdown -->
         <div class="md:hidden w-full flex justify-end pr-4">
@@ -64,11 +67,19 @@
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >Services</a
               >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Profile</a
+              >
             </div>
           </details>
         </div>
       </div>
     </nav>
+    <!---->
+
+    <!--IMAGE ROLLING-->
     <div class="overflow-hidden w-full">
       <div class="w-full flex justify-center items-center">
         <div
@@ -106,9 +117,13 @@
           class="inline-block h-[275px] w-[250px] sm:w-[300px] md:h-[300px] md:w-[400px] lg:h-[330px] lg:w-[800px] xl:h-[360px] 2xl:h-[450px] object-contain"
         />
       </div>
+      <!---->
 
       <!-- Optional container -->
       <div id="box" class="w-full h-[500px]"></div>
+      <!---->
+
+      <!--BOTTOM NAV BAR, MODULES-->
       <nav
         id="navbot"
         class="hidden lg:flex fixed bottom-0 w-full h-[120px] bg-white"
@@ -144,7 +159,9 @@
           </button>
         </div>
       </nav>
+      <!---->
 
+      <!-- DROP UP NAV-->
       <nav
         id="navbot2"
         class="fixed bottom-0 w-full h-[100px] bg-white lg:hidden"
@@ -201,10 +218,13 @@
             </p>
           </div>
         </div>
+        <!---->
       </nav>
+      <!---->
     </div>
   </body>
 
+  <!--SCRIPT OF DROP UP-->
   <script>
     const toggle = document.getElementById("dropup-toggle");
     const close = document.getElementById("close");
@@ -220,4 +240,5 @@
       }
     });
   </script>
+  <!---->
 </html>
