@@ -19,4 +19,44 @@
   #first2boxholder {
     left: 400px;
   }
+  
+  #radyoboton {
+    margin-left: 390px !important;
+  }
+}
+
+@media (min-width: 2650px) {
+  #first2boxholder {
+    left: 720px;
+  }
+}
+
+@media (min-width: 1444px) {
+  #secondbox {
+    width: 1000px;
+  }
+}
+
+@media (min-width: 1690px) {
+  #secondboxholder {
+    left: 500px;
+  }
+}
+
+@media (min-width: 2650px) {
+  #secondboxholder {
+    left: 820px;
+  }
+}
+
+@media (max-width: 344px) {
+  #datebtn {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  #selecttext {
+    display: none;
+  }
 }

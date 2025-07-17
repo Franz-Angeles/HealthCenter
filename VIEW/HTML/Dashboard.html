@@ -11,14 +11,14 @@
   </head>
   <body>
     <!-- MAIN NAV BAR -->
-    <nav class="bg-white shadow-md z-50 relative">
+    <nav id="mainnav" class="bg-white shadow-md z-50">
       <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
         <img
           class="h-[50px] mr-[10px]"
           src="../SRC/IMG/bucallogonobg.png"
           alt=""
         />
-        <div class="text-xl w-[600px] font-bold">Dashboard</div>
+        <div class="text-xl w-[600px] font-bold">Patient KPI Dashboard</div>
 
         <!-- Desktop Nav: Removed Links Here -->
         <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
@@ -142,22 +142,192 @@
     </div>
 
     <!-- MAIN CONTENT -->
+
+    <div
+      id="radyoboton"
+      class="flex justify-center md:justify-start md:ml-[230px] mt-4 space-x-6"
+    >
+      <div class="flex items-center">
+        <input
+          type="radio"
+          id="daily"
+          name="viewMode"
+          value="daily"
+          class="h-4 w-4 text-blue-600 focus:ring-blue-500"
+          checked
+        />
+        <label for="daily" class="ml-2 text-gray-700 font-medium"
+          >Daily View</label
+        >
+      </div>
+      <div class="flex items-center">
+        <input
+          type="radio"
+          id="weekly"
+          name="viewMode"
+          value="weekly"
+          class="h-4 w-4 text-blue-600 focus:ring-blue-500"
+        />
+        <label for="weekly" class="ml-2 text-gray-700 font-medium"
+          >Weekly View</label
+        >
+      </div>
+    </div>
+
+    <!--first two box-->
     <div
       id="first2boxholder"
       class="justify-items-center mt-[20px] md:absolute left-[220px] md:left-[230px] xl:flex xl:left-[240px] transition-all duration-700"
     >
       <div
-        class="first2box border-2 border-[grey] h-[250px] rounded-3xl w-[350px] mb-[10px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:mr-[20px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700"
+        class="first2box border-2 border-[grey] h-[250px] rounded-3xl w-[340px] mb-[10px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:mr-[20px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700"
       >
-        asd
+        Number of patients daily (line graph)
       </div>
       <div
-        class="first2box border-2 border-[grey] h-[250px] rounded-3xl w-[350px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700"
+        class="first2box border-2 border-[grey] h-[250px] rounded-3xl w-[340px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700"
       >
-        asd
+        number of patients weekly (line graph)
+      </div>
+    </div>
+    <!---->
+
+    <div
+      id="secondboxholder"
+      class="flex justify-self-center mt-[20px] md:absolute top-[590px] left-[230px] xl:top-[340px] xl:left-[240px] transition-all duration-700"
+    >
+      <div
+        id="secondbox"
+        class="border-2 border-[grey] rounded-3xl w-[340px] h-[400px] sm:w-[545px] lg:w-[700px] xl:w-[900px] transition-all duration-700"
+      >
+        Services used (bar graph per services)
+      </div>
+    </div>
+    <!-- Trigger Button -->
+    <!-- Date button for mobile -->
+    <div class="md:hidden">
+      <button
+        id="openModal"
+        class="absolute right-[90px] top-3 px-3 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:text-blue-600 border border-gray-300 flex items-center transition-colors duration-200"
+      >
+        <span class="mr-1">📅</span>
+        <span id="datebtn" class="text-sm font-semibold flex"
+          ><h1 id="selecttext" class="mr-[5px]">Select</h1>
+          Date</span
+        >
+      </button>
+    </div>
+
+    <!-- Date button for desktop (in sidebar) -->
+    <div class="hidden md:block">
+      <div class="fixed left-0 top-[430px] w-52 px-6 z-40">
+        <button
+          id="openModalDesktop"
+          class="w-full px-3 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:text-blue-600 border border-gray-300 flex items-center justify-center transition-colors duration-200"
+        >
+          <span class="mr-1">📅</span>
+          <span id="datebtnDesktop" class="text-sm font-semibold flex"
+            ><h1 id="selecttextDesktop" class="mr-[5px]">Select</h1>
+            Date</span
+          >
+        </button>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div
+      id="dateModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden justify-center items-center z-50"
+    >
+      <div
+        class="bg-white p-6 rounded-2xl shadow-lg w-full max-w-md space-y-4 relative"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeModal"
+          class="absolute top-2 right-2 text-gray-600 hover:text-red-500 text-xl"
+        >
+          &times;
+        </button>
+
+        <h2 class="text-lg font-bold text-gray-800 mb-4">
+          Pick a Date or Week
+        </h2>
+
+        <!-- Week Picker -->
+        <div>
+          <label for="week" class="block text-sm font-medium text-gray-700"
+            >Select Week</label
+          >
+          <input
+            type="week"
+            id="week"
+            name="week"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+          />
+        </div>
+
+        <!-- Specific Date Picker -->
+        <div class="grid grid-cols-3 gap-2">
+          <!-- Month -->
+          <div>
+            <label for="month" class="block text-sm font-medium text-gray-700"
+              >Month</label
+            >
+            <select
+              id="month"
+              name="month"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+            >
+              <option value="">Month</option>
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Jul</option>
+              <option value="8">Aug</option>
+              <option value="9">Sep</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+          </div>
+
+          <!-- Day -->
+          <div>
+            <label for="day" class="block text-sm font-medium text-gray-700"
+              >Day</label
+            >
+            <select
+              id="day"
+              name="day"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+            >
+              <option value="">Day</option>
+            </select>
+          </div>
+
+          <!-- Year -->
+          <div>
+            <label for="year" class="block text-sm font-medium text-gray-700"
+              >Year</label
+            >
+            <select
+              id="year"
+              name="year"
+              class="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+            >
+              <option value="">Year</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   </body>
+
+  <!--JAVASCRIPT-->
+
   <script>
     const button = document.getElementById("menu-button");
     const dropdown = document.getElementById("dropdown-menu");
@@ -178,5 +348,57 @@
         dropdown.classList.remove("scale-y-100", "opacity-100");
       }
     });
+  </script>
+  <script>
+    const openModalBtn = document.getElementById("openModal");
+    const openModalDesktopBtn = document.getElementById("openModalDesktop");
+    const closeModalBtn = document.getElementById("closeModal");
+    const modal = document.getElementById("dateModal");
+
+    openModalBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    openModalDesktopBtn.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeModalBtn.addEventListener("click", () => {
+      modal.classList.add("hidden");
+    });
+
+    const daySelect = document.getElementById("day");
+    const monthSelect = document.getElementById("month");
+    const yearSelect = document.getElementById("year");
+
+    // Populate years
+    const currentYear = new Date().getFullYear();
+    for (let y = currentYear - 10; y <= currentYear + 10; y++) {
+      const option = document.createElement("option");
+      option.value = y;
+      option.textContent = y;
+      yearSelect.appendChild(option);
+    }
+
+    // Update days based on month and year
+    function updateDays() {
+      const year = parseInt(yearSelect.value);
+      const month = parseInt(monthSelect.value);
+      if (!year || !month) return;
+
+      const daysInMonth = new Date(year, month, 0).getDate();
+      daySelect.innerHTML = '<option value="">Day</option>';
+      for (let d = 1; d <= daysInMonth; d++) {
+        const option = document.createElement("option");
+        option.value = d;
+        option.textContent = d;
+        daySelect.appendChild(option);
+      }
+    }
+
+    monthSelect.addEventListener("change", updateDays);
+    yearSelect.addEventListener("change", updateDays);
   </script>
 </html>
