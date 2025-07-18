@@ -22,11 +22,38 @@
 
         <!-- Desktop Nav -->
         <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
-          <div class="flex space-x-6">
+          <div class="flex space-x-9">
             <a href="#" class="text-gray-700 hover:text-blue-600 m-0">Home</a>
             <a href="#" class="text-gray-700 hover:text-blue-600">About</a>
             <a href="#" class="text-gray-700 hover:text-blue-600">Services</a>
-            <a href="#" class="text-gray-700 hover:text-blue-600">Profile</a>
+            <div class="relative" id="profileDropdown">
+              <a href="#" class="text-gray-700 hover:text-blue-600" id="profileDropdownBtn">Profile</a>
+              <div
+              id="profileDropdownContent"
+              class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >My Account</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Settings</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Preferences</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Logout</a
+              >
+              </div>
+            </div>
           </div>
         </div>
         <!---->
@@ -67,11 +94,39 @@
                 class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
                 >Services</a
               >
-              <a
-                href="#"
-                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >Profile</a
-              >
+              <!-- Profile dropdown for mobile -->
+              <div class="relative" id="mobileProfileDropdown">
+                <a 
+                  href="#" 
+                  id="mobileProfileBtn"
+                  class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                >Profile</a>
+                <div
+                  id="mobileProfileContent"
+                  class="absolute right-0 mt-1 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+                >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >My Account</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Settings</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Preferences</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                    >Logout</a
+                  >
+                </div>
+              </div>
             </div>
           </details>
         </div>
@@ -129,10 +184,12 @@
         class="hidden lg:flex fixed bottom-0 w-full h-[120px] bg-white"
       >
         <div class="flex justify-center w-full">
-          <button class="buts">
-            <img class="icons" src="../SRC/ICON/dashboard.png" alt="" />
-            Dashboard
-          </button>
+          <a href="../HTML/Dashboard.html"
+            ><button class="buts">
+              <img class="icons" src="../SRC/ICON/dashboard.png" alt="" />
+              Dashboard
+            </button>
+          </a>
           <button class="buts">
             <img class="icons" src="../SRC/ICON/Patientflow.png" alt="" />
             Patient Flow Forecast
@@ -221,7 +278,6 @@
         <!---->
       </nav>
       <!---->
-    </div>
     <!-- JavaScript -->
     <script src="../JAVASCRIPT/Landingpage.js"></script>
   </body>
