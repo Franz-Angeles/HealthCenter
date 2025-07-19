@@ -1,0 +1,122 @@
+/* ProfileSettings Page Specific Styles */
+
+/* Profile Sidebar Styles */
+.profile-sidebar {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Toggle Switch Animation */
+.toggle-switch:after {
+  content: "";
+  transition: all 0.3s ease-in-out;
+}
+
+/* Form Focus Effects */
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+/* Tab Transitions */
+.tab-content {
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Profile Image Hover Effect */
+.profile-image-container:hover .profile-image-overlay {
+  opacity: 1;
+}
+
+.profile-image-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .settings-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .settings-tab {
+    display: inline-block;
+  }
+}
+
+/* Card Hover Effects */
+.settings-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.settings-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Success Message Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-message {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+/* Error Message Animation */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.error-message {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Button Hover Effects */
+.action-button {
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
