@@ -20,6 +20,39 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Sidebar navigation functionality
+  const sidebarLinks = document.querySelectorAll(".sidebar-link");
+  const dropdownLinks = document.querySelectorAll(".dropdown-link");
+
+  // Function to remove active class from all links
+  function removeActiveFromAll() {
+    sidebarLinks.forEach((link) => link.classList.remove("active"));
+    dropdownLinks.forEach((link) => link.classList.remove("active"));
+  }
+
+  // Add click event listeners to sidebar links
+  sidebarLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      removeActiveFromAll();
+      this.classList.add("active");
+    });
+  });
+
+  // Add click event listeners to dropdown links
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      removeActiveFromAll();
+      this.classList.add("active");
+
+      // Close the dropdown after selection on mobile
+      dropdown.classList.add("scale-y-0", "opacity-0", "pointer-events-none");
+      dropdown.classList.remove("scale-y-100", "opacity-100");
+      isOpen = false;
+    });
+  });
+
   // Date picker modal functionality
   const openModalBtn = document.getElementById("openModal");
   const openModalDesktopBtn = document.getElementById("openModalDesktop");

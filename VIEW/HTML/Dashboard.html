@@ -8,6 +8,26 @@
     <link href="../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .sidebar-link.active {
+        background-color: #3b82f6;
+        color: white;
+        transform: translateX(4px);
+      }
+
+      .dropdown-link.active {
+        background-color: #3b82f6;
+        color: white;
+      }
+
+      .sidebar-link:hover {
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+      }
+
+      .dropdown-link:hover {
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+      }
+    </style>
   </head>
   <body>
     <!-- MAIN NAV BAR -->
@@ -82,37 +102,37 @@
             <hr />
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 my-2"
-              >Dashboard</a
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Analytics</a
             >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 mb-2"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Patient Flow Forecast</a
             >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 mb-2"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Service Usage Trends</a
             >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 mb-2"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Barangay Map View</a
             >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 mb-2"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Seasonality Explorer</a
             >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 mb-2"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Staffing Planner</a
             >
             <a
               href="#"
-              class="block px-4 py-2 text-gray-700 hover:bg-gray-100 mb-2"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Inventory Alert System</a
             >
           </div>
@@ -126,25 +146,40 @@
     >
       <!-- top-[72px] assumes navbar height ~72px -->
       <div class="flex flex-col p-6 font-semibold justify-center">
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600"
-          >Dashboard</a
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
+          >Analytics</a
         >
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600"
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
           >Patient Flow Forecast</a
         >
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600"
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
           >Service Usage Trends</a
         >
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600"
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
           >Barangay Map View</a
         >
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600"
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
           >Seasonality Explorer</a
         >
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600"
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
           >Staffing Planner</a
         >
-        <a href="#" class="mods block text-gray-700 hover:text-blue-600">
+        <a
+          href="#"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50"
+        >
           Inventory <br />Alert System
         </a>
       </div>
@@ -181,6 +216,20 @@
           >Weekly View</label
         >
       </div>
+
+      <!-- Date button for desktop (moved from sidebar) -->
+      <div class="hidden md:block">
+        <button
+          id="openModalDesktop"
+          class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:text-blue-600 border border-gray-300 flex items-center transition-colors duration-200"
+        >
+          <span class="mr-1">📅</span>
+          <span id="datebtnDesktop" class="text-sm font-semibold flex"
+            ><h1 id="selecttextDesktop" class="mr-[5px]">Select</h1>
+            Date</span
+          >
+        </button>
+      </div>
     </div>
 
     <!--first two box-->
@@ -203,7 +252,7 @@
 
     <div
       id="secondboxholder"
-      class="flex justify-self-center mt-[20px] md:absolute top-[625px] left-[230px] xl:top-[375px] xl:left-[240px] transition-all duration-700"
+      class="flex justify-self-center mt-[10px] md:absolute top-[655px] left-[230px] xl:top-[395px] xl:left-[240px] transition-all duration-700"
     >
       <div
         id="secondbox"
@@ -227,21 +276,6 @@
       </button>
     </div>
 
-    <!-- Date button for desktop (in sidebar) -->
-    <div class="hidden md:block">
-      <div class="fixed left-0 top-[430px] w-52 px-6 z-40">
-        <button
-          id="openModalDesktop"
-          class="w-full px-3 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:text-blue-600 border border-gray-300 flex items-center justify-center transition-colors duration-200"
-        >
-          <span class="mr-1">📅</span>
-          <span id="datebtnDesktop" class="text-sm font-semibold flex"
-            ><h1 id="selecttextDesktop" class="mr-[5px]">Select</h1>
-            Date</span
-          >
-        </button>
-      </div>
-    </div>
     <!-- Modal -->
     <div
       id="dateModal"
