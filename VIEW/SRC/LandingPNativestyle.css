@@ -1,6 +1,8 @@
 #box {
   box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.568);
 }
+
+/* Enhanced animations for moving images */
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -9,31 +11,435 @@
     transform: translateX(-50%);
   }
 }
-.scrolling-banner {
-  animation: scroll 20s linear infinite;
+
+@keyframes scroll-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
+
+@keyframes diagonal-move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(20px, -10px) rotate(90deg);
+  }
+  50% {
+    transform: translate(10px, 20px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-15px, 5px) rotate(270deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes rotate-slow {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes float-up-down {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-15px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.1);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes scale-bounce {
+  0%,
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.2) rotate(5deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(-5deg);
+  }
+  75% {
+    transform: scale(1.1) rotate(3deg);
+  }
+}
+
+@keyframes fade-in-out {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+  15% {
+    transform: rotate(5deg) translateX(2px);
+  }
+  30% {
+    transform: rotate(-5deg) translateX(-2px);
+  }
+  45% {
+    transform: rotate(3deg) translateX(1px);
+  }
+  60% {
+    transform: rotate(-3deg) translateX(-1px);
+  }
+  75% {
+    transform: rotate(2deg) translateX(1px);
+  }
+}
+
+@keyframes spiral-rotate {
+  0% {
+    transform: rotate(0deg) translateX(0px) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) translateX(10px) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) translateX(15px) scale(1.2);
+  }
+  75% {
+    transform: rotate(270deg) translateX(10px) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0px) scale(1);
+  }
+}
+
+@keyframes heart-beat {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  14% {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  28% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  42% {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+  70% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes medical-float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(240deg);
+  }
+}
+
+@keyframes medical-float-2 {
+  0%,
+  100% {
+    transform: translateX(0px) scale(1);
+  }
+  50% {
+    transform: translateX(30px) scale(1.3);
+  }
+}
+
+@keyframes medical-float-3 {
+  0%,
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  25% {
+    transform: translate(15px, -15px) rotate(90deg);
+  }
+  50% {
+    transform: translate(30px, 0px) rotate(180deg);
+  }
+  75% {
+    transform: translate(15px, 15px) rotate(270deg);
+  }
+}
+
+@keyframes medical-float-4 {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.2) rotate(180deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-gentle {
+  0%,
+  100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes hover-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.6));
+  }
+}
+
+/* Apply animations to elements */
+.scrolling-banner {
+  animation: scroll 25s linear infinite;
+}
+
+.scrolling-banner-reverse {
+  animation: scroll-reverse 35s linear infinite;
+}
+
+.diagonal-scroll {
+  animation: diagonal-move 40s ease-in-out infinite;
+}
+
+.rotate-slow {
+  animation: rotate-slow 20s ease-in-out infinite;
+}
+
+.float-up-down {
+  animation: float-up-down 8s ease-in-out infinite;
+}
+
+.scale-bounce {
+  animation: scale-bounce 6s ease-in-out infinite;
+}
+
+.fade-in-out {
+  animation: fade-in-out 10s ease-in-out infinite;
+}
+
+.wiggle {
+  animation: wiggle 4s ease-in-out infinite;
+}
+
+.spiral-rotate {
+  animation: spiral-rotate 15s ease-in-out infinite;
+}
+
+.heart-beat {
+  animation: heart-beat 2s ease-in-out infinite;
+}
+
+.medical-float {
+  animation: medical-float 12s ease-in-out infinite;
+}
+
+.medical-float-2 {
+  animation: medical-float-2 8s ease-in-out infinite 1s;
+}
+
+.medical-float-3 {
+  animation: medical-float-3 14s ease-in-out infinite 2s;
+}
+
+.medical-float-4 {
+  animation: medical-float-4 10s ease-in-out infinite 0.5s;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 4s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+.hover-glow {
+  animation: hover-glow 8s ease-in-out infinite;
+}
+
+/* Interactive hover effects for floating images */
+.scrolling-banner img:hover,
+.scrolling-banner-reverse img:hover {
+  animation-play-state: paused;
+  transform: scale(1.3) !important;
+  filter: brightness(1.2) drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+  transition: all 0.3s ease;
+  z-index: 100;
+  position: relative;
+}
+
+/* Background pattern */
+.bg-grid-pattern {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Improved hover effects */
+.service-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
 #white {
   box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.568);
 }
+
 #navbot,
 #navbot2 {
   box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.425);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
 }
+
 @media (max-width: 1204px) {
   #navbot {
     height: 140px;
   }
 }
+
 .buts {
   margin: 10px;
   padding: 10px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
 }
+
 .buts:hover {
   border-bottom: 3px solid rgb(148, 148, 148);
+  background: rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
 }
+
 .icons {
   height: 50px;
   width: 50px;
   display: flex;
   justify-self: center;
+  transition: transform 0.3s ease;
+}
+
+.buts:hover .icons {
+  transform: scale(1.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .service-card {
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
 }
