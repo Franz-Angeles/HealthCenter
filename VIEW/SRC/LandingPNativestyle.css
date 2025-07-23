@@ -2,8 +2,8 @@
   box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.568);
 }
 
-/* Enhanced animations for moving images */
-@keyframes scroll {
+/* Simple slow carousel animation */
+@keyframes scroll-slow {
   0% {
     transform: translateX(0);
   }
@@ -12,13 +12,9 @@
   }
 }
 
-@keyframes scroll-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+/* Apply animation to carousel */
+.animate-scroll-slow {
+  animation: scroll-slow 60s linear infinite;
 }
 
 @keyframes diagonal-move {
@@ -252,29 +248,9 @@
   }
 }
 
-/* Apply animations to elements */
-.scrolling-banner {
-  animation: scroll 25s linear infinite;
-}
-
-.scrolling-banner-reverse {
-  animation: scroll-reverse 35s linear infinite;
-}
-
-.diagonal-scroll {
-  animation: diagonal-move 40s ease-in-out infinite;
-}
-
-.rotate-slow {
-  animation: rotate-slow 20s ease-in-out infinite;
-}
-
-.float-up-down {
-  animation: float-up-down 8s ease-in-out infinite;
-}
-
-.scale-bounce {
-  animation: scale-bounce 6s ease-in-out infinite;
+/* Apply animation to carousel */
+.animate-scroll-slow {
+  animation: scroll-slow 60s linear infinite;
 }
 
 .fade-in-out {

@@ -154,7 +154,7 @@
 
       <!-- Hero Content -->
       <div
-        class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center"
+        class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center -mt-24"
       >
         <!-- Main Hero Card -->
         <div
@@ -237,101 +237,61 @@
         </div>
       </div>
 
-      <!-- Enhanced Multi-Layer Background Animation -->
-      <div class="absolute inset-0 overflow-hidden opacity-15 z-0">
-        <!-- Primary scrolling banner - horizontal -->
+      <!-- Simple Carousel Background Animation -->
+      <div class="absolute inset-0 overflow-hidden opacity-10 z-0">
+        <!-- Continuous horizontal carousel -->
         <div
-          class="flex whitespace-nowrap scrolling-banner items-center h-full"
+          class="flex animate-scroll-slow whitespace-nowrap items-center h-full"
         >
-          <img
-            src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-32 w-32 object-contain mx-8 animate-pulse-slow hover-glow"
-          />
+          <!-- First set of images -->
           <img
             src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-40 w-40 object-contain mx-12 rotate-slow"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-28 w-28 object-contain mx-6 float-up-down"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-36 w-36 object-contain mx-10 scale-bounce"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-32 w-32 object-contain mx-8 animate-pulse-slow"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-44 w-44 object-contain mx-14 rotate-slow"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-30 w-30 object-contain mx-7 float-up-down"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
+          <!-- Duplicate set for seamless loop -->
           <img
             src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-38 w-38 object-contain mx-11 scale-bounce"
-          />
-        </div>
-
-        <!-- Secondary layer - reverse direction -->
-        <div
-          class="absolute top-1/4 flex whitespace-nowrap scrolling-banner-reverse items-center h-1/2 opacity-60"
-        >
-          <img
-            src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-24 w-24 object-contain mx-16 fade-in-out"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-20 w-20 object-contain mx-20 wiggle"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-28 w-28 object-contain mx-18 fade-in-out"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-22 w-22 object-contain mx-22 wiggle"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/bucallogonobg.png"
-            class="inline-block h-26 w-26 object-contain mx-17 fade-in-out"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
           <img
             src="../SRC/IMG/tanzalogo.png"
-            class="inline-block h-24 w-24 object-contain mx-19 wiggle"
-          />
-        </div>
-
-        <!-- Third layer - diagonal movement -->
-        <div class="absolute inset-0 diagonal-scroll opacity-40">
-          <img
-            src="../SRC/IMG/tanzalogo.png"
-            class="absolute top-20 left-20 h-16 w-16 object-contain spiral-rotate"
-          />
-          <img
-            src="../SRC/IMG/bucallogonobg.png"
-            class="absolute top-40 right-32 h-20 w-20 object-contain heart-beat"
-          />
-          <img
-            src="../SRC/IMG/tanzalogo.png"
-            class="absolute bottom-32 left-40 h-18 w-18 object-contain spiral-rotate"
-          />
-          <img
-            src="../SRC/IMG/bucallogonobg.png"
-            class="absolute bottom-60 right-16 h-22 w-22 object-contain heart-beat"
-          />
-          <img
-            src="../SRC/IMG/tanzalogo.png"
-            class="absolute top-60 left-60 h-14 w-14 object-contain spiral-rotate"
-          />
-          <img
-            src="../SRC/IMG/bucallogonobg.png"
-            class="absolute top-80 right-60 h-24 w-24 object-contain heart-beat"
+            class="inline-block h-32 w-32 object-contain mx-16"
           />
         </div>
       </div>
