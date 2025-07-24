@@ -1,0 +1,128 @@
+/* Sidebar Active States */
+.sidebar-link.active {
+  background-color: #3b82f6;
+  color: white;
+  transform: translateX(4px);
+}
+
+.dropdown-link.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Sidebar Hover Effects */
+.sidebar-link:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.dropdown-link:hover {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+/* Forecast Card Animations */
+.forecast-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Selection Animations */
+.service-chip {
+  transition: all 0.2s ease;
+}
+
+.service-chip:hover {
+  transform: scale(1.05);
+}
+
+.service-chip.selected {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  transform: scale(1.02);
+}
+
+/* Chart Container Styling */
+.chart-container {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.1);
+}
+
+/* Prediction Accuracy Indicator */
+.accuracy-indicator {
+  position: relative;
+  overflow: hidden;
+}
+
+.accuracy-bar {
+  height: 4px;
+  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* Loading Animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  border-radius: 3px;
+}
+
+/* Enhanced focus states */
+select:focus,
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Hover effects for form elements */
+select:hover,
+input:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Forecast metric cards */
+.metric-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.08);
+  transform: translateY(-2px);
+}

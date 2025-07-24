@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staffing Planner</title>
+    <link href="../SRC/output.css" rel="stylesheet" />
+    <link href="../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- MAIN NAV BAR -->
+    <nav id="mainnav" class="bg-white shadow-md z-50">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <img
+          class="h-[50px] mr-[10px]"
+          src="../SRC/IMG/bucallogonobg.png"
+          alt=""
+        />
+        <div class="text-xl w-[900px] font-bold">Staffing Planner</div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
+          <!-- Leave Empty or Add Other Icons If Needed -->
+        </div>
+        <div class="hidden md:flex font-semibold">
+          <a
+            href="../HTML/LandingP.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+          >
+            Home</a
+          >
+          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Services</a
+          >
+          <a
+            href="../HTML/ProfileSettings.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Profile</a
+          >
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden w-full flex justify-end pr-4 relative">
+          <!-- Toggle button -->
+          <button id="menu-button" class="p-2">
+            <svg
+              class="w-8 h-7 text-zinc-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdown-menu"
+            class="transition-all duration-500 ease-in-out origin-top scale-y-0 opacity-0 absolute right-0 top-14 w-[230px] bg-white shadow-lg rounded-md z-50 font-semibold pointer-events-none"
+          >
+            <a
+              href="../HTML/LandingP.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Home</a
+            >
+            <hr />
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Services</a
+            >
+            <hr />
+            <a
+              href="../HTML/ProfileSettings.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Profile</a
+            >
+            <hr />
+            <a
+              href="../HTML/Dashboard.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Dashboard</a
+            >
+            <a
+              href="../HTML/PatientFlowFcst.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Patient Flow Forecast</a
+            >
+            <a
+              href="../HTML/ServiceUsageTrends.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Service Usage Trends</a
+            >
+            <a
+              href="../HTML/BarangayMapView.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Barangay Map View</a
+            >
+            <a
+              href="../HTML/SeasonalityExplorer.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Seasonality Explorer</a
+            >
+            <a
+              href="../HTML/StaffingPlanner.html"
+              class="dropdown-link active block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Staffing Planner</a
+            >
+            <a
+              href="../HTML/InventoryAlertSystem.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Inventory Alert System</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
+    <div
+      class="hidden md:block bg-white w-52 h-screen shadow-md fixed top-[72px] left-0 z-40"
+    >
+      <div class="flex flex-col p-6 font-semibold justify-center">
+        <a
+          href="../HTML/Dashboard.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+          >Dashboard</a
+        >
+        <a
+          href="../HTML/PatientFlowFcst.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+          >Patient Flow Forecast</a
+        >
+        <a
+          href="../HTML/ServiceUsageTrends.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+          >Service Usage Trends</a
+        >
+        <a
+          href="../HTML/BarangayMapView.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+          >Barangay Map View</a
+        >
+        <a
+          href="../HTML/SeasonalityExplorer.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+          >Seasonality Explorer</a
+        >
+        <a
+          href="../HTML/StaffingPlanner.html"
+          class="sidebar-link active mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+          >Staffing Planner</a
+        >
+        <a
+          href="../HTML/InventoryAlertSystem.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
+        >
+          Inventory <br />Alert System
+        </a>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="md:ml-52 pt-[72px] min-h-screen">
+      <!-- Header Section -->
+      <div class="bg-gradient-to-r from-teal-600 to-teal-800 text-white p-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex items-center mb-4">
+            <img
+              src="../SRC/ICON/staffing.png"
+              alt="Staffing"
+              class="w-12 h-12 mr-4"
+            />
+            <div>
+              <h1 class="text-3xl font-bold">Staffing Planner</h1>
+              <p class="text-teal-100 mt-1">
+                Optimize staff allocation based on patient flow predictions
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="p-6 space-y-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              Staffing Planner
+            </h2>
+            <p class="text-gray-600 mb-8">
+              This page will help optimize staff scheduling based on predicted
+              patient flow and service demands.
+            </p>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <p class="text-gray-500">
+                Staffing optimization tools coming soon...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="../JAVASCRIPT/navigation.js"></script>
+    <script src="../JAVASCRIPT/Dashboard.js"></script>
+  </body>
+</html>
