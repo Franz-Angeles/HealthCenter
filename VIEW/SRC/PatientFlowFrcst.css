@@ -1,13 +1,26 @@
 /* Sidebar Active States */
 .sidebar-link.active {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #3b82f6 !important;
+  color: white !important;
   transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.sidebar-link.active:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+  transform: translateX(4px) scale(1.02);
 }
 
 .dropdown-link.active {
-  background-color: #3b82f6;
-  color: white;
+  background-color: #3b82f6 !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.dropdown-link.active:hover {
+  background-color: #2563eb !important;
+  color: white !important;
 }
 
 /* Sidebar Hover Effects */

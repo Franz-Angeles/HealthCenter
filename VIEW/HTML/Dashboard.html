@@ -8,84 +8,6 @@
     <link href="../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      .sidebar-link.active {
-        background-color: #3b82f6;
-        color: white;
-        transform: translateX(4px);
-      }
-
-      .dropdown-link.active {
-        background-color: #3b82f6;
-        color: white;
-      }
-
-      .sidebar-link:hover {
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
-      }
-
-      .dropdown-link:hover {
-        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
-      }
-
-      /* Modal Animation Styles */
-      #dateModal.show {
-        display: flex !important;
-      }
-
-      #dateModal.show .modal-content {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      .modal-content {
-        animation: modalSlideIn 0.3s ease-out;
-      }
-
-      @keyframes modalSlideIn {
-        from {
-          transform: scale(0.95) translateY(-20px);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1) translateY(0);
-          opacity: 1;
-        }
-      }
-
-      /* Custom scrollbar for select elements */
-      select::-webkit-scrollbar {
-        width: 8px;
-      }
-
-      select::-webkit-scrollbar-track {
-        background: #f1f5f9;
-        border-radius: 10px;
-      }
-
-      select::-webkit-scrollbar-thumb {
-        background: linear-gradient(180deg, #3b82f6, #1d4ed8);
-        border-radius: 10px;
-      }
-
-      select::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(180deg, #1d4ed8, #1e40af);
-      }
-
-      /* Enhanced focus states */
-      select:focus,
-      input:focus {
-        outline: none;
-        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
-      }
-
-      /* Hover effects for form elements */
-      select:hover,
-      input:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      }
-    </style>
   </head>
   <body>
     <!-- MAIN NAV BAR -->
@@ -161,7 +83,7 @@
             <a
               href="../HTML/Dashboard.html"
               class="dropdown-link active block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Dashboard</a
+              >Analytics</a
             >
             <a
               href="../HTML/PatientFlowFcst.html"
@@ -207,7 +129,7 @@
         <a
           href="../HTML/Dashboard.html"
           class="sidebar-link active mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50"
-          >Dashboard</a
+          >Analytics</a
         >
         <a
           href="../HTML/PatientFlowFcst.html"

@@ -60,3 +60,94 @@
     display: none;
   }
 }
+
+/* Sidebar and dropdown link styles */
+.sidebar-link.active {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.sidebar-link.active:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+  transform: translateX(4px) scale(1.02);
+}
+
+.dropdown-link.active {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.dropdown-link.active:hover {
+  background-color: #2563eb !important;
+  color: white !important;
+}
+
+.sidebar-link:hover {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.dropdown-link:hover {
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+}
+
+/* Modal Animation Styles */
+#dateModal.show {
+  display: flex !important;
+}
+
+#dateModal.show .modal-content {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-content {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.95) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar for select elements */
+select::-webkit-scrollbar {
+  width: 8px;
+}
+
+select::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+select::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+  border-radius: 10px;
+}
+
+select::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1d4ed8, #1e40af);
+}
+
+/* Enhanced focus states */
+select:focus,
+input:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Hover effects for form elements */
+select:hover,
+input:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
