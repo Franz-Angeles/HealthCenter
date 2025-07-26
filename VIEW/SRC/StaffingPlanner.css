@@ -1,0 +1,271 @@
+/* Staffing Planner Specific Styles */
+
+/* Loading Spinner Animation */
+.loading-spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Metric Card Hover Effects */
+.metric-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+/* Chart Container Styling */
+.chart-container {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 2px solid #e2e8f0;
+}
+
+/* Efficiency Indicator */
+.efficiency-indicator {
+  overflow: hidden;
+  position: relative;
+}
+
+.efficiency-bar {
+  transition: width 0.8s ease-in-out;
+  border-radius: 9999px;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Table Row Hover Effects */
+#staffingTable tr {
+  transition: all 0.2s ease;
+}
+
+#staffingTable tr:hover {
+  background-color: #f8fafc;
+  transform: scale(1.01);
+}
+
+/* Status Badge Animations */
+.status-badge {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.status-badge::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.status-badge:hover::before {
+  left: 100%;
+}
+
+/* Shift Distribution Cards */
+.shift-card {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.shift-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Recommendations Section Styling */
+.recommendations-section {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
+  border-left: 4px solid #14b8a6;
+  position: relative;
+}
+
+.recommendations-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.05));
+  pointer-events: none;
+}
+
+/* Pulsing Animation for Critical Status */
+.critical-pulse {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Staff Utilization Bars */
+.utilization-bar {
+  transition: width 0.8s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.utilization-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  animation: loading-bar 1.5s ease-in-out infinite;
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+/* Service Distribution Hover Effects */
+.service-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.service-item:hover {
+  background-color: #f1f5f9 !important;
+  transform: translateX(3px);
+  border-radius: 8px;
+}
+
+/* Gradient Text Effects */
+.gradient-text {
+  background: linear-gradient(135deg, #0d9488, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Button Hover Effects */
+#generatePlan {
+  position: relative;
+  overflow: hidden;
+}
+
+#generatePlan::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+#generatePlan:hover::before {
+  left: 100%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .metric-card {
+    margin-bottom: 1rem;
+  }
+
+  .chart-container {
+    padding: 1rem;
+  }
+
+  #staffingTable {
+    font-size: 0.875rem;
+  }
+
+  .shift-card {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Dark mode support (if needed) */
+@media (prefers-color-scheme: dark) {
+  .chart-container {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+    border-color: #374151;
+  }
+
+  .metric-card {
+    background-color: #1f2937;
+    border-color: #374151;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .chart-container {
+    border: 1px solid #000;
+    background: white;
+  }
+
+  .metric-card {
+    border: 1px solid #000;
+    background: white;
+    box-shadow: none;
+  }
+
+  .recommendations-section {
+    border: 1px solid #000;
+    background: white;
+  }
+}
