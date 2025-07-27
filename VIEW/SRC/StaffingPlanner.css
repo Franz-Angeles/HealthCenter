@@ -1,103 +1,76 @@
-/* Staffing Planner Specific Styles */
+/* Simplified Staffing Planner Styles */
 
-/* Loading Spinner Animation */
-.loading-spinner {
-  display: inline-block;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Metric Card Hover Effects */
-.metric-card {
-  transition: all 0.3s ease;
-  border: 1px solid #e5e7eb;
-}
-
-.metric-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border-color: #d1d5db;
-}
-
-/* Chart Container Styling */
-.chart-container {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-  border: 2px solid #e2e8f0;
-}
-
-/* Efficiency Indicator */
-.efficiency-indicator {
-  overflow: hidden;
-  position: relative;
-}
-
-.efficiency-bar {
-  transition: width 0.8s ease-in-out;
-  border-radius: 9999px;
-}
-
-/* Custom Scrollbar */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 3px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Table Row Hover Effects */
-#staffingTable tr {
+/* Basic transitions for all elements */
+* {
   transition: all 0.2s ease;
 }
 
-#staffingTable tr:hover {
+/* Simple hover effects for table rows */
+tbody tr:hover {
   background-color: #f8fafc;
-  transform: scale(1.01);
 }
 
-/* Status Badge Animations */
-.status-badge {
-  transition: all 0.2s ease;
-  position: relative;
-  overflow: hidden;
+/* Status badge styling */
+.bg-green-100 {
+  background-color: #dcfce7;
 }
 
-.status-badge::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
+.text-green-800 {
+  color: #166534;
 }
 
-.status-badge:hover::before {
-  left: 100%;
+.bg-yellow-100 {
+  background-color: #fef3c7;
+}
+
+.text-yellow-800 {
+  color: #92400e;
+}
+
+.bg-red-100 {
+  background-color: #fee2e2;
+}
+
+.text-red-800 {
+  color: #991b1b;
+}
+
+/* Simple card hover effect */
+.shadow-sm:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Chart container styling */
+#staffingChart {
+  background: white;
+  border-radius: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text-4xl {
+    font-size: 2rem;
+  }
+}
+
+/* Loading animation (if needed) */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 /* Shift Distribution Cards */
