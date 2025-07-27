@@ -7,6 +7,7 @@
     <link href="../SRC/output.css" rel="stylesheet" />
     <link href="../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../SRC/InventoryAlertSystem.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-gray-50">
@@ -190,18 +191,46 @@
       <!-- Main Content -->
       <div class="p-6 space-y-6">
         <div class="max-w-7xl mx-auto">
-          <div class="bg-white rounded-xl p-8 shadow-sm text-center">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">
-              Inventory Alert System
-            </h2>
-            <p class="text-gray-600 mb-8">
-              This page will track medical supplies and send alerts when
-              inventory levels are low.
-            </p>
-            <div class="bg-gray-50 rounded-lg p-6">
-              <p class="text-gray-500">
-                Inventory management system coming soon...
-              </p>
+          <!-- Overview Statistics -->
+          <div id="statsOverview"></div>
+
+          <!-- Control Panel -->
+          <div class="bg-white rounded-lg shadow p-4 mb-6">
+            <h3 class="text-lg font-bold">Inventory Control</h3>
+            <p class="text-gray-600">Simple inventory monitoring system</p>
+          </div>
+
+          <!-- High Demand Alerts -->
+          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3
+              class="text-lg font-semibold text-gray-900 mb-4 flex items-center"
+            >
+              <svg
+                class="w-5 h-5 text-red-500 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"
+                ></path>
+              </svg>
+              Alerts
+            </h3>
+            <div id="highDemandAlerts"></div>
+          </div>
+
+          <!-- Inventory Grid -->
+          <div class="mb-6">
+            <h3 class="text-lg font-bold mb-4">📦 Stock Status</h3>
+            <div
+              id="inventoryContainer"
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              <!-- Items will be shown here -->
             </div>
           </div>
         </div>
@@ -211,5 +240,6 @@
     <!-- External JavaScript -->
     <script src="../JAVASCRIPT/navigation.js"></script>
     <script src="../JAVASCRIPT/Dashboard.js"></script>
+    <script src="../JAVASCRIPT/InventoryAlertSystem.js"></script>
   </body>
 </html>

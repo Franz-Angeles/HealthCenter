@@ -1,0 +1,220 @@
+/* Inventory Alert System Specific Styles */
+
+.inventory-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.inventory-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.demand-bar {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.demand-bar:hover {
+  opacity: 0.8;
+  transform: scaleY(1.05);
+}
+
+.alert-fade-in {
+  animation: fadeInAlert 0.5s ease-in-out;
+}
+
+@keyframes fadeInAlert {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stock-progress {
+  background: linear-gradient(90deg, #ef4444 0%, #f59e0b 50%, #10b981 100%);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.stock-progress::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
+.stock-level {
+  height: 100%;
+  background: inherit;
+  border-radius: 4px;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+.critical-alert {
+  background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+  border-left: 4px solid #dc2626;
+}
+
+.high-alert {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid #d97706;
+}
+
+.normal-status {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+  border-left: 4px solid #16a34a;
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.trend-chart {
+  display: flex;
+  align-items: end;
+  height: 60px;
+  gap: 2px;
+  padding: 4px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.trend-bar {
+  flex: 1;
+  min-height: 2px;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.trend-bar:hover {
+  opacity: 0.8;
+  transform: scaleY(1.1);
+}
+
+.stats-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.icon-container {
+  background: linear-gradient(135deg, var(--icon-from) 0%, var(--icon-to) 100%);
+}
+
+.blue-gradient {
+  --icon-from: #dbeafe;
+  --icon-to: #bfdbfe;
+}
+
+.red-gradient {
+  --icon-from: #fee2e2;
+  --icon-to: #fecaca;
+}
+
+.yellow-gradient {
+  --icon-from: #fef3c7;
+  --icon-to: #fde68a;
+}
+
+.purple-gradient {
+  --icon-from: #e9d5ff;
+  --icon-to: #ddd6fe;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .inventory-card {
+    margin-bottom: 1rem;
+  }
+
+  .trend-chart {
+    height: 40px;
+  }
+
+  .stats-card {
+    text-align: center;
+  }
+}
+
+/* Loading animation */
+.loading-skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Alert severity indicators */
+.severity-critical {
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+}
+
+.severity-high {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: white;
+}
+
+.severity-normal {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: white;
+}
+
+/* Button animations */
+.btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(107, 114, 128, 0.3);
+}
