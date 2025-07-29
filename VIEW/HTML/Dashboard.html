@@ -167,66 +167,150 @@
       </div>
     </div>
 
-    <!-- Date button for mobile - positioned below navbar -->
-    <div
-      class="md:hidden flex justify-center pt-3 pb-2 bg-gray-50 border-b border-gray-200"
-    >
-      <button
-        id="openModal"
-        class="px-4 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:text-blue-600 border border-gray-300 flex items-center transition-colors duration-200"
+    <!-- Mobile Layout - Different design for mobile -->
+    <div class="md:hidden">
+      <!-- Mobile header section with proper navbar spacing -->
+      <div
+        class="pt-20 pb-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"
       >
-        <span class="mr-2">📅</span>
-        <span id="datebtn" class="text-sm font-semibold flex"
-          ><h1 id="selecttext" class="mr-[5px]">Select</h1>
-          Date</span
-        >
-      </button>
+        <div class="px-4">
+          <!-- Mobile title -->
+          <div class="text-center mb-4">
+            <h2 class="text-xl font-bold text-gray-800 mb-1">
+              Analytics Dashboard
+            </h2>
+            <p class="text-sm text-gray-600">
+              Monitor patient data and insights
+            </p>
+          </div>
+
+          <!-- Mobile view mode selector -->
+          <div class="flex justify-center space-x-4 mb-4">
+            <label
+              class="flex items-center bg-white rounded-lg px-3 py-2 shadow-sm border border-blue-200"
+            >
+              <input
+                type="radio"
+                id="dailyMobile"
+                name="viewModeMobile"
+                value="daily"
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                checked
+              />
+              <span class="ml-2 text-sm font-medium text-gray-700">Daily</span>
+            </label>
+            <label
+              class="flex items-center bg-white rounded-lg px-3 py-2 shadow-sm border border-gray-200"
+            >
+              <input
+                type="radio"
+                id="weeklyMobile"
+                name="viewModeMobile"
+                value="weekly"
+                class="h-4 w-4 text-blue-600 focus:ring-blue-500"
+              />
+              <span class="ml-2 text-sm font-medium text-gray-700">Weekly</span>
+            </label>
+          </div>
+
+          <!-- Mobile date picker button -->
+          <div class="flex justify-center">
+            <button
+              id="openModal"
+              class="w-full max-w-xs px-6 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-2xl shadow-lg hover:shadow-xl border-0 flex items-center justify-center transition-all duration-300 transform hover:scale-105"
+            >
+              <div
+                class="flex items-center justify-center w-10 h-10 bg-white/20 rounded-xl mr-4"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="text-left">
+                <div class="text-xs opacity-90 font-medium">
+                  Select Date Range
+                </div>
+                <div class="text-base font-bold">Choose Period</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- MAIN CONTENT -->
-
-    <div
-      id="radyoboton"
-      class="flex justify-center md:justify-start md:ml-[230px] mt-4 space-x-6"
-    >
-      <div class="flex items-center">
-        <input
-          type="radio"
-          id="daily"
-          name="viewMode"
-          value="daily"
-          class="h-4 w-4 text-blue-600 focus:ring-blue-500"
-          checked
-        />
-        <label for="daily" class="ml-2 text-gray-700 font-medium"
-          >Daily View</label
-        >
-      </div>
-      <div class="flex items-center">
-        <input
-          type="radio"
-          id="weekly"
-          name="viewMode"
-          value="weekly"
-          class="h-4 w-4 text-blue-600 focus:ring-blue-500"
-        />
-        <label for="weekly" class="ml-2 text-gray-700 font-medium"
-          >Weekly View</label
-        >
-      </div>
-
-      <!-- Date button for desktop (moved from sidebar) -->
-      <div class="hidden md:block">
-        <button
-          id="openModalDesktop"
-          class="px-3 py-2 bg-white text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:text-blue-600 border border-gray-300 flex items-center transition-colors duration-200"
-        >
-          <span class="mr-1">📅</span>
-          <span id="datebtnDesktop" class="text-sm font-semibold flex"
-            ><h1 id="selecttextDesktop" class="mr-[5px]">Select</h1>
-            Date</span
+    <!-- MAIN CONTENT - Desktop Layout -->
+    <div class="hidden md:block pt-20">
+      <div
+        id="radyoboton"
+        class="flex justify-start ml-[250px] mt-6 space-x-6 items-center"
+      >
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="daily"
+            name="viewMode"
+            value="daily"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500"
+            checked
+          />
+          <label for="daily" class="ml-2 text-gray-700 font-medium"
+            >Daily View</label
           >
-        </button>
+        </div>
+        <div class="flex items-center">
+          <input
+            type="radio"
+            id="weekly"
+            name="viewMode"
+            value="weekly"
+            class="h-4 w-4 text-blue-600 focus:ring-blue-500"
+          />
+          <label for="weekly" class="ml-2 text-gray-700 font-medium"
+            >Weekly View</label
+          >
+        </div>
+
+        <!-- Date button for desktop (moved from sidebar) -->
+        <div class="flex items-center ml-8">
+          <button
+            id="openModalDesktop"
+            class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl shadow-lg hover:shadow-xl border-0 flex items-center transition-all duration-300 transform hover:scale-105"
+          >
+            <div
+              class="flex items-center justify-center w-8 h-8 bg-white/20 rounded-lg mr-3"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </div>
+            <span id="datebtnDesktop" class="text-sm font-semibold">
+              <span id="selecttextDesktop" class="block text-xs opacity-90"
+                >Select Date Range</span
+              >
+              <span class="block">Choose Period</span>
+            </span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -407,12 +491,14 @@
         <button
           id="closeModal"
           class="absolute top-4 right-4 w-8 h-8 bg-red-50 hover:bg-red-100 text-red-500 hover:text-red-600 rounded-full flex items-center justify-center text-lg font-bold transition-all duration-200 hover:scale-110 shadow-sm"
-        ></button>
+        >
+          ×
+        </button>
 
         <!-- Header Section -->
         <div class="text-center space-y-2">
           <div
-            class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg"
+            class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg date-picker-icon"
           >
             <svg
               class="w-8 h-8 text-white"
@@ -436,10 +522,10 @@
 
         <!-- Week Picker Section -->
         <div
-          class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-blue-100 shadow-sm"
+          class="modal-section bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-blue-100 shadow-sm"
         >
           <div class="flex items-center space-x-2 mb-3">
-            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full decorative-dot"></div>
             <label for="week" class="text-base font-semibold text-gray-800">
               Select Week
             </label>
@@ -458,7 +544,7 @@
             class="flex-1 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"
           ></div>
           <span
-            class="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200"
+            class="text-sm font-medium text-gray-500 bg-white px-3 py-1 rounded-full border border-gray-200 shadow-sm"
             >OR</span
           >
           <div
@@ -468,10 +554,12 @@
 
         <!-- Specific Date Picker Section -->
         <div
-          class="bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-blue-100 shadow-sm"
+          class="modal-section bg-white/70 backdrop-blur-sm p-5 rounded-2xl border border-blue-100 shadow-sm"
         >
           <div class="flex items-center space-x-2 mb-4">
-            <div class="w-3 h-3 bg-purple-500 rounded-full"></div>
+            <div
+              class="w-3 h-3 bg-purple-500 rounded-full decorative-dot"
+            ></div>
             <label class="text-base font-semibold text-gray-800">
               Select Specific Date
             </label>

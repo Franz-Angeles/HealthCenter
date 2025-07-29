@@ -95,6 +95,11 @@
 }
 
 /* Modal Animation Styles */
+#dateModal {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 #dateModal.show {
   display: flex !important;
 }
@@ -105,12 +110,21 @@
 }
 
 .modal-content {
-  animation: modalSlideIn 0.3s ease-out;
+  animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  backdrop-filter: blur(20px);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(239, 246, 255, 0.9)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 @keyframes modalSlideIn {
   from {
-    transform: scale(0.95) translateY(-20px);
+    transform: scale(0.9) translateY(-30px);
     opacity: 0;
   }
   to {
@@ -119,19 +133,27 @@
   }
 }
 
+/* Glass morphism effect for modal sections */
+.modal-section {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 /* Custom scrollbar for select elements */
 select::-webkit-scrollbar {
   width: 8px;
 }
 
 select::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f8fafc;
   border-radius: 10px;
 }
 
 select::-webkit-scrollbar-thumb {
   background: linear-gradient(180deg, #3b82f6, #1d4ed8);
   border-radius: 10px;
+  border: 2px solid #f8fafc;
 }
 
 select::-webkit-scrollbar-thumb:hover {
@@ -142,12 +164,52 @@ select::-webkit-scrollbar-thumb:hover {
 select:focus,
 input:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15), 0 0 0 1px #3b82f6;
+  transform: translateY(-1px);
 }
 
 /* Hover effects for form elements */
 select:hover,
 input:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+
+/* Button hover effects */
+#confirmDate:hover {
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+  transform: translateY(-2px) scale(1.02);
+}
+
+#cancelDate:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* Close button enhanced styling */
+#closeModal:hover {
+  transform: scale(1.15) rotate(90deg);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* Date picker enhanced styling */
+.date-picker-icon {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Decorative elements */
+.decorative-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
