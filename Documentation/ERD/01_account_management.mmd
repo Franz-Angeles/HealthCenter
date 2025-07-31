@@ -1,0 +1,88 @@
+erDiagram
+    %% ========================================
+    %% PAGE 1: CORE ACCOUNT & USER MANAGEMENT
+    %% ========================================
+    
+    Account {
+        string id PK
+        string email UK
+        string password
+        string role
+        boolean isActive
+        datetime createdAt
+        datetime updatedAt
+        string profilePictureUrl
+        boolean emailVerified
+    }
+
+    UserProfile {
+        string id PK
+        string accountId FK
+        string fullName
+        date dateOfBirth
+        int age
+        string gender
+        string address
+        string contactNumber
+        string religion
+        string civilStatus
+        string occupation
+        string educationLevel
+        string philhealthNumber
+        string nhtsStatus
+        boolean personWithDisability
+        boolean indigenousPeople
+        datetime createdAt
+    }
+
+    HealthWorker {
+        string id PK
+        string accountId FK
+        string name
+        string role
+        string contactNumber
+        string signature
+        boolean isActive
+    }
+
+    %% OFF-PAGE CONNECTORS TO OTHER PAGES
+    "Go to Family Records ERD" {
+        string navigation "SEE_PAGE_2"
+    }
+
+    "Go to Maternal Health ERD" {
+        string navigation "SEE_PAGE_3"
+    }
+
+    "Go to Immunization ERD" {
+        string navigation "SEE_PAGE_4"
+    }
+
+    "Go to Healthcare Services ERD" {
+        string navigation "SEE_PAGE_5"
+    }
+
+    "Go to Events Programs ERD" {
+        string navigation "SEE_PAGE_6"
+    }
+
+    "Go to Communication Surveys ERD" {
+        string navigation "SEE_PAGE_7"
+    }
+
+    "Go to Analytics Reports ERD" {
+        string navigation "SEE_PAGE_8"
+    }
+
+    %% RELATIONSHIPS - PAGE 1
+    Account ||--|| UserProfile : "has"
+    Account ||--o{ HealthWorker : "can be"
+    
+    %% OFF-PAGE RELATIONSHIPS
+    UserProfile ||--o{ "Go to Family Records ERD" : "heads family"
+    UserProfile ||--o{ "Go to Maternal Health ERD" : "has maternal records"
+    UserProfile ||--o{ "Go to Immunization ERD" : "has immunizations"
+    UserProfile ||--o{ "Go to Healthcare Services ERD" : "has visits"
+    Account ||--o{ "Go to Events Programs ERD" : "creates events"
+    Account ||--o{ "Go to Communication Surveys ERD" : "creates surveys"
+    Account ||--o{ "Go to Analytics Reports ERD" : "generates reports"

@@ -1,0 +1,94 @@
+erDiagram
+    %% ========================================
+    %% PAGE 3: MATERNAL & CHILD HEALTH
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+    }
+
+    MaternalHealth {
+        string id PK
+        string userProfileId FK
+        string mothersName
+        int mothersAge
+        date mothersBirthday
+        string mothersMaidenName
+        string mothersReligion
+        string mothersEducation
+        string mothersOccupation
+        int numberOfChildren
+        string gravidaPara
+        int menarcheAge
+        date lastMenstrualPeriod
+        date expectedDeliveryDate
+        string tetanusToxoidStatus
+        datetime createdAt
+    }
+
+    PrenatalVisit {
+        string id PK
+        string maternalHealthId FK
+        date visitDate
+        int gestationalAgeWeeks
+        float weightKg
+        float heightCm
+        string bloodPressure
+        float fundalHeightCm
+        string fetalHeartTone
+        date nextVisitDate
+        string recordedBy FK
+    }
+
+    LaboratoryTest {
+        string id PK
+        string prenatalVisitId FK
+        string userProfileId FK
+        date testDate
+        string testType
+        boolean testCompleted
+        string recordedBy FK
+    }
+
+    Intervention {
+        string id PK
+        string prenatalVisitId FK
+        string tetanusToxoidDose
+        string tetanusToxoidLocation
+        date tetanusToxoidDate
+        boolean ironSupplementation
+        string ironMedication
+        boolean vitaminSupplementation
+        string vitaminMedication
+        boolean calciumSupplementation
+        string calciumMedication
+        string[] healthEducationTopics
+    }
+
+    BirthInformation {
+        string id PK
+        string userProfileId FK
+        string maternalHealthId FK
+        string placeOfDelivery
+        time timeOfDelivery
+        string deliveryType
+        float birthWeightKg
+        float birthHeightCm
+        date newbornScreeningDate
+        boolean newbornScreeningCompleted
+        string feedingType
+        datetime createdAt
+        string recordedBy FK
+    }
+
+    %% RELATIONSHIPS - PAGE 3
+    "From Account Management ERD" ||--o{ MaternalHealth : "has"
+    MaternalHealth ||--o{ PrenatalVisit : "has visits"
+    PrenatalVisit ||--o{ LaboratoryTest : "may have tests"
+    PrenatalVisit ||--o{ Intervention : "has interventions"
+    "From Account Management ERD" ||--o{ BirthInformation : "has birth record"
+    MaternalHealth ||--o{ BirthInformation : "related to"
+    "From Account Management ERD" ||--|| PrenatalVisit : "recorded by"
+    "From Account Management ERD" ||--|| LaboratoryTest : "recorded by"
+    "From Account Management ERD" ||--|| BirthInformation : "recorded by"

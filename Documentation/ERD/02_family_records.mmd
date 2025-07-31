@@ -1,0 +1,48 @@
+erDiagram
+    %% ========================================
+    %% PAGE 2: FAMILY & HOUSEHOLD MANAGEMENT
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+    }
+
+    FamilyRecord {
+        string id PK
+        string familyId UK
+        string headOfFamilyId FK
+        string address
+        string contactNumber
+        boolean smsConsent
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    FamilyMember {
+        string id PK
+        string familyRecordId FK
+        string userProfileId FK
+        string memberName
+        string relationship
+        string gender
+        int age
+        string occupation
+        string civilStatus
+    }
+
+    FamilyHealthHistory {
+        string id PK
+        string familyRecordId FK
+        string[] geneticConditions
+        string[] chronicDiseases
+        datetime recordedDate
+        string recordedBy FK
+    }
+
+    %% RELATIONSHIPS - PAGE 2
+    "From Account Management ERD" ||--|| FamilyRecord : "heads family"
+    "From Account Management ERD" ||--o{ FamilyMember : "can be member of"
+    FamilyRecord ||--o{ FamilyMember : "contains"
+    FamilyRecord ||--|| FamilyHealthHistory : "has"
+    "From Account Management ERD" ||--|| FamilyHealthHistory : "recorded by"

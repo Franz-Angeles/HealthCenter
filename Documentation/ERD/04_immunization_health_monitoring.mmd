@@ -1,0 +1,98 @@
+erDiagram
+    %% ========================================
+    %% PAGE 4: IMMUNIZATION & HEALTH MONITORING
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+    }
+
+    ImmunizationEvent {
+        string id PK
+        string userProfileId FK
+        date visitDate
+        float temperatureCelsius
+        float weightKg
+        float heightCm
+        string adverseReactions
+        string healthWorkerName
+        string healthWorkerSignature
+        date nextFollowupDate
+        string recordedBy FK
+    }
+
+    VaccineGiven {
+        string id PK
+        string immunizationEventId FK
+        string vaccineName
+        string doseNumber
+        date dateGiven
+        string lotNumber
+    }
+
+    VitalSigns {
+        string id PK
+        string userProfileId FK
+        date recordDate
+        string bloodPressure
+        int heartRate
+        int respiratoryRate
+        float temperatureCelsius
+        int pulseRate
+        string recordedBy FK
+    }
+
+    AnthropometricMeasurement {
+        string id PK
+        string userProfileId FK
+        date measurementDate
+        float weightKg
+        float heightCm
+        float headCircumferenceCm
+        float waistCircumferenceCm
+        float bmi
+        string recordedBy FK
+    }
+
+    GrowthTracking {
+        string id PK
+        string userProfileId FK
+        date trackingDate
+        string weightForAge
+        string heightForAge
+        string weightForHeight
+        string recordedBy FK
+    }
+
+    NCDRiskAssessment {
+        string id PK
+        string userProfileId FK
+        date assessmentDate
+        string smokingStatus
+        string alcoholIntake
+        string physicalActivity
+        string fruitVegetableIntake
+        boolean familyHistoryDiabetes
+        boolean familyHistoryHypertension
+        boolean familyHistoryHeartDisease
+        boolean familyHistoryStroke
+        boolean screeningCompleted
+        boolean followUpNeeded
+        string[] lifestyleModifications
+        string[] healthEducationReceived
+        string recordedBy FK
+    }
+
+    %% RELATIONSHIPS - PAGE 4
+    "From Account Management ERD" ||--o{ ImmunizationEvent : "has immunizations"
+    ImmunizationEvent ||--o{ VaccineGiven : "contains vaccines"
+    "From Account Management ERD" ||--o{ VitalSigns : "has vital signs"
+    "From Account Management ERD" ||--o{ AnthropometricMeasurement : "has measurements"
+    "From Account Management ERD" ||--o{ GrowthTracking : "has growth data"
+    "From Account Management ERD" ||--o{ NCDRiskAssessment : "has risk assessments"
+    "From Account Management ERD" ||--|| ImmunizationEvent : "recorded by"
+    "From Account Management ERD" ||--|| VitalSigns : "recorded by"
+    "From Account Management ERD" ||--|| AnthropometricMeasurement : "recorded by"
+    "From Account Management ERD" ||--|| GrowthTracking : "recorded by"
+    "From Account Management ERD" ||--|| NCDRiskAssessment : "recorded by"

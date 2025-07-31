@@ -1,0 +1,52 @@
+erDiagram
+    %% ========================================
+    %% PAGE 8: ANALYTICS & SYSTEM MANAGEMENT
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+        string description "Account"
+        string role
+    }
+
+    AnalyticsReport {
+        string id PK
+        string reportName
+        string reportType
+        string[] dataFilters
+        json reportData
+        date reportPeriodStart
+        date reportPeriodEnd
+        string generatedBy FK
+    }
+
+    PredictionModel {
+        string id PK
+        string modelName
+        string modelType
+        json modelParameters
+        json predictionResults
+        float accuracy
+        date lastTrained
+        boolean isActive
+        string createdBy FK
+        datetime createdAt
+    }
+
+    SystemLog {
+        string id PK
+        string userId FK
+        string action
+        string entityType
+        string entityId
+        json oldData
+        json newData
+        string ipAddress
+        string userAgent
+    }
+
+    %% RELATIONSHIPS - PAGE 8
+    "From Account Management ERD" ||--o{ AnalyticsReport : "generates reports"
+    "From Account Management ERD" ||--o{ PredictionModel : "creates models"
+    "From Account Management ERD" ||--o{ SystemLog : "has activity logs"
