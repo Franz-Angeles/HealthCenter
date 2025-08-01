@@ -1,0 +1,75 @@
+erDiagram
+    %% ========================================
+    %% PAGE 7: COMMUNICATION & SURVEYS
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+    }
+
+    Inquiry {
+        string id PK
+        string userProfileId FK
+        string subject
+        string message
+        string priority
+        string status
+        string category
+        datetime createdAt
+    }
+
+    InquiryResponse {
+        string id PK
+        string inquiryId FK
+        string message
+        string respondedBy FK
+    }
+
+    Survey {
+        string id PK
+        string title
+        string description
+        string surveyType
+        boolean isActive
+        date startDate
+        date endDate
+        string qrCode
+        string createdBy FK
+        datetime createdAt
+    }
+
+    SurveyQuestion {
+        string id PK
+        string surveyId FK
+        string questionText
+        string questionType
+        string[] options
+        boolean isRequired
+        int orderIndex
+    }
+
+    SurveyResponse {
+        string id PK
+        string surveyId FK
+        string userProfileId FK
+        string ipAddress
+        datetime submittedAt
+    }
+
+    SurveyAnswer {
+        string id PK
+        string surveyResponseId FK
+        string surveyQuestionId FK
+        string answer
+    }
+
+    %% RELATIONSHIPS - PAGE 7
+    "From Account Management ERD" ||--o{ Inquiry : "creates inquiries"
+    Inquiry ||--o{ InquiryResponse : "has responses"
+    "From Account Management ERD" ||--|| InquiryResponse : "responded by"
+    "From Account Management ERD" ||--o{ Survey : "creates surveys"
+    Survey ||--o{ SurveyQuestion : "has questions"
+    Survey ||--o{ SurveyResponse : "has responses"
+    SurveyResponse ||--o{ SurveyAnswer : "has answers"
+    "From Account Management ERD" ||--o{ SurveyResponse : "submits responses"

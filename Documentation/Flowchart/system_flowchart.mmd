@@ -1,0 +1,259 @@
+flowchart TD
+    %% User Authentication & Registration Flow
+    A[Start] --> B{User Exists?}
+    B -->|No| C[Register New Account]
+    B -->|Yes| D[Login]
+    
+    C --> E[Create User Profile]
+    E --> F[Dashboard]
+    D --> F
+    
+    %% Main Dashboard Navigation
+    F --> G{User Role}
+    G -->|Admin/Health Worker| H[Admin Dashboard]
+    G -->|Regular User| I[User Dashboard]
+    
+    %% Admin Dashboard Features
+    H --> J[Medical Records Management]
+    H --> K[Events & Seminars Management]
+    H --> L[Medical Programs Management]
+    H --> M[Survey Management]
+    H --> N[Analytics & Reports]
+    H --> O[Virtual Checkup Management]
+    H --> P[Inquiry Management]
+    
+    %% User Dashboard Features
+    I --> Q[View My Health Records]
+    I --> R[Event Registration]
+    I --> S[Program Participation]
+    I --> T[Schedule Virtual Checkup]
+    I --> U[Submit Inquiry]
+    I --> V[Take Surveys]
+    I --> W[View Appointments]
+    
+    %% Medical Records Management Flow
+    J --> J1[Family Health Records]
+    J --> J2[Maternal Health Records]
+    J --> J3[Birth Information]
+    J --> J4[Immunization Records]
+    J --> J5[Health Monitoring]
+    J --> J6[Visit Records]
+    J --> J7[NCD Risk Assessment]
+    
+    J1 --> J1A[Add Family Member]
+    J1 --> J1B[Update Health History]
+    J1A --> J1C[Save to Database]
+    J1B --> J1C
+    
+    J2 --> J2A[Prenatal Visits]
+    J2 --> J2B[Laboratory Tests]
+    J2 --> J2C[Interventions]
+    J2A --> J2D[Record Visit Data]
+    J2B --> J2E[Track Test Completion]
+    J2C --> J2F[Document Interventions]
+    
+    J3 --> J3A[Record Birth Details]
+    J3A --> J3B[Newborn Screening]
+    J3B --> J3C[Save Birth Record]
+    
+    J4 --> J4A[Schedule Vaccination]
+    J4 --> J4B[Record Vaccine Given]
+    J4 --> J4C[Track Adverse Reactions]
+    J4A --> J4D[Generate Reminders]
+    J4B --> J4D
+    J4C --> J4D
+    
+    J5 --> J5A[Vital Signs]
+    J5 --> J5B[Anthropometric Measurements]
+    J5 --> J5C[Growth Tracking]
+    J5A --> J5D[Trend Analysis]
+    J5B --> J5D
+    J5C --> J5D
+    
+    J6 --> J6A[Record Visit Type]
+    J6A --> J6B[Track Visit Frequency]
+    J6B --> J6C[Referral Management]
+    
+    J7 --> J7A[Risk Factor Assessment]
+    J7A --> J7B[Health Screening]
+    J7B --> J7C[Lifestyle Recommendations]
+    
+    %% Events & Seminars Management Flow
+    K --> K1[Create Event]
+    K --> K2[Manage Registrations]
+    K --> K3[Event Analytics]
+    
+    K1 --> K1A[Set Event Details]
+    K1A --> K1B[Upload Banner]
+    K1B --> K1C[Publish Event]
+    
+    K2 --> K2A[View Registrations]
+    K2A --> K2B[Mark Attendance]
+    K2B --> K2C[Send Notifications]
+    
+    %% Medical Programs Management Flow
+    L --> L1[Create Program]
+    L --> L2[Manage Participation]
+    L --> L3[Program Analytics]
+    
+    L1 --> L1A[Set Program Details]
+    L1A --> L1B[Define Target Demographics]
+    L1B --> L1C[Activate Program]
+    
+    L2 --> L2A[Register Participants]
+    L2A --> L2B[Record Services Provided]
+    L2B --> L2C[Track Outcomes]
+    
+    %% Survey Management Flow
+    M --> M1[Create Survey]
+    M --> M2[Manage Questions]
+    M --> M3[Analyze Responses]
+    
+    M1 --> M1A[Set Survey Details]
+    M1A --> M1B[Generate QR Code]
+    M1B --> M1C[Activate Survey]
+    
+    M2 --> M2A[Add Questions]
+    M2A --> M2B[Set Question Types]
+    M2B --> M2C[Configure Options]
+    
+    M3 --> M3A[View Responses]
+    M3A --> M3B[Export Data]
+    M3B --> M3C[Generate Reports]
+    
+    %% Analytics & Reports Flow
+    N --> N1[Population Health Analytics]
+    N --> N2[Immunization Coverage]
+    N --> N3[Growth Trends]
+    N --> N4[Predictive Models]
+    
+    N1 --> N1A[Demographic Analysis]
+    N1A --> N1B[Health Service Utilization]
+    N1B --> N1C[Risk Factor Trends]
+    
+    N2 --> N2A[Vaccination Rates]
+    N2A --> N2B[Coverage by Age Group]
+    N2B --> N2C[Compliance Predictions]
+    
+    N3 --> N3A[Growth Pattern Analysis]
+    N3A --> N3B[Nutritional Status Trends]
+    N3B --> N3C[Intervention Effectiveness]
+    
+    N4 --> N4A[Train Prediction Models]
+    N4A --> N4B[Generate Forecasts]
+    N4B --> N4C[Model Performance Metrics]
+    
+    %% Virtual Checkup Flow
+    O --> O1[Schedule Management]
+    O --> O2[Conduct Checkup]
+    O --> O3[Follow-up Actions]
+    
+    T --> T1[Available Time Slots]
+    T1 --> T2[Select Health Worker]
+    T2 --> T3[Book Appointment]
+    T3 --> T4[Receive Confirmation]
+    
+    O2 --> O2A[Video Call Interface]
+    O2A --> O2B[Record Consultation Notes]
+    O2B --> O2C[Schedule Follow-up]
+    
+    %% Inquiry Management Flow
+    P --> P1[View Inquiries]
+    P --> P2[Respond to Inquiries]
+    P --> P3[Track Resolution]
+    
+    U --> U1[Submit New Inquiry]
+    U1 --> U2[Set Priority Level]
+    U2 --> U3[Wait for Response]
+    
+    P2 --> P2A[Read Inquiry Details]
+    P2A --> P2B[Provide Response]
+    P2B --> P2C[Update Status]
+    
+    %% Survey Taking Flow
+    V --> V1[Scan QR Code/Access Link]
+    V1 --> V2[View Survey Questions]
+    V2 --> V3[Submit Answers]
+    V3 --> V4[Confirmation]
+    
+    %% Event Registration Flow
+    R --> R1[Browse Available Events]
+    R1 --> R2[View Event Details]
+    R2 --> R3[Register for Event]
+    R3 --> R4[Receive Confirmation]
+    
+    %% Program Participation Flow
+    S --> S1[View Available Programs]
+    S1 --> S2[Check Eligibility]
+    S2 --> S3[Register for Program]
+    S3 --> S4[Participate in Program]
+    
+    %% Data Storage & Processing
+    J1C --> DB[(Database)]
+    J2D --> DB
+    J2E --> DB
+    J2F --> DB
+    J3C --> DB
+    J4D --> DB
+    J5D --> DB
+    J6C --> DB
+    J7C --> DB
+    K1C --> DB
+    K2C --> DB
+    L1C --> DB
+    L2C --> DB
+    M1C --> DB
+    M2C --> DB
+    V4 --> DB
+    R4 --> DB
+    S4 --> DB
+    T4 --> DB
+    U3 --> DB
+    O2C --> DB
+    P2C --> DB
+    
+    %% Analytics Processing
+    DB --> AA[Data Processing Engine]
+    AA --> AB[Trend Analysis]
+    AB --> AC[Predictive Modeling]
+    AC --> AD[Report Generation]
+    AD --> AE[Dashboard Updates]
+    
+    %% Notification System
+    J4D --> NS[Notification System]
+    K2C --> NS
+    L2C --> NS
+    T4 --> NS
+    U3 --> NS
+    NS --> NF[SMS/Email Notifications]
+    
+    %% System Monitoring & Logs
+    DB --> SL[System Logs]
+    AA --> SL
+    NS --> SL
+    SL --> SM[System Monitoring]
+    
+    %% External Integrations
+    O2A --> VI[Video Call Service]
+    M1B --> QR[QR Code Generator]
+    NF --> SMS[SMS Gateway]
+    NF --> EMAIL[Email Service]
+    
+    %% Error Handling & Security
+    F --> SEC[Security Layer]
+    SEC --> AUTH[Authentication]
+    SEC --> AUTHZ[Authorization]
+    SEC --> AUDIT[Audit Trail]
+    
+    %% Styling
+    classDef userAction fill:#e1f5fe
+    classDef adminAction fill:#f3e5f5
+    classDef dataStorage fill:#e8f5e8
+    classDef analytics fill:#fff3e0
+    classDef external fill:#ffebee
+    
+    class A,B,C,D,E,F,G,I,Q,R,S,T,U,V,W,R1,R2,R3,R4,S1,S2,S3,S4,T1,T2,T3,T4,U1,U2,U3,V1,V2,V3,V4 userAction
+    class H,J,K,L,M,N,O,P,J1,J2,J3,J4,J5,J6,J7,K1,K2,K3,L1,L2,L3,M1,M2,M3,P1,P2,P3 adminAction
+    class DB,SL dataStorage
+    class N1,N2,N3,N4,AA,AB,AC,AD,AE analytics
+    class VI,QR,SMS,EMAIL external

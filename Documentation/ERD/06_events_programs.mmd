@@ -1,0 +1,71 @@
+erDiagram
+    %% ========================================
+    %% PAGE 6: EVENTS, PROGRAMS & COMMUNITY ENGAGEMENT
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+    }
+
+    Event {
+        string id PK
+        string title
+        string description
+        string eventType
+        date eventDate
+        time startTime
+        time endTime
+        string venue
+        string targetAudience
+        int maxParticipants
+        string status
+        string bannerImageUrl
+        string createdBy FK
+        datetime createdAt
+    }
+
+    EventRegistration {
+        string id PK
+        string eventId FK
+        string userProfileId FK
+        date registrationDate
+        string status
+        string notes
+    }
+
+    MedicalProgram {
+        string id PK
+        string programName
+        string description
+        string programType
+        date startDate
+        date endDate
+        string venue
+        string targetDemographic
+        int targetParticipants
+        string status
+        string bannerImageUrl
+        string createdBy FK
+        datetime createdAt
+    }
+
+    ProgramParticipation {
+        string id PK
+        string medicalProgramId FK
+        string userProfileId FK
+        date participationDate
+        string status
+        string servicesReceived
+        string notes
+        string recordedBy FK
+    }
+
+    %% RELATIONSHIPS - PAGE 6
+    "From Account Management ERD" ||--o{ Event : "creates events"
+    Event ||--o{ EventRegistration : "has registrations"
+    "From Account Management ERD" ||--o{ EventRegistration : "registers for events"
+    "From Account Management ERD" ||--o{ MedicalProgram : "creates programs"
+    MedicalProgram ||--o{ ProgramParticipation : "has participants"
+    "From Account Management ERD" ||--o{ ProgramParticipation : "participates in programs"
+    "From Account Management ERD" ||--|| ProgramParticipation : "recorded by"

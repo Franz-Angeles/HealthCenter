@@ -1,0 +1,115 @@
+erDiagram
+    %% ========================================
+    %% PAGE 5: HEALTHCARE SERVICES & APPOINTMENTS
+    %% ========================================
+    
+    %% OFF-PAGE CONNECTORS FROM PAGE 1
+    "From Account Management ERD" {
+        string navigation "FROM_PAGE_1"
+    }
+
+    VisitRecord {
+        string id PK
+        string userProfileId FK
+        date visitDate
+        string visitType
+        string visitFrequency
+        boolean referred
+        string facilityName
+        string referralReason
+        string recordedBy FK
+    }
+
+    HealthEducation {
+        string id PK
+        string userProfileId FK
+        string[] topicsCovered
+        date dateProvided
+        string providedBy FK
+    }
+
+    NutritionalCounseling {
+        string id PK
+        string userProfileId FK
+        string recommendations
+        date dateProvided
+        string providedBy FK
+    }
+
+    Referral {
+        string id PK
+        string userProfileId FK
+        string facilityName
+        string reason
+        date dateReferred
+        string status
+        string referredBy FK
+    }
+
+    Appointment {
+        string id PK
+        string userProfileId FK
+        date nextVisitDate
+        string visitType
+        string appointmentStatus
+        string scheduledBy FK
+        datetime createdAt
+    }
+
+    ImmunizationReminder {
+        string id PK
+        string userProfileId FK
+        string vaccineName
+        date dueDate
+        boolean reminderSent
+        datetime sentAt
+    }
+
+    TestReminder {
+        string id PK
+        string userProfileId FK
+        string testName
+        date dueDate
+        boolean reminderSent
+        datetime sentAt
+    }
+
+    VirtualCheckup {
+        string id PK
+        string userProfileId FK
+        string healthWorkerId FK
+        date scheduledDate
+        time scheduledTime
+        string meetingUrl
+        string status
+        string consultationType
+        string chiefComplaint
+        string notes
+        int durationMinutes
+        datetime createdAt
+    }
+
+    VirtualCheckupNote {
+        string id PK
+        string virtualCheckupId FK
+        string note
+        string createdBy FK
+    }
+
+    %% RELATIONSHIPS - PAGE 5
+    "From Account Management ERD" ||--o{ VisitRecord : "has visit records"
+    "From Account Management ERD" ||--o{ HealthEducation : "receives education"
+    "From Account Management ERD" ||--o{ NutritionalCounseling : "receives counseling"
+    "From Account Management ERD" ||--o{ Referral : "has referrals"
+    "From Account Management ERD" ||--o{ Appointment : "has appointments"
+    "From Account Management ERD" ||--o{ ImmunizationReminder : "has reminders"
+    "From Account Management ERD" ||--o{ TestReminder : "has test reminders"
+    "From Account Management ERD" ||--o{ VirtualCheckup : "schedules checkups"
+    "From Account Management ERD" ||--o{ VirtualCheckup : "conducts checkups"
+    VirtualCheckup ||--o{ VirtualCheckupNote : "has notes"
+    "From Account Management ERD" ||--|| VisitRecord : "recorded by"
+    "From Account Management ERD" ||--|| HealthEducation : "provided by"
+    "From Account Management ERD" ||--|| NutritionalCounseling : "provided by"
+    "From Account Management ERD" ||--|| Referral : "referred by"
+    "From Account Management ERD" ||--|| Appointment : "scheduled by"
+    "From Account Management ERD" ||--|| VirtualCheckupNote : "created by"
