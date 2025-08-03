@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logs and Audit Trail</title>
+    <link href="../../SRC/output.css" rel="stylesheet" />
+    <link href="../../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../servicescss/LogsAndAuditTrail.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <!-- MAIN NAV BAR -->
+    <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <a href="../../HTML/LandingP.html" class="flex-shrink-0">
+          <img
+            class="h-[50px] mr-[10px]"
+            src="../../SRC/IMG/bucallogonobg.png"
+            alt=""
+          />
+        </a>
+        <div class="text-xl w-[900px] font-bold">Logs and Audit Trail</div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
+          <!-- Leave Empty or Add Other Icons If Needed -->
+        </div>
+        <div class="hidden md:flex font-semibold">
+          <a
+            href="../../HTML/LandingP.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+          >
+            Home</a
+          >
+          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Services</a
+          >
+          <a
+            href="../../HTML/ProfileSettings.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Profile</a
+          >
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden w-full flex justify-end pr-4 relative">
+          <!-- Toggle button -->
+          <button id="menu-button" class="p-2">
+            <svg
+              class="w-8 h-7 text-zinc-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdown-menu"
+            class="transition-all duration-500 ease-in-out origin-top scale-y-0 opacity-0 absolute right-0 top-14 w-[230px] bg-white shadow-lg rounded-md z-50 font-semibold pointer-events-none"
+          >
+            <a
+              href="../../HTML/LandingP.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Home</a
+            >
+            <hr />
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Services</a
+            >
+            <hr />
+            <a
+              href="../../HTML/ProfileSettings.html"
+              class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+              >Profile</a
+            >
+            <hr />
+            <a
+              href="../../HTML/Dashboard.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Analytics</a
+            >
+            <a
+              href="../../HTML/PatientFlowFcst.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Patient Flow Forecast</a
+            >
+            <a
+              href="../../HTML/ServiceUsageTrends.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Service Usage Trends</a
+            >
+            <a
+              href="../../HTML/BarangayMapView.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Barangay Map View</a
+            >
+            <a
+              href="../../HTML/SeasonalityExplorer.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Seasonality Explorer</a
+            >
+            <a
+              href="../../HTML/StaffingPlanner.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Staffing Planner</a
+            >
+            <a
+              href="../../HTML/InventoryAlertSystem.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Inventory Alert System</a
+            >
+            <a
+              href="../serviceshtml/UserManagement.html"
+              class="dropdown-link block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Account Management</a
+            >
+            <a
+              href="../serviceshtml/LogsAndAuditTrail.html"
+              class="dropdown-link active block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Logs and Audit Trail</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
+    <div
+      class="hidden md:block bg-white w-52 h-screen shadow-md fixed top-[72px] left-0 z-40 overflow-y-auto"
+    >
+      <div class="flex flex-col p-4 font-semibold">
+        <a
+          href="../../HTML/Dashboard.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Analytics</a
+        >
+        <a
+          href="../../HTML/PatientFlowFcst.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Patient Flow Forecast</a
+        >
+        <a
+          href="../../HTML/ServiceUsageTrends.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Service Usage Trends</a
+        >
+        <a
+          href="../../HTML/BarangayMapView.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Barangay Map View</a
+        >
+        <a
+          href="../../HTML/SeasonalityExplorer.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Seasonality Explorer</a
+        >
+        <a
+          href="../../HTML/StaffingPlanner.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Staffing Planner</a
+        >
+        <a
+          href="../../HTML/InventoryAlertSystem.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Inventory Alert System</a
+        >
+        <a
+          href="../serviceshtml/UserManagement.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Account Management</a
+        >
+        <a
+          href="../serviceshtml/LogsAndAuditTrail.html"
+          class="sidebar-link active mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-2 rounded-md hover:bg-blue-50 text-sm"
+          >Logs and Audit Trail</a
+        >
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="md:ml-52 pt-[72px] min-h-screen">
+      <!-- Header Section -->
+      <div
+        class="bg-gradient-to-r from-indigo-600 to-purple-800 text-white p-6"
+      >
+        <div class="max-w-7xl mx-auto">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-clipboard-list text-4xl mr-4"></i>
+            <div>
+              <h1 class="text-3xl font-bold">Logs and Audit Trail</h1>
+              <p class="text-indigo-100 mt-1">
+                Monitor system activities and user actions
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="p-6 space-y-6">
+        <div class="max-w-7xl mx-auto">
+          <!-- Overview Statistics -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow p-6">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-list-alt text-indigo-600 text-2xl"></i>
+                </div>
+                <div class="ml-4">
+                  <p class="text-sm font-medium text-gray-500">Total Logs</p>
+                  <p class="text-2xl font-bold text-gray-900" id="totalLogs">
+                    2,847
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-calendar-day text-green-600 text-2xl"></i>
+                </div>
+                <div class="ml-4">
+                  <p class="text-sm font-medium text-gray-500">Today</p>
+                  <p class="text-2xl font-bold text-gray-900" id="todayLogs">
+                    42
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <i
+                    class="fas fa-exclamation-triangle text-yellow-600 text-2xl"
+                  ></i>
+                </div>
+                <div class="ml-4">
+                  <p class="text-sm font-medium text-gray-500">Warnings</p>
+                  <p class="text-2xl font-bold text-gray-900" id="warningLogs">
+                    8
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow p-6">
+              <div class="flex items-center">
+                <div class="flex-shrink-0">
+                  <i class="fas fa-times-circle text-red-600 text-2xl"></i>
+                </div>
+                <div class="ml-4">
+                  <p class="text-sm font-medium text-gray-500">Errors</p>
+                  <p class="text-2xl font-bold text-gray-900" id="errorLogs">
+                    3
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filters and Controls -->
+          <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <div
+              class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+            >
+              <div>
+                <h3 class="text-lg font-bold text-gray-900">
+                  System Activity Logs
+                </h3>
+                <p class="text-gray-600">
+                  Track all user actions and system events
+                </p>
+              </div>
+              <div class="mt-4 md:mt-0 flex space-x-2">
+                <button
+                  id="exportBtn"
+                  class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <i class="fas fa-download mr-2"></i>Export Logs
+                </button>
+                <button
+                  id="clearLogsBtn"
+                  class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <i class="fas fa-trash mr-2"></i>Clear Old Logs
+                </button>
+              </div>
+            </div>
+
+            <!-- Search and Filter -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
+              <div class="md:col-span-2">
+                <div class="relative">
+                  <i
+                    class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+                  ></i>
+                  <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search logs by user, action, or description..."
+                    class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+              <div>
+                <select
+                  id="actionFilter"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                >
+                  <option value="">All Actions</option>
+                  <option value="login">Login</option>
+                  <option value="logout">Logout</option>
+                  <option value="create">Create</option>
+                  <option value="update">Update</option>
+                  <option value="delete">Delete</option>
+                  <option value="view">View</option>
+                  <option value="export">Export</option>
+                </select>
+              </div>
+              <div>
+                <select
+                  id="levelFilter"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                >
+                  <option value="">All Levels</option>
+                  <option value="info">Info</option>
+                  <option value="warning">Warning</option>
+                  <option value="error">Error</option>
+                  <option value="success">Success</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="date"
+                  id="dateFilter"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Logs Timeline -->
+          <div class="bg-white rounded-lg shadow p-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-6">
+              Recent Activity
+            </h3>
+
+            <div class="space-y-4" id="logsContainer">
+              <!-- Log entries will be dynamically loaded here -->
+
+              <!-- Sample log entry 1 -->
+              <div
+                class="log-entry border-l-4 border-green-500 pl-4 py-3 bg-green-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-sign-in-alt text-green-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">Dr. Maria Santos</span>
+                        logged into the system
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        IP: 192.168.1.45 • Location: Admin Office
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Login</p>
+                    <p class="text-xs text-gray-500">2 minutes ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 2 -->
+              <div
+                class="log-entry border-l-4 border-blue-500 pl-4 py-3 bg-blue-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-calendar-plus text-blue-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">Nurse Jennifer Cruz</span>
+                        created new health seminar
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Event: "Diabetes Prevention Workshop" • Date: Aug 15,
+                        2025
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Create</p>
+                    <p class="text-xs text-gray-500">15 minutes ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 3 -->
+              <div
+                class="log-entry border-l-4 border-purple-500 pl-4 py-3 bg-purple-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-user-plus text-purple-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">Admin Rodriguez</span>
+                        added new user account
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        User: Dr. Carlos Martinez • Role: Healthcare Provider
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Create</p>
+                    <p class="text-xs text-gray-500">32 minutes ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 4 -->
+              <div
+                class="log-entry border-l-4 border-yellow-500 pl-4 py-3 bg-yellow-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i
+                        class="fas fa-exclamation-triangle text-yellow-600"
+                      ></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        System detected
+                        <span class="text-yellow-700">low inventory</span> alert
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Item: Paracetamol 500mg • Remaining: 15 units •
+                        Threshold: 20 units
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Warning</p>
+                    <p class="text-xs text-gray-500">1 hour ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 5 -->
+              <div
+                class="log-entry border-l-4 border-indigo-500 pl-4 py-3 bg-indigo-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-file-export text-indigo-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">Dr. Ana Reyes</span>
+                        exported patient reports
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Report Type: Monthly Health Summary • File:
+                        health_report_july_2025.pdf
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Export</p>
+                    <p class="text-xs text-gray-500">2 hours ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 6 -->
+              <div
+                class="log-entry border-l-4 border-green-500 pl-4 py-3 bg-green-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-user-edit text-green-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">Nurse Patricia Go</span>
+                        updated patient record
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Patient: Juan Dela Cruz • Record ID: HC-2025-0847
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Update</p>
+                    <p class="text-xs text-gray-500">3 hours ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 7 -->
+              <div
+                class="log-entry border-l-4 border-red-500 pl-4 py-3 bg-red-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-times-circle text-red-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        Failed login attempt detected
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        IP: 203.171.45.123 • Attempted User:
+                        admin@healthcenter.com • Attempts: 3
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Error</p>
+                    <p class="text-xs text-gray-500">4 hours ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 8 -->
+              <div
+                class="log-entry border-l-4 border-blue-500 pl-4 py-3 bg-blue-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-database text-blue-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        System performed automated backup
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Backup Size: 2.4 GB • Duration: 3m 42s • Status:
+                        Successful
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">System</p>
+                    <p class="text-xs text-gray-500">6 hours ago</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 9 -->
+              <div
+                class="log-entry border-l-4 border-purple-500 pl-4 py-3 bg-purple-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-shield-alt text-purple-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">System Admin</span>
+                        updated security settings
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Action: Password policy updated • Min length: 8
+                        characters
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Update</p>
+                    <p class="text-xs text-gray-500">Yesterday</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sample log entry 10 -->
+              <div
+                class="log-entry border-l-4 border-green-500 pl-4 py-3 bg-green-50 rounded-r-lg"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center space-x-3">
+                    <div class="flex-shrink-0">
+                      <i class="fas fa-sign-out-alt text-green-600"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium text-gray-900">
+                        <span class="text-indigo-600">Dr. Roberto Silva</span>
+                        logged out of the system
+                      </p>
+                      <p class="text-sm text-gray-500">
+                        Session Duration: 4h 23m • Last Activity: Patient
+                        consultation
+                      </p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-sm font-medium text-gray-900">Logout</p>
+                    <p class="text-xs text-gray-500">Yesterday</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-6">
+              <button
+                id="loadMoreBtn"
+                class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                <i class="fas fa-refresh mr-2"></i>Load More Logs
+              </button>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex items-center justify-between mt-6">
+            <div class="text-sm text-gray-700">
+              Showing <span id="startRange">1</span> to
+              <span id="endRange">10</span> of
+              <span id="totalRecords">2,847</span> logs
+            </div>
+            <div class="flex items-center space-x-2">
+              <button
+                id="prevBtn"
+                class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                Previous
+              </button>
+              <div id="pageNumbers" class="flex space-x-1">
+                <button
+                  class="px-3 py-2 text-sm font-medium text-white bg-indigo-600 border border-indigo-600 rounded-md"
+                >
+                  1
+                </button>
+                <button
+                  class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  2
+                </button>
+                <button
+                  class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  3
+                </button>
+                <span class="px-3 py-2 text-sm font-medium text-gray-500"
+                  >...</span
+                >
+                <button
+                  class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                >
+                  285
+                </button>
+              </div>
+              <button
+                id="nextBtn"
+                class="px-3 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div
+      id="exportModal"
+      class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50"
+    >
+      <div
+        class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+      >
+        <div class="mt-3">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-gray-900">Export Logs</h3>
+            <button
+              id="closeExportModal"
+              class="text-gray-400 hover:text-gray-600"
+            >
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+
+          <form id="exportForm">
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Date Range
+              </label>
+              <div class="grid grid-cols-2 gap-2">
+                <input
+                  type="date"
+                  id="exportDateFrom"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                <input
+                  type="date"
+                  id="exportDateTo"
+                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Log Level
+              </label>
+              <select
+                id="exportLevel"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                <option value="">All Levels</option>
+                <option value="info">Info</option>
+                <option value="warning">Warning</option>
+                <option value="error">Error</option>
+                <option value="success">Success</option>
+              </select>
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                Format
+              </label>
+              <select
+                id="exportFormat"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              >
+                <option value="csv">CSV</option>
+                <option value="pdf">PDF</option>
+                <option value="excel">Excel</option>
+              </select>
+            </div>
+
+            <div class="flex justify-end space-x-3">
+              <button
+                type="button"
+                id="cancelExportBtn"
+                class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 border border-gray-300 rounded-md hover:bg-gray-300"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                class="px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-700"
+              >
+                <i class="fas fa-download mr-2"></i>Export
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clear Logs Confirmation Modal -->
+    <div
+      id="clearModal"
+      class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50"
+    >
+      <div
+        class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+      >
+        <div class="mt-3 text-center">
+          <div
+            class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4"
+          >
+            <i class="fas fa-exclamation-triangle text-red-600 text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Clear Old Logs</h3>
+          <p class="text-sm text-gray-500 mb-4">
+            This will permanently delete logs older than 90 days. This action
+            cannot be undone.
+          </p>
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">
+              Delete logs older than:
+            </label>
+            <select
+              id="clearPeriod"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+            >
+              <option value="30">30 days</option>
+              <option value="60">60 days</option>
+              <option value="90" selected>90 days</option>
+              <option value="180">6 months</option>
+              <option value="365">1 year</option>
+            </select>
+          </div>
+          <div class="flex justify-center space-x-3">
+            <button
+              id="cancelClearBtn"
+              class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 border border-gray-300 rounded-md hover:bg-gray-300"
+            >
+              Cancel
+            </button>
+            <button
+              id="confirmClearBtn"
+              class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700"
+            >
+              Clear Logs
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../JAVASCRIPT/navigation.js"></script>
+    <script src="../servicesjs/LogsAndAuditTrail.js"></script>
+  </body>
+</html>
