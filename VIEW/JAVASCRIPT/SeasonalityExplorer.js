@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
       visitsElement.textContent = visits;
 
       // Calculate trend (mock calculation)
-      const visitNum = parseInt(visits);
+      const visitNum = parseInt(visits) || 0;
       const trend = visitNum > 300 ? "+15%" : visitNum > 200 ? "+5%" : "-8%";
       const trendClass =
         visitNum > 300

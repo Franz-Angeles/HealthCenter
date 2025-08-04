@@ -252,20 +252,24 @@ document.addEventListener("DOMContentLoaded", function () {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const counter = entry.target;
-          const target = parseInt(counter.textContent.replace(/\D/g, ""));
+          const target = parseInt(counter.textContent.replace(/\D/g, "")) || 0;
           const suffix = counter.textContent.replace(/\d/g, "");
           let current = 0;
-          const increment = target / 50;
 
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              counter.textContent = target + suffix;
-              clearInterval(timer);
-            } else {
-              counter.textContent = Math.floor(current) + suffix;
-            }
-          }, 30);
+          // Only animate if target is a valid number greater than 0
+          if (target > 0) {
+            const increment = target / 50;
+
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                counter.textContent = target + suffix;
+                clearInterval(timer);
+              } else {
+                counter.textContent = Math.floor(current) + suffix;
+              }
+            }, 30);
+          }
 
           observer.unobserve(counter);
         }

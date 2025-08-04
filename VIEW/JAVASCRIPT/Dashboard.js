@@ -180,9 +180,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Update days based on month and year
   function updateDays() {
-    const year = parseInt(yearSelect.value);
-    const month = parseInt(monthSelect.value);
-    if (!year || !month) return;
+    const year = parseInt(yearSelect.value) || 0;
+    const month = parseInt(monthSelect.value) || 0;
+    if (!year || !month || year < 1900 || month < 1 || month > 12) return;
 
     const daysInMonth = new Date(year, month, 0).getDate();
     daySelect.innerHTML = '<option value="">Day</option>';

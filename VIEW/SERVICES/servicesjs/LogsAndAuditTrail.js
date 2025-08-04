@@ -485,7 +485,8 @@ function handleExport(event) {
 function handleClearLogs() {
   const clearPeriod = document.getElementById("clearPeriod").value;
   const cutoffDate = new Date();
-  cutoffDate.setDate(cutoffDate.getDate() - parseInt(clearPeriod));
+  const daysToSubtract = parseInt(clearPeriod) || 30; // Default to 30 days if NaN
+  cutoffDate.setDate(cutoffDate.getDate() - daysToSubtract);
 
   const initialCount = logsData.length;
   logsData = logsData.filter((log) => log.timestamp > cutoffDate);

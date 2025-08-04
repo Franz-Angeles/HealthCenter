@@ -653,7 +653,9 @@ class EventsManager {
   formatTime(timeString) {
     const [hours, minutes] = timeString.split(":");
     const date = new Date();
-    date.setHours(parseInt(hours), parseInt(minutes));
+    const hoursParsed = parseInt(hours) || 0;
+    const minutesParsed = parseInt(minutes) || 0;
+    date.setHours(hoursParsed, minutesParsed);
     return date.toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
