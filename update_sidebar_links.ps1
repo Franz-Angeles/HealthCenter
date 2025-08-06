@@ -6,7 +6,7 @@ $files = @(
     "c:\Users\User\OneDrive\Desktop\Health\VIEW\HTML\SeasonalityExplorer.html", 
     "c:\Users\User\OneDrive\Desktop\Health\VIEW\HTML\StaffingPlanner.html",
     "c:\Users\User\OneDrive\Desktop\Health\VIEW\SERVICES\serviceshtml\UserManagement.html",
-    "c:\Users\User\OneDrive\Desktop\Health\VIEW\SERVICES\serviceshtml\LogsAndAuditTrail.html"
+    "c:\Users\User\OneDrive\Desktop\Health\VIEW\SERVICES\serviceshtml\Logs.html"
 )
 
 foreach ($file in $files) {

@@ -1,4 +1,4 @@
-// Logs and Audit Trail JavaScript
+// System Logs JavaScript
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize the module
@@ -133,7 +133,7 @@ let currentPage = 1;
 const logsPerPage = 10;
 
 function initializeLogsModule() {
-  console.log("Initializing Logs and Audit Trail module...");
+  console.log("Initializing System Logs module...");
   updateStatistics();
 }
 
