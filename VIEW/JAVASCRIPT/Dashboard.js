@@ -2,6 +2,56 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Dashboard script loaded"); // Debug log
 
+  // ===== ANALYTICS SECTION NAVIGATION =====
+  const navButtons = document.querySelectorAll(".analytics-nav-btn");
+  const sections = document.querySelectorAll(".analytics-section");
+
+  // Function to show specific section
+  function showSection(sectionId) {
+    // Special handling for service-usage section
+    if (sectionId === "service-usage") {
+      window.location.href = "ServiceUsageTrends.html";
+      return;
+    }
+
+    // Hide all sections
+    sections.forEach((section) => {
+      section.classList.add("hidden");
+    });
+
+    // Remove active class from all buttons
+    navButtons.forEach((btn) => {
+      btn.classList.remove("active", "bg-blue-600", "text-white");
+      btn.classList.add("bg-gray-100", "text-gray-700");
+    });
+
+    // Show selected section
+    const targetSection = document.getElementById(sectionId + "-section");
+    if (targetSection) {
+      targetSection.classList.remove("hidden");
+    }
+
+    // Add active class to clicked button
+    const activeButton = document.querySelector(
+      `[data-section="${sectionId}"]`
+    );
+    if (activeButton) {
+      activeButton.classList.add("active", "bg-blue-600", "text-white");
+      activeButton.classList.remove("bg-gray-100", "text-gray-700");
+    }
+  }
+
+  // Add event listeners to navigation buttons
+  navButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const section = this.getAttribute("data-section");
+      showSection(section);
+    });
+  });
+
+  // Show overview section by default
+  showSection("overview");
+
   // Check if buttons exist
   const openModalBtn = document.getElementById("openModal");
   const openModalDesktopBtn = document.getElementById("openModalDesktop");
