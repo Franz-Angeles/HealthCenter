@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Programs - Health Center Management</title>
+    <link rel="stylesheet" href="../servicescss/HealthProgram.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-row">
+          <a href="../../HTML/LandingP.html" class="back-button">
+            <span class="back-button-icon">
+              <i class="fas fa-arrow-left"></i>
+            </span>
+            <span class="back-button-text"> Back</span>
+          </a>
+          <h1><i class="fas fa-heartbeat"></i> Health Programs Management</h1>
+        </div>
+        <button class="btn-primary" id="createProgramBtn">
+          <i class="fas fa-plus"></i> Create New Program
+        </button>
+      </header>
+
+      <!-- Program Creation Modal -->
+      <div id="programModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 id="modalTitle">Create New Health Program</h2>
+            <span class="close" id="closeModal">&times;</span>
+          </div>
+
+          <form id="programForm" class="program-form">
+            <!-- Program Title -->
+            <div class="form-group">
+              <label for="programTitle">
+                <i class="fas fa-heading"></i> Program Title *
+              </label>
+              <input
+                type="text"
+                id="programTitle"
+                name="programTitle"
+                required
+                placeholder="Enter health program title"
+              />
+            </div>
+
+            <!-- Program Type -->
+            <div class="form-group">
+              <label for="programType">
+                <i class="fas fa-stethoscope"></i> Program Type *
+              </label>
+              <select id="programType" name="programType" required>
+                <option value="">Select Program Type</option>
+                <option value="vaccination">Mass Vaccination</option>
+                <option value="operation-tuli">Operation Tuli</option>
+                <option value="feeding-program">Feeding Program</option>
+                <option value="health-screening">Health Screening</option>
+                <option value="dental-mission">Dental Mission</option>
+                <option value="family-planning">Family Planning Program</option>
+                <option value="maternal-care">Maternal Care Program</option>
+                <option value="immunization">Immunization Drive</option>
+                <option value="deworming">Deworming Program</option>
+                <option value="health-education">Health Education</option>
+                <option value="senior-citizen">Senior Citizen Program</option>
+              </select>
+            </div>
+
+            <!-- Date and Time Section -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="startDate">
+                  <i class="fas fa-calendar-day"></i> Start Date *
+                </label>
+                <input type="date" id="startDate" name="startDate" required />
+              </div>
+              <div class="form-group">
+                <label for="endDate">
+                  <i class="fas fa-calendar-day"></i> End Date *
+                </label>
+                <input type="date" id="endDate" name="endDate" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="startTime">
+                  <i class="fas fa-clock"></i> Start Time *
+                </label>
+                <input type="time" id="startTime" name="startTime" required />
+              </div>
+              <div class="form-group">
+                <label for="endTime">
+                  <i class="fas fa-clock"></i> End Time *
+                </label>
+                <input type="time" id="endTime" name="endTime" required />
+              </div>
+            </div>
+
+            <!-- Location and Capacity -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="location">
+                  <i class="fas fa-map-marker-alt"></i> Location *
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  required
+                  placeholder="Enter program location"
+                />
+              </div>
+              <div class="form-group">
+                <label for="capacity">
+                  <i class="fas fa-users"></i> Maximum Capacity
+                </label>
+                <input
+                  type="number"
+                  id="capacity"
+                  name="capacity"
+                  min="1"
+                  placeholder="Enter maximum participants"
+                />
+              </div>
+            </div>
+
+            <!-- Target Demographics -->
+            <div class="form-group">
+              <label for="targetDemographics">
+                <i class="fas fa-bullseye"></i> Target Demographics *
+              </label>
+              <div class="checkbox-group">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="demographics" value="infants" />
+                  <span>Infants (0-2 years)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="demographics" value="children" />
+                  <span>Children (3-12 years)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    name="demographics"
+                    value="adolescents"
+                  />
+                  <span>Adolescents (13-18 years)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="demographics" value="adults" />
+                  <span>Adults (19-59 years)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="demographics" value="seniors" />
+                  <span>Senior Citizens (60+ years)</span>
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="demographics" value="pregnant" />
+                  <span>Pregnant Women</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Requirements/Prerequisites -->
+            <div class="form-group">
+              <label for="requirements">
+                <i class="fas fa-clipboard-list"></i> Requirements/Prerequisites
+              </label>
+              <textarea
+                id="requirements"
+                name="requirements"
+                rows="3"
+                placeholder="Enter any requirements or documents needed (e.g., valid ID, health card, vaccination record...)"
+              ></textarea>
+            </div>
+
+            <!-- Staff/Medical Team -->
+            <div class="form-group">
+              <label for="medicalTeam">
+                <i class="fas fa-user-md"></i> Medical Team/Staff Involved
+              </label>
+              <div id="staffContainer">
+                <div class="staff-input">
+                  <input
+                    type="text"
+                    name="staff[]"
+                    placeholder="Staff name and position/specialization"
+                  />
+                  <button type="button" class="btn-remove-staff">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="button" id="addStaffBtn" class="btn-secondary">
+                <i class="fas fa-plus"></i> Add Staff Member
+              </button>
+            </div>
+
+            <!-- Program Image -->
+            <div class="form-group">
+              <label for="programImage">
+                <i class="fas fa-image"></i> Program Image/Poster
+              </label>
+              <div class="image-upload-container">
+                <input
+                  type="file"
+                  id="programImage"
+                  name="programImage"
+                  accept="image/*"
+                />
+                <div class="image-preview" id="imagePreview">
+                  <i class="fas fa-camera"></i>
+                  <span>Click to upload program image/poster</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+              <label for="description">
+                <i class="fas fa-align-left"></i> Program Description *
+              </label>
+              <textarea
+                id="description"
+                name="description"
+                required
+                rows="4"
+                placeholder="Enter detailed description of the health program, services offered, benefits, etc..."
+              ></textarea>
+            </div>
+
+            <!-- Registration Settings -->
+            <div class="form-group">
+              <label> <i class="fas fa-cog"></i> Registration Settings </label>
+              <div class="registration-settings">
+                <label class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="enableRegistration"
+                    name="enableRegistration"
+                    checked
+                  />
+                  <span>Enable Registration</span>
+                </label>
+                <div class="form-row registration-options">
+                  <div class="form-group">
+                    <label for="registrationDeadline"
+                      >Registration Deadline</label
+                    >
+                    <input
+                      type="date"
+                      id="registrationDeadline"
+                      name="registrationDeadline"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="registrationFee">Registration Fee (₱)</label>
+                    <input
+                      type="number"
+                      id="registrationFee"
+                      name="registrationFee"
+                      min="0"
+                      step="0.01"
+                      placeholder="0.00"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" id="cancelBtn">
+                Cancel
+              </button>
+              <button type="submit" class="btn-primary">
+                <i class="fas fa-save"></i> Save Program
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Health Programs Feed Section -->
+      <div class="programs-feed">
+        <div class="feed-header">
+          <h2><i class="fas fa-stream"></i> Health Programs Feed</h2>
+          <div class="filter-options">
+            <select id="filterType" class="filter-select">
+              <option value="all">All Programs</option>
+              <option value="vaccination">Mass Vaccination</option>
+              <option value="operation-tuli">Operation Tuli</option>
+              <option value="feeding-program">Feeding Program</option>
+              <option value="health-screening">Health Screening</option>
+              <option value="dental-mission">Dental Mission</option>
+              <option value="family-planning">Family Planning</option>
+              <option value="maternal-care">Maternal Care</option>
+              <option value="immunization">Immunization Drive</option>
+              <option value="deworming">Deworming Program</option>
+              <option value="health-education">Health Education</option>
+              <option value="senior-citizen">Senior Citizen Program</option>
+            </select>
+            <select id="filterStatus" class="filter-select">
+              <option value="all">All Status</option>
+              <option value="upcoming">Upcoming</option>
+              <option value="ongoing">Ongoing</option>
+              <option value="completed">Completed</option>
+              <option value="registration-open">Registration Open</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Programs Container -->
+        <div id="programsContainer" class="programs-container">
+          <!-- Programs will be dynamically loaded here -->
+        </div>
+
+        <!-- No Programs Message -->
+        <div id="noProgramsMessage" class="no-programs" style="display: none">
+          <i class="fas fa-calendar-times"></i>
+          <h3>No Health Programs Found</h3>
+          <p>
+            No programs match your current filters. Try adjusting your search
+            criteria or create a new health program.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Program Details Modal -->
+    <div id="programDetailsModal" class="modal">
+      <div class="modal-content program-details-modal">
+        <div class="modal-header">
+          <h2 id="programDetailsTitle">Program Details</h2>
+          <span class="close" id="closeDetailsModal">&times;</span>
+        </div>
+        <div id="programDetailsContent" class="program-details-content">
+          <!-- Program details will be loaded here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+      <div class="modal-content registration-modal">
+        <div class="modal-header">
+          <h2 id="registrationTitle">Program Registration</h2>
+          <span class="close" id="closeRegistrationModal">&times;</span>
+        </div>
+        <form id="registrationForm" class="registration-form">
+          <div class="form-group">
+            <label for="participantName">
+              <i class="fas fa-user"></i> Full Name *
+            </label>
+            <input
+              type="text"
+              id="participantName"
+              name="participantName"
+              required
+              placeholder="Enter full name"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="participantAge">
+                <i class="fas fa-birthday-cake"></i> Age *
+              </label>
+              <input
+                type="number"
+                id="participantAge"
+                name="participantAge"
+                required
+                min="1"
+                max="120"
+                placeholder="Age"
+              />
+            </div>
+            <div class="form-group">
+              <label for="participantGender">
+                <i class="fas fa-venus-mars"></i> Gender *
+              </label>
+              <select id="participantGender" name="participantGender" required>
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="participantContact">
+              <i class="fas fa-phone"></i> Contact Number *
+            </label>
+            <input
+              type="tel"
+              id="participantContact"
+              name="participantContact"
+              required
+              placeholder="Enter contact number"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="participantAddress">
+              <i class="fas fa-home"></i> Address *
+            </label>
+            <textarea
+              id="participantAddress"
+              name="participantAddress"
+              required
+              rows="3"
+              placeholder="Enter complete address"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="emergencyContact">
+              <i class="fas fa-phone-alt"></i> Emergency Contact
+            </label>
+            <input
+              type="text"
+              id="emergencyContact"
+              name="emergencyContact"
+              placeholder="Emergency contact name and number"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="medicalHistory">
+              <i class="fas fa-notes-medical"></i> Medical History/Allergies
+            </label>
+            <textarea
+              id="medicalHistory"
+              name="medicalHistory"
+              rows="3"
+              placeholder="Enter any relevant medical history, allergies, or conditions"
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button
+              type="button"
+              class="btn-secondary"
+              id="cancelRegistrationBtn"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-check"></i> Register for Program
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmModal" class="modal">
+      <div class="modal-content confirm-modal">
+        <div class="modal-header">
+          <h3 id="confirmTitle">Confirm Action</h3>
+          <span class="close" id="closeConfirmModal">&times;</span>
+        </div>
+        <div class="confirm-content">
+          <p id="confirmMessage">
+            Are you sure you want to perform this action?
+          </p>
+          <div class="confirm-actions">
+            <button class="btn-secondary" id="confirmCancel">Cancel</button>
+            <button class="btn-danger" id="confirmOk">Confirm</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success/Error Toast -->
+    <div id="toast" class="toast">
+      <div class="toast-content">
+        <i id="toastIcon" class="fas fa-check-circle"></i>
+        <span id="toastMessage">Action completed successfully!</span>
+      </div>
+    </div>
+
+    <script src="../servicesjs/HealthProgram.js"></script>
+  </body>
+</html>
