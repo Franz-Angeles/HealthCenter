@@ -2,6 +2,385 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("Dashboard script loaded"); // Debug log
 
+  // ===== CREATE SAMPLE CHARTS =====
+  // Family Planning Services Chart
+  const familyPlanningCtx = document.getElementById("familyPlanningChart");
+  if (familyPlanningCtx) {
+    const familyPlanningChart = new Chart(familyPlanningCtx, {
+      type: "line",
+      data: {
+        labels: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+        datasets: [
+          {
+            label: "Family Planning Consultations",
+            data: [65, 59, 80, 81, 76, 85, 90, 95, 87, 92, 98, 105],
+            borderColor: "rgba(59, 130, 246, 1)", // blue-500
+            backgroundColor: "rgba(59, 130, 246, 0.1)",
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: "rgba(59, 130, 246, 1)",
+            pointBorderColor: "#fff",
+            pointRadius: 5,
+            pointHoverRadius: 7,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: "top",
+            labels: {
+              font: {
+                size: 13,
+                family: "'Inter', sans-serif",
+              },
+              boxWidth: 15,
+              padding: 12,
+            },
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            titleColor: "#334155",
+            bodyColor: "#334155",
+            borderColor: "rgba(226, 232, 240, 1)",
+            borderWidth: 1,
+            cornerRadius: 8,
+            padding: 12,
+            boxPadding: 6,
+          },
+          title: {
+            display: true,
+            text: "2024-2025 Monthly Trend",
+            font: {
+              size: 14,
+              weight: "normal",
+            },
+            padding: {
+              top: 8,
+              bottom: 12,
+            },
+            color: "#6B7280", // text-gray-500
+          },
+        },
+        scales: {
+          x: {
+            display: true,
+            grid: {
+              display: false,
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+              maxRotation: 0,
+            },
+            title: {
+              display: true,
+              text: "Month",
+              font: {
+                size: 12,
+              },
+              color: "#6B7280",
+            },
+          },
+          y: {
+            display: true,
+            grid: {
+              color: "rgba(226, 232, 240, 0.5)",
+              drawBorder: false,
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+              maxTicksLimit: 5,
+            },
+            title: {
+              display: true,
+              text: "Number of Consultations",
+              font: {
+                size: 12,
+              },
+              color: "#6B7280",
+            },
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  }
+
+  // Newborn and Infants Chart
+  const newbornCtx = document.getElementById("newbornChart");
+  if (newbornCtx) {
+    const newbornChart = new Chart(newbornCtx, {
+      type: "line",
+      data: {
+        labels: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+        datasets: [
+          {
+            label: "Newborn Registrations",
+            data: [42, 38, 45, 50, 52, 48, 55, 60, 57, 62, 58, 65],
+            borderColor: "rgba(16, 185, 129, 1)", // green-500
+            backgroundColor: "rgba(16, 185, 129, 0.1)",
+            tension: 0.4,
+            fill: true,
+            pointBackgroundColor: "rgba(16, 185, 129, 1)",
+            pointBorderColor: "#fff",
+            pointRadius: 5,
+            pointHoverRadius: 7,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: "top",
+            labels: {
+              font: {
+                size: 13,
+                family: "'Inter', sans-serif",
+              },
+              boxWidth: 15,
+              padding: 12,
+            },
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            titleColor: "#334155",
+            bodyColor: "#334155",
+            borderColor: "rgba(226, 232, 240, 1)",
+            borderWidth: 1,
+            cornerRadius: 8,
+            padding: 12,
+            boxPadding: 6,
+          },
+          title: {
+            display: true,
+            text: "2024-2025 Monthly Trend",
+            font: {
+              size: 14,
+              weight: "normal",
+            },
+            padding: {
+              top: 8,
+              bottom: 12,
+            },
+            color: "#6B7280", // text-gray-500
+          },
+        },
+        scales: {
+          x: {
+            display: true,
+            grid: {
+              display: false,
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+              maxRotation: 0,
+            },
+            title: {
+              display: true,
+              text: "Month",
+              font: {
+                size: 12,
+              },
+              color: "#6B7280",
+            },
+          },
+          y: {
+            display: true,
+            grid: {
+              color: "rgba(226, 232, 240, 0.5)",
+              drawBorder: false,
+            },
+            ticks: {
+              font: {
+                size: 11,
+              },
+              maxTicksLimit: 5,
+            },
+            title: {
+              display: true,
+              text: "Number of Infants",
+              font: {
+                size: 12,
+              },
+              color: "#6B7280",
+            },
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  }
+
+  // Maternal Care Chart
+  const maternalCtx = document.getElementById("maternalChart");
+  if (maternalCtx) {
+    const maternalChart = new Chart(maternalCtx, {
+      type: "bar",
+      data: {
+        labels: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+        datasets: [
+          {
+            label: "Prenatal Checkups",
+            data: [85, 78, 90, 95, 88, 92, 98, 105, 95, 100, 108, 115],
+            backgroundColor: "rgba(124, 58, 237, 0.7)", // purple-600
+            borderRadius: 6,
+          },
+          {
+            label: "Postnatal Visits",
+            data: [60, 55, 65, 70, 68, 75, 80, 85, 78, 82, 88, 95],
+            backgroundColor: "rgba(172, 148, 250, 0.7)", // purple-400
+            borderRadius: 6,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: "top",
+            labels: {
+              font: {
+                size: 14,
+                family: "'Inter', sans-serif",
+              },
+              boxWidth: 18,
+              padding: 18,
+            },
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            titleColor: "#334155",
+            bodyColor: "#334155",
+            borderColor: "rgba(226, 232, 240, 1)",
+            borderWidth: 1,
+            cornerRadius: 8,
+            padding: 12,
+            boxPadding: 6,
+          },
+          title: {
+            display: true,
+            text: "Maternal Care Services (2024-2025)",
+            font: {
+              size: 16,
+              weight: "normal",
+            },
+            padding: {
+              top: 12,
+              bottom: 18,
+            },
+            color: "#4B5563", // text-gray-600
+          },
+        },
+        scales: {
+          x: {
+            grid: {
+              display: false,
+            },
+            ticks: {
+              font: {
+                size: 12,
+              },
+            },
+            title: {
+              display: true,
+              text: "Month",
+              font: {
+                size: 14,
+                weight: "normal",
+              },
+              color: "#6B7280",
+              padding: {
+                top: 12,
+              },
+            },
+          },
+          y: {
+            beginAtZero: true,
+            grid: {
+              color: "rgba(226, 232, 240, 0.5)",
+            },
+            ticks: {
+              font: {
+                size: 12,
+              },
+            },
+            title: {
+              display: true,
+              text: "Number of Visits",
+              font: {
+                size: 14,
+                weight: "normal",
+              },
+              color: "#6B7280",
+              padding: {
+                bottom: 12,
+              },
+            },
+          },
+        },
+      },
+    });
+  }
+
   // ===== ANALYTICS SECTION NAVIGATION =====
   const navButtons = document.querySelectorAll(".analytics-nav-btn");
   const sections = document.querySelectorAll(".analytics-section");
@@ -160,90 +539,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Confirm button functionality
+  // If confirmBtn exists, add event listener for year selection
   if (confirmBtn) {
     confirmBtn.addEventListener("click", () => {
-      const weekValue = document.getElementById("week").value;
-      const monthValue = document.getElementById("month").value;
-      const dayValue = document.getElementById("day").value;
-      const yearValue = document.getElementById("year").value;
+      const yearValue = document.getElementById("yearSelect").value;
 
-      let selectedDate = "";
-
-      if (weekValue) {
-        selectedDate = `Week of ${weekValue}`;
-      } else if (monthValue && dayValue && yearValue) {
-        const monthNames = [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ];
-        selectedDate = `${
-          monthNames[monthValue - 1]
-        } ${dayValue}, ${yearValue}`;
-      }
-
-      if (selectedDate) {
+      if (yearValue) {
         // Update the button text for both mobile and desktop
         const selectTextMobile = document.getElementById("selecttext");
         const selectTextDesktop = document.getElementById("selecttextDesktop");
 
         if (selectTextMobile) {
-          selectTextMobile.textContent = selectedDate;
+          selectTextMobile.textContent = `Year: ${yearValue}`;
           selectTextMobile.classList.remove("mr-[5px]");
         }
         if (selectTextDesktop) {
-          selectTextDesktop.textContent = selectedDate;
+          selectTextDesktop.textContent = `Year: ${yearValue}`;
           selectTextDesktop.classList.remove("mr-[5px]");
         }
 
         closeModal();
       } else {
-        // Show error message if no date is selected
-        alert("Please select either a week or a specific date.");
+        // Show error message if no year is selected
+        alert("Please select a year.");
       }
     });
   }
 
-  // Date picker functionality
-  const daySelect = document.getElementById("day");
-  const monthSelect = document.getElementById("month");
-  const yearSelect = document.getElementById("year");
+  // Date picker functionality - populate years
+  const yearSelect = document.getElementById("yearSelect");
 
   // Populate years
-  const currentYear = new Date().getFullYear();
-  for (let y = currentYear - 10; y <= currentYear + 10; y++) {
-    const option = document.createElement("option");
-    option.value = y;
-    option.textContent = y;
-    yearSelect.appendChild(option);
-  }
-
-  // Update days based on month and year
-  function updateDays() {
-    const year = parseInt(yearSelect.value) || 0;
-    const month = parseInt(monthSelect.value) || 0;
-    if (!year || !month || year < 1900 || month < 1 || month > 12) return;
-
-    const daysInMonth = new Date(year, month, 0).getDate();
-    daySelect.innerHTML = '<option value="">Day</option>';
-    for (let d = 1; d <= daysInMonth; d++) {
+  if (yearSelect) {
+    const currentYear = new Date().getFullYear();
+    // Add years from 5 years ago to 5 years in the future
+    for (let y = currentYear - 5; y <= currentYear + 5; y++) {
       const option = document.createElement("option");
-      option.value = d;
-      option.textContent = d;
-      daySelect.appendChild(option);
+      option.value = y;
+      option.textContent = y;
+      // Set current year as selected by default
+      if (y === currentYear) {
+        option.selected = true;
+      }
+      yearSelect.appendChild(option);
     }
   }
-
-  monthSelect.addEventListener("change", updateDays);
-  yearSelect.addEventListener("change", updateDays);
 });

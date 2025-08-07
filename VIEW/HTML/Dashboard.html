@@ -190,34 +190,7 @@
             </button>
           </div>
 
-          <!-- Mobile view mode selector -->
-          <div class="flex justify-center space-x-4 mb-4">
-            <label
-              class="flex items-center bg-white rounded-lg px-3 py-2 shadow-sm border border-blue-200"
-            >
-              <input
-                type="radio"
-                id="dailyMobile"
-                name="viewModeMobile"
-                value="daily"
-                class="h-4 w-4 text-blue-600 focus:ring-blue-500"
-                checked
-              />
-              <span class="ml-2 text-sm font-medium text-gray-700">Daily</span>
-            </label>
-            <label
-              class="flex items-center bg-white rounded-lg px-3 py-2 shadow-sm border border-gray-200"
-            >
-              <input
-                type="radio"
-                id="weeklyMobile"
-                name="viewModeMobile"
-                value="weekly"
-                class="h-4 w-4 text-blue-600 focus:ring-blue-500"
-              />
-              <span class="ml-2 text-sm font-medium text-gray-700">Weekly</span>
-            </label>
-          </div>
+          <!-- Mobile view mode selector removed -->
 
           <!-- Mobile date picker button -->
           <div class="flex justify-center">
@@ -243,10 +216,8 @@
                 </svg>
               </div>
               <div class="text-left">
-                <div class="text-xs opacity-90 font-medium">
-                  Select Date Range
-                </div>
-                <div class="text-base font-bold">Choose Period</div>
+                <div class="text-xs opacity-90 font-medium">Select Year</div>
+                <div class="text-base font-bold">View Annual Data</div>
               </div>
             </button>
           </div>
@@ -302,44 +273,11 @@
               <span>Service Usage Trends</span>
             </div>
           </button>
-        </div>
-      </div>
 
-      <div
-        id="radyoboton"
-        class="flex justify-start ml-[250px] mt-6 space-x-6 items-center"
-      >
-        <div class="flex items-center">
-          <input
-            type="radio"
-            id="daily"
-            name="viewMode"
-            value="daily"
-            class="h-4 w-4 text-blue-600 focus:ring-blue-500"
-            checked
-          />
-          <label for="daily" class="ml-2 text-gray-700 font-medium"
-            >Daily View</label
-          >
-        </div>
-        <div class="flex items-center">
-          <input
-            type="radio"
-            id="weekly"
-            name="viewMode"
-            value="weekly"
-            class="h-4 w-4 text-blue-600 focus:ring-blue-500"
-          />
-          <label for="weekly" class="ml-2 text-gray-700 font-medium"
-            >Weekly View</label
-          >
-        </div>
-
-        <!-- Date button for desktop (moved from sidebar) -->
-        <div class="flex items-center ml-8">
+          <!-- Year selector button moved here -->
           <button
             id="openModalDesktop"
-            class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl shadow-lg hover:shadow-xl border-0 flex items-center transition-all duration-300 transform hover:scale-105"
+            class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105 shadow-lg flex items-center"
           >
             <div
               class="flex items-center justify-center w-8 h-8 bg-white/20 rounded-lg mr-3"
@@ -358,15 +296,17 @@
                 ></path>
               </svg>
             </div>
-            <span id="datebtnDesktop" class="text-sm font-semibold">
+            <span id="datebtnDesktop" class="text-sm">
               <span id="selecttextDesktop" class="block text-xs opacity-90"
-                >Select Date Range</span
+                >Select Year</span
               >
-              <span class="block">Choose Period</span>
+              <span class="block">View Annual Data</span>
             </span>
           </button>
         </div>
       </div>
+
+      <!-- Radio buttons section removed -->
     </div>
 
     <!-- ANALYTICS CONTENT SECTIONS -->
@@ -379,7 +319,7 @@
         class="flex flex-col xl:flex-row justify-center items-center gap-6 mt-8 px-4 md:ml-52 md:mr-4 transition-all duration-700"
       >
         <div
-          class="first2box bg-gradient-to-br from-blue-50 to-white border border-blue-200 shadow-lg hover:shadow-xl h-[250px] rounded-3xl w-[340px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700 hover:scale-105 hover:border-blue-300 group overflow-hidden relative"
+          class="first2box bg-gradient-to-br from-blue-50 to-white border border-blue-200 shadow-lg hover:shadow-xl h-[350px] rounded-3xl w-[340px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700 hover:scale-105 hover:border-blue-300 group overflow-hidden relative"
         >
           <!-- Decorative corner element -->
           <div
@@ -401,7 +341,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
                 ></path>
               </svg>
             </div>
@@ -409,26 +349,26 @@
               <h1
                 class="text-lg font-bold text-gray-800 group-hover:text-blue-700 transition-colors duration-300"
               >
-                Patient Analytics
+                Family Planning Services
               </h1>
               <p class="text-sm text-gray-600 mt-1">
-                Real-time patient count tracking
+                Annual service usage trends
               </p>
             </div>
           </div>
 
-          <!-- Chart placeholder area -->
+          <!-- Chart area with sample graph -->
           <div class="px-5 pb-5 mt-2">
             <div
-              class="bg-white/50 backdrop-blur-sm rounded-2xl h-32 border border-blue-100 flex items-center justify-center text-gray-500"
+              class="bg-white/50 backdrop-blur-sm rounded-2xl h-60 border border-blue-100 relative"
             >
-              <span class="text-sm font-medium">Line Graph Visualization</span>
+              <canvas id="familyPlanningChart" class="w-full h-full"></canvas>
             </div>
           </div>
         </div>
 
         <div
-          class="first2box bg-gradient-to-br from-green-50 to-white border border-green-200 shadow-lg hover:shadow-xl h-[250px] rounded-3xl w-[340px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700 hover:scale-105 hover:border-green-300 group overflow-hidden relative"
+          class="first2box bg-gradient-to-br from-green-50 to-white border border-green-200 shadow-lg hover:shadow-xl h-[350px] rounded-3xl w-[340px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[515px] 2xl:w-[600px] transition-all duration-700 hover:scale-105 hover:border-green-300 group overflow-hidden relative"
         >
           <!-- Decorative corner element -->
           <div
@@ -450,7 +390,7 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"
                 ></path>
               </svg>
             </div>
@@ -458,20 +398,20 @@
               <h1
                 class="text-lg font-bold text-gray-800 group-hover:text-green-700 transition-colors duration-300"
               >
-                Wait Time Analysis
+                New Born and Infants
               </h1>
               <p class="text-sm text-gray-600 mt-1">
-                Average patient waiting periods
+                Annual health monitoring data
               </p>
             </div>
           </div>
 
-          <!-- Chart placeholder area -->
+          <!-- Chart area with sample graph -->
           <div class="px-5 pb-5 mt-2">
             <div
-              class="bg-white/50 backdrop-blur-sm rounded-2xl h-32 border border-green-100 flex items-center justify-center text-gray-500"
+              class="bg-white/50 backdrop-blur-sm rounded-2xl h-60 border border-green-100 relative"
             >
-              <span class="text-sm font-medium">Line Graph Visualization</span>
+              <canvas id="newbornChart" class="w-full h-full"></canvas>
             </div>
           </div>
         </div>
@@ -484,7 +424,7 @@
       >
         <div
           id="secondbox"
-          class="bg-gradient-to-br from-purple-50 to-white border border-purple-200 shadow-lg hover:shadow-xl rounded-3xl w-[340px] h-[400px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[1050px] 2xl:w-[1220px] transition-all duration-700 hover:scale-105 hover:border-purple-300 group overflow-hidden relative"
+          class="bg-gradient-to-br from-purple-50 to-white border border-purple-200 shadow-lg hover:shadow-xl rounded-3xl w-[340px] h-[450px] sm:w-[500px] md:w-[545px] lg:w-[700px] xl:w-[1050px] 2xl:w-[1220px] transition-all duration-700 hover:scale-105 hover:border-purple-300 group overflow-hidden relative"
         >
           <!-- Decorative corner element -->
           <div
@@ -506,7 +446,13 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 12a3 3 0 100-6 3 3 0 000 6z"
                 ></path>
               </svg>
             </div>
@@ -514,19 +460,272 @@
               <h1
                 class="text-lg font-bold text-gray-800 group-hover:text-purple-700 transition-colors duration-300"
               >
-                Service Usage Overview
+                Maternal Care
               </h1>
               <p class="text-sm text-gray-600 mt-1">
-                Quick overview by service category
+                Annual maternal health services data
               </p>
             </div>
           </div>
 
-          <!-- Chart placeholder area -->
+          <!-- Chart area with sample graph -->
           <div class="px-5 pb-5 mt-2">
             <div
-              class="bg-white/50 backdrop-blur-sm rounded-2xl h-64 border border-purple-100 flex items-center justify-center text-gray-500"
-            ></div>
+              class="bg-white/50 backdrop-blur-sm rounded-2xl h-72 border border-purple-100 relative"
+            >
+              <canvas id="maternalChart" class="w-full h-full"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Section for Predictions, Error Rate, Confidence Rate, and Summary -->
+    <div
+      id="analytics-metrics-section"
+      class="flex flex-col justify-center mb-16 px-4 md:ml-52 md:mr-4 transition-all duration-700"
+    >
+      <h2
+        class="text-2xl font-bold text-gray-800 mb-6 mt-6 text-center md:text-left"
+      >
+        Health Services Analytics
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <!-- Predictions Card -->
+        <div
+          class="bg-gradient-to-br from-blue-50 to-white border border-blue-200 shadow-lg hover:shadow-xl rounded-2xl p-5 transition-all duration-500 hover:scale-105 hover:border-blue-300 group"
+        >
+          <div class="flex items-center mb-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center shadow-md group-hover:bg-blue-600 transition-colors duration-300"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="ml-3 text-lg font-bold text-gray-800 group-hover:text-blue-700"
+            >
+              Predictions
+            </h3>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-600">Family Planning Trend</span>
+              <span class="text-sm font-medium text-blue-600">+12.5%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div
+                class="bg-blue-600 h-2 rounded-full"
+                style="width: 68%"
+              ></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-sm text-gray-600">Newborn Registrations</span>
+              <span class="text-sm font-medium text-blue-600">+8.3%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div
+                class="bg-blue-600 h-2 rounded-full"
+                style="width: 75%"
+              ></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-sm text-gray-600">Maternal Care Visits</span>
+              <span class="text-sm font-medium text-blue-600">+15.7%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div
+                class="bg-blue-600 h-2 rounded-full"
+                style="width: 82%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Rate Card -->
+        <div
+          class="bg-gradient-to-br from-red-50 to-white border border-red-200 shadow-lg hover:shadow-xl rounded-2xl p-5 transition-all duration-500 hover:scale-105 hover:border-red-300 group"
+        >
+          <div class="flex items-center mb-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center shadow-md group-hover:bg-red-600 transition-colors duration-300"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="ml-3 text-lg font-bold text-gray-800 group-hover:text-red-700"
+            >
+              Error Rate
+            </h3>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-600">Data Entry Errors</span>
+              <span class="text-sm font-medium text-red-600">1.2%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-red-600 h-2 rounded-full" style="width: 12%"></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-sm text-gray-600">Appointment Scheduling</span>
+              <span class="text-sm font-medium text-red-600">0.8%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-red-600 h-2 rounded-full" style="width: 8%"></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-sm text-gray-600">Record Inconsistencies</span>
+              <span class="text-sm font-medium text-red-600">1.5%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div class="bg-red-600 h-2 rounded-full" style="width: 15%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Confidence Rate Card -->
+        <div
+          class="bg-gradient-to-br from-green-50 to-white border border-green-200 shadow-lg hover:shadow-xl rounded-2xl p-5 transition-all duration-500 hover:scale-105 hover:border-green-300 group"
+        >
+          <div class="flex items-center mb-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center shadow-md group-hover:bg-green-600 transition-colors duration-300"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="ml-3 text-lg font-bold text-gray-800 group-hover:text-green-700"
+            >
+              Confidence Rate
+            </h3>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <span class="text-sm text-gray-600">Family Planning Model</span>
+              <span class="text-sm font-medium text-green-600">93.5%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div
+                class="bg-green-600 h-2 rounded-full"
+                style="width: 93%"
+              ></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-sm text-gray-600">Infant Health Model</span>
+              <span class="text-sm font-medium text-green-600">95.2%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div
+                class="bg-green-600 h-2 rounded-full"
+                style="width: 95%"
+              ></div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4">
+              <span class="text-sm text-gray-600">Maternal Care Model</span>
+              <span class="text-sm font-medium text-green-600">91.8%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+              <div
+                class="bg-green-600 h-2 rounded-full"
+                style="width: 92%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div
+          class="bg-gradient-to-br from-purple-50 to-white border border-purple-200 shadow-lg hover:shadow-xl rounded-2xl p-5 transition-all duration-500 hover:scale-105 hover:border-purple-300 group"
+        >
+          <div class="flex items-center mb-4">
+            <div
+              class="flex-shrink-0 w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center shadow-md group-hover:bg-purple-600 transition-colors duration-300"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                ></path>
+              </svg>
+            </div>
+            <h3
+              class="ml-3 text-lg font-bold text-gray-800 group-hover:text-purple-700"
+            >
+              Summary
+            </h3>
+          </div>
+
+          <div class="space-y-4">
+            <p class="text-sm text-gray-700 leading-relaxed">
+              All health services have shown positive growth trends in the past
+              year. Family planning services usage increased by 12.5%, while
+              maternal care visits grew by 15.7%.
+            </p>
+            <p class="text-sm text-gray-700 leading-relaxed">
+              Data quality remains high with an overall error rate below 2%.
+              Prediction models maintain above 90% confidence across all service
+              categories.
+            </p>
+            <div class="pt-2">
+              <a
+                href="#"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors"
+              >
+                View detailed report →
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -559,75 +758,24 @@
           </svg>
         </button>
 
-        <h3 class="text-xl font-bold text-gray-800 mb-5">Select Date Range</h3>
+        <h3 class="text-xl font-bold text-gray-800 mb-5">Select Year</h3>
 
         <div class="space-y-6">
-          <!-- Weekly Selection -->
-          <div class="rounded-xl bg-blue-50 p-4">
-            <h4 class="font-semibold text-blue-800 mb-2">Select Week</h4>
-            <input
-              type="week"
-              id="week"
-              class="w-full rounded-lg border border-blue-200 px-4 py-2 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
-            />
-          </div>
-
-          <div class="text-center text-gray-500 font-medium">- OR -</div>
-
-          <!-- Individual Date Selection -->
-          <div class="rounded-xl bg-purple-50 p-4">
-            <h4 class="font-semibold text-purple-800 mb-2">
-              Select Specific Date
+          <!-- Year Selection -->
+          <div class="rounded-xl bg-indigo-50 p-6">
+            <h4 class="font-semibold text-indigo-800 mb-4 text-center">
+              Select Data Year
             </h4>
-            <div class="grid grid-cols-3 gap-2">
-              <div>
-                <label for="month" class="block text-xs text-gray-600 mb-1"
-                  >Month</label
-                >
-                <select
-                  id="month"
-                  class="w-full rounded-lg border border-purple-200 px-3 py-2 focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-50"
-                >
-                  <option value="">Month</option>
-                  <option value="1">January</option>
-                  <option value="2">February</option>
-                  <option value="3">March</option>
-                  <option value="4">April</option>
-                  <option value="5">May</option>
-                  <option value="6">June</option>
-                  <option value="7">July</option>
-                  <option value="8">August</option>
-                  <option value="9">September</option>
-                  <option value="10">October</option>
-                  <option value="11">November</option>
-                  <option value="12">December</option>
-                </select>
-              </div>
-              <div>
-                <label for="day" class="block text-xs text-gray-600 mb-1"
-                  >Day</label
-                >
-                <select
-                  id="day"
-                  class="w-full rounded-lg border border-purple-200 px-3 py-2 focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-50"
-                >
-                  <option value="">Day</option>
-                  <!-- Days will be populated by JavaScript -->
-                </select>
-              </div>
-              <div>
-                <label for="year" class="block text-xs text-gray-600 mb-1"
-                  >Year</label
-                >
-                <select
-                  id="year"
-                  class="w-full rounded-lg border border-purple-200 px-3 py-2 focus:border-purple-500 focus:ring focus:ring-purple-200 focus:ring-opacity-50"
-                >
-                  <option value="">Year</option>
-                  <!-- Years will be populated by JavaScript -->
-                </select>
-              </div>
-            </div>
+            <select
+              id="yearSelect"
+              class="w-full rounded-lg border border-indigo-200 px-4 py-3 focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-lg font-medium text-center"
+            >
+              <!-- Years will be populated by JavaScript -->
+            </select>
+
+            <p class="mt-4 text-sm text-gray-600 text-center">
+              Select a year to view annual healthcare service data
+            </p>
           </div>
         </div>
 
