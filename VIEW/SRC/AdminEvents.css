@@ -124,10 +124,25 @@
 }
 
 /* Admin header */
-.header h1 {
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.admin-header h1 {
   color: #2c3e50;
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+/* Mobile-friendly filters */
+.mobile-friendly-filters {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 /* Small status buttons in card view */
@@ -143,22 +158,60 @@
   padding-top: 65px;
 }
 
-/* Responsive adjustments for admin features */
-@media (max-width: 768px) {
-  .admin-status {
-    position: absolute;
-    top: 50px;
-    right: 20px;
-  }
-
+/* Mobile-optimized button styles */
+@media (max-width: 480px) {
+  /* More aggressive mobile optimizations for very small screens */
   .admin-actions {
     flex-direction: column;
+    gap: 8px;
   }
 
-  .event-statuses {
+  .admin-actions button {
+    width: 100%;
+    min-width: 0;
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .event-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .event-actions .btn-small {
+    font-size: 11px;
+    padding: 4px 6px;
+    margin: 2px;
+  }
+
+  .event-card {
+    padding: 10px;
+  }
+
+  .event-meta {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .admin-header h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .analytics-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
+  }
+
+  .analytics-card {
+    padding: 8px;
+  }
+
+  .analytics-card h3 {
+    font-size: 1.5rem;
   }
 }
 
