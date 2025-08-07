@@ -1,0 +1,228 @@
+/* Admin Events & Seminars Module Styles - Extension of Events&Seminar.css */
+
+/* Admin-specific status colors */
+.admin-status {
+  position: absolute;
+  top: 20px;
+  right: 120px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+  min-width: 90px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.admin-status.pending {
+  background: linear-gradient(135deg, #a9a9a9 0%, #808080 100%);
+  color: white;
+}
+
+.admin-status.approved {
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  color: white;
+}
+
+.admin-status.featured {
+  background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+  color: white;
+}
+
+.admin-status.canceled {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+}
+
+/* Event card status variations */
+.event-card.pending {
+  border-left: 5px solid #a9a9a9;
+}
+
+.event-card.approved {
+  border-left: 5px solid #2ecc71;
+}
+
+.event-card.featured {
+  border-left: 5px solid #f1c40f;
+  background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+}
+
+.event-card.canceled {
+  border-left: 5px solid #e74c3c;
+  background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+  opacity: 0.85;
+}
+
+/* Admin actions in event details */
+.admin-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e6ed;
+}
+
+.admin-actions button {
+  flex: 1;
+  min-width: 150px;
+}
+
+/* Success button for approve action */
+.btn-success {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #27ae60, #219651);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+/* Feature button */
+.btn-feature {
+  background: linear-gradient(135deg, #f1c40f, #f39c12);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-feature:hover {
+  background: linear-gradient(135deg, #f39c12, #d35400);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+/* Event statuses in details view */
+.event-statuses {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+/* Admin header */
+.header h1 {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Small status buttons in card view */
+.btn-small.btn-success,
+.btn-small.btn-feature {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+}
+
+/* Event card for admin - additional spacing for more actions */
+.event-card {
+  padding-top: 65px;
+}
+
+/* Responsive adjustments for admin features */
+@media (max-width: 768px) {
+  .admin-status {
+    position: absolute;
+    top: 50px;
+    right: 20px;
+  }
+
+  .admin-actions {
+    flex-direction: column;
+  }
+
+  .event-statuses {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+/* Analytics summary section */
+.admin-analytics {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.analytics-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.analytics-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.analytics-card.pending {
+  border-bottom-color: #a9a9a9;
+}
+
+.analytics-card.approved {
+  border-bottom-color: #2ecc71;
+}
+
+.analytics-card.featured {
+  border-bottom-color: #f1c40f;
+}
+
+.analytics-card.canceled {
+  border-bottom-color: #e74c3c;
+}
+
+.analytics-card.total {
+  border-bottom-color: #3498db;
+}
+
+.analytics-card h3 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.analytics-card p {
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.analytics-card i {
+  font-size: 1.5rem;
+  color: #3498db;
+}
