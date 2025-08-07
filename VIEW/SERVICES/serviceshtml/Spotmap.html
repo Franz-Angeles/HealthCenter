@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay Spot Map</title>
+    <link href="../../SRC/output.css" rel="stylesheet" />
+    <link href="../../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../servicescss/Spotmap.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- MAIN NAV BAR -->
+    <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <a href="../../HTML/LandingP.html" class="flex-shrink-0">
+          <img
+            class="h-[50px] mr-[10px]"
+            src="../../SRC/IMG/bucallogonobg.png"
+            alt="Bucal Logo"
+          />
+        </a>
+        <div class="text-xl w-[900px] font-bold">Barangay Spot Map</div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
+          <!-- Leave Empty or Add Other Icons If Needed -->
+        </div>
+        <div class="hidden md:flex font-semibold">
+          <a
+            href="../../HTML/LandingP.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+          >
+            Home</a
+          >
+          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Services</a
+          >
+          <a
+            href="../../HTML/ProfileSettings.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Profile</a
+          >
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden w-full flex justify-end pr-4 relative">
+          <!-- Toggle button -->
+          <button id="menu-button" class="p-2">
+            <svg
+              class="w-8 h-7 text-zinc-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdown-menu"
+            class="transition-all duration-500 ease-in-out origin-top scale-y-0 opacity-0 absolute right-0 top-14 w-[230px] bg-white shadow-lg rounded-md z-50 font-semibold pointer-events-none"
+          >
+            <a
+              href="../../HTML/LandingP.html"
+              class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Home</a
+            >
+            <hr />
+            <a href="#" class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Services</a
+            >
+            <hr />
+            <a
+              href="../../HTML/ProfileSettings.html"
+              class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Profile</a
+            >
+            <hr />
+            <a
+              href="../../HTML/Dashboard.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Analytics</a
+            >
+            <a
+              href="../serviceshtml/Spotmap.html"
+              class="dropdown-link active block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Barangay Spot Map</a>a
+            >
+            <a
+              href="../../HTML/SeasonalityExplorer.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Seasonality Explorer</a
+            >
+            <a
+              href="../../HTML/StaffingPlanner.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Staffing Planner</a
+            >
+            <a
+              href="../serviceshtml/UserManagement.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Account Management</a
+            >
+            <a
+              href="../serviceshtml/Logs.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >System Logs</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar removed as requested -->
+    <div class="hidden"><!-- Empty div to replace the sidebar --></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="md:ml-0 pt-[72px] min-h-screen">
+      <!-- Header Section -->
+      <div class="bg-gradient-to-r from-teal-500 to-blue-600 text-white p-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex items-center mb-4">
+            <img
+              src="../../SRC/ICON/mapview.png"
+              alt="Map View"
+              class="w-12 h-12 mr-4"
+            />
+            <div>
+              <h1 class="text-3xl font-bold">Barangay Spot Map</h1>
+              <p class="text-blue-100 mt-1">
+                Visualize healthcare facilities and services across different
+                barangays
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="p-6 space-y-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              Barangay Spot Map
+            </h2>
+            <p class="text-gray-600 mb-8">
+              This page displays a map showing healthcare facilities and
+              services across different barangays.
+            </p>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <img
+                src="../../SRC/IMG/bucalmap.jfif"
+                alt="Bucal Map"
+                class="mx-auto max-w-full h-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="../../JAVASCRIPT/navigation.js"></script>
+  </body>
+</html>
