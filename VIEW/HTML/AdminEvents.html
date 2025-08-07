@@ -78,7 +78,8 @@
         background: white;
         border-radius: 0.5rem;
         padding: 1.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
         display: flex;
         flex-direction: column;
       }
@@ -128,7 +129,8 @@
         padding: 1.5rem;
         background: white;
         border-radius: 0.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
       }
 
       .event-row {
@@ -190,24 +192,24 @@
           border-radius: 0.5rem;
           margin-bottom: 1rem;
         }
-        
+
         .event-row-header {
           display: none;
         }
-        
+
         .event-title {
           font-weight: 600;
           font-size: 1.125rem;
           margin-bottom: 0.5rem;
         }
-        
+
         .event-info {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 0.5rem;
           margin-bottom: 0.5rem;
         }
-        
+
         .event-info-label {
           font-weight: 500;
           color: #6b7280;
@@ -330,9 +332,14 @@
       <!-- Admin Header Section -->
       <div class="admin-header">
         <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between mb-4"
+          >
             <div class="flex items-center mb-4 md:mb-0">
-              <a href="Dashboard.html" class="back-button rounded-lg px-3 py-2 flex items-center">
+              <a
+                href="Dashboard.html"
+                class="back-button rounded-lg px-3 py-2 flex items-center"
+              >
                 <i class="fas fa-arrow-left mr-2"></i> Back to Dashboard
               </a>
             </div>
@@ -342,7 +349,8 @@
                 <span class="admin-badge">Admin</span>
               </h1>
               <p class="text-blue-100 mt-1">
-                Create, manage, and track all community health events and seminars
+                Create, manage, and track all community health events and
+                seminars
               </p>
             </div>
             <div class="mt-4 md:mt-0 flex flex-wrap gap-2">
@@ -393,25 +401,35 @@
           </div>
 
           <!-- Tabs and Filters -->
-          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6"
+          >
             <ul class="flex bg-white rounded-lg shadow-sm p-1">
               <li>
-                <button class="px-4 py-2 bg-blue-500 text-white rounded-md font-medium">
+                <button
+                  class="px-4 py-2 bg-blue-500 text-white rounded-md font-medium"
+                >
                   All Events
                 </button>
               </li>
               <li>
-                <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium">
+                <button
+                  class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
+                >
                   Upcoming
                 </button>
               </li>
               <li>
-                <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium">
+                <button
+                  class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
+                >
                   Ongoing
                 </button>
               </li>
               <li>
-                <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium">
+                <button
+                  class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-md font-medium"
+                >
                   Completed
                 </button>
               </li>
@@ -428,14 +446,16 @@
                 <option value="vaccination-drive">Vaccination Drives</option>
                 <option value="community-event">Community Events</option>
               </select>
-              
+
               <div class="relative">
                 <input
                   type="text"
                   placeholder="Search events..."
                   class="w-full py-2 px-4 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 />
-                <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                <i
+                  class="fas fa-search absolute right-3 top-3 text-gray-400"
+                ></i>
               </div>
             </div>
           </div>
@@ -456,7 +476,9 @@
               <div class="hidden md:block">Aug 10-12, 2025</div>
               <div class="hidden md:block">Vaccination Drive</div>
               <div class="hidden md:block">
-                <span class="px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">
+                <span
+                  class="px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold"
+                >
                   Upcoming
                 </span>
               </div>
@@ -471,7 +493,7 @@
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
-              
+
               <!-- Mobile Layout -->
               <div class="md:hidden event-info">
                 <div>
@@ -484,7 +506,9 @@
                 </div>
                 <div>
                   <span class="event-info-label">Status:</span>
-                  <span class="px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold">
+                  <span
+                    class="px-2 py-1 rounded-full bg-green-100 text-green-800 text-xs font-semibold"
+                  >
                     Upcoming
                   </span>
                 </div>
@@ -511,7 +535,9 @@
               <div class="hidden md:block">Aug 7-8, 2025</div>
               <div class="hidden md:block">Seminar</div>
               <div class="hidden md:block">
-                <span class="px-2 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold">
+                <span
+                  class="px-2 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold"
+                >
                   Ongoing
                 </span>
               </div>
@@ -526,7 +552,7 @@
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
-              
+
               <!-- Mobile Layout -->
               <div class="md:hidden event-info">
                 <div>
@@ -539,7 +565,9 @@
                 </div>
                 <div>
                   <span class="event-info-label">Status:</span>
-                  <span class="px-2 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold">
+                  <span
+                    class="px-2 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-semibold"
+                  >
                     Ongoing
                   </span>
                 </div>
@@ -566,7 +594,9 @@
               <div class="hidden md:block">Jul 28-29, 2025</div>
               <div class="hidden md:block">Workshop</div>
               <div class="hidden md:block">
-                <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold">
+                <span
+                  class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold"
+                >
                   Completed
                 </span>
               </div>
@@ -581,7 +611,7 @@
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
-              
+
               <!-- Mobile Layout -->
               <div class="md:hidden event-info">
                 <div>
@@ -594,7 +624,9 @@
                 </div>
                 <div>
                   <span class="event-info-label">Status:</span>
-                  <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold">
+                  <span
+                    class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold"
+                  >
                     Completed
                   </span>
                 </div>
@@ -621,7 +653,9 @@
               <div class="hidden md:block">Jul 15, 2025</div>
               <div class="hidden md:block">Medical Mission</div>
               <div class="hidden md:block">
-                <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold">
+                <span
+                  class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold"
+                >
                   Completed
                 </span>
               </div>
@@ -636,7 +670,7 @@
                   <i class="fas fa-trash"></i>
                 </button>
               </div>
-              
+
               <!-- Mobile Layout -->
               <div class="md:hidden event-info">
                 <div>
@@ -649,7 +683,9 @@
                 </div>
                 <div>
                   <span class="event-info-label">Status:</span>
-                  <span class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold">
+                  <span
+                    class="px-2 py-1 rounded-full bg-gray-100 text-gray-800 text-xs font-semibold"
+                  >
                     Completed
                   </span>
                 </div>
@@ -673,27 +709,39 @@
             <!-- Pagination -->
             <div class="mt-6 flex justify-between items-center">
               <div class="text-sm text-gray-600">
-                Showing <span class="font-medium">1</span> to 
-                <span class="font-medium">4</span> of 
+                Showing <span class="font-medium">1</span> to
+                <span class="font-medium">4</span> of
                 <span class="font-medium">42</span> results
               </div>
               <div class="flex gap-2">
-                <button class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                <button
+                  class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-500 hover:bg-gray-50"
+                >
                   Previous
                 </button>
-                <button class="px-3 py-1 rounded border border-blue-500 bg-blue-500 text-white">
+                <button
+                  class="px-3 py-1 rounded border border-blue-500 bg-blue-500 text-white"
+                >
                   1
                 </button>
-                <button class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                <button
+                  class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+                >
                   2
                 </button>
-                <button class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                <button
+                  class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+                >
                   3
                 </button>
-                <button class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                <button
+                  class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+                >
                   4
                 </button>
-                <button class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                <button
+                  class="px-3 py-1 rounded border border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+                >
                   Next
                 </button>
               </div>
@@ -764,23 +812,13 @@
               <label for="openingTime">
                 <i class="fas fa-clock"></i> Opening Time *
               </label>
-              <input
-                type="time"
-                id="openingTime"
-                name="openingTime"
-                required
-              />
+              <input type="time" id="openingTime" name="openingTime" required />
             </div>
             <div class="form-group">
               <label for="closingTime">
                 <i class="fas fa-clock"></i> Closing Time *
               </label>
-              <input
-                type="time"
-                id="closingTime"
-                name="closingTime"
-                required
-              />
+              <input type="time" id="closingTime" name="closingTime" required />
             </div>
           </div>
 
