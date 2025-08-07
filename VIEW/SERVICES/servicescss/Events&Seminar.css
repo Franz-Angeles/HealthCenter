@@ -31,6 +31,60 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.back-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 0;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  overflow: hidden;
+}
+
+.back-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.back-button-text {
+  padding: 10px 15px;
+  position: relative;
+}
+
+.back-button:hover {
+  transform: translateX(-5px);
+  box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+}
+
+.back-button:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 15px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.back-button:hover:after {
+  width: calc(100% - 30px);
+}
+
 .header h1 {
   color: #2c3e50;
   font-size: 2rem;
