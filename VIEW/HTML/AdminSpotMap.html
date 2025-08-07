@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barangay Spot Map (Admin)</title>
+    <link href="../SRC/output.css" rel="stylesheet" />
+    <link href="../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../SERVICES/servicescss/Spotmap.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- MAIN NAV BAR -->
+    <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <a href="../HTML/LandingP.html" class="flex-shrink-0">
+          <img
+            class="h-[50px] mr-[10px]"
+            src="../SRC/IMG/bucallogonobg.png"
+            alt="Bucal Logo"
+          />
+        </a>
+        <div class="text-xl w-[900px] font-bold">Barangay Spot Map (Admin)</div>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
+          <!-- Leave Empty or Add Other Icons If Needed -->
+        </div>
+        <div class="hidden md:flex font-semibold">
+          <a
+            href="../HTML/LandingP.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+          >
+            Home</a
+          >
+          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Services</a
+          >
+          <a
+            href="../HTML/ProfileSettings.html"
+            class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Profile</a
+          >
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden w-full flex justify-end pr-4 relative">
+          <!-- Toggle button -->
+          <button id="menu-button" class="p-2">
+            <svg
+              class="w-8 h-7 text-zinc-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div
+            id="dropdown-menu"
+            class="transition-all duration-500 ease-in-out origin-top scale-y-0 opacity-0 absolute right-0 top-14 w-[230px] bg-white shadow-lg rounded-md z-50 font-semibold pointer-events-none"
+          >
+            <a
+              href="../HTML/LandingP.html"
+              class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Home</a
+            >
+            <hr />
+            <a href="#" class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Services</a
+            >
+            <hr />
+            <a
+              href="../HTML/ProfileSettings.html"
+              class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Profile</a
+            >
+            <hr />
+            <a
+              href="../HTML/Dashboard.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Analytics</a
+            >
+            <a
+              href="../HTML/AdminSpotMap.html"
+              class="dropdown-link active block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Barangay Spot Map</a
+            >
+            <a
+              href="../HTML/SeasonalityExplorer.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Seasonality Explorer</a
+            >
+            <a
+              href="../HTML/StaffingPlanner.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Staffing Planner</a
+            >
+            <a
+              href="../SERVICES/serviceshtml/UserManagement.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Account Management</a
+            >
+            <a
+              href="../SERVICES/serviceshtml/Logs.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >System Logs</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
+    <div
+      class="hidden md:block bg-white w-52 h-screen shadow-md fixed top-[72px] left-0 z-40 overflow-y-auto"
+    >
+      <!-- top-[72px] assumes navbar height ~72px -->
+      <div class="flex flex-col p-4 font-semibold">
+        <a
+          href="../HTML/Dashboard.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Analytics</a
+        >
+        <a
+          href="../HTML/AdminSpotMap.html"
+          class="sidebar-link active mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Barangay Spot Map</a
+        >
+        <a
+          href="../HTML/SeasonalityExplorer.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Seasonality Explorer</a
+        >
+        <a
+          href="../HTML/StaffingPlanner.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Staffing Planner</a
+        >
+        <a
+          href="../SERVICES/serviceshtml/UserManagement.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Account Management</a
+        >
+        <a
+          href="../SERVICES/serviceshtml/Logs.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >System Logs</a
+        >
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="md:ml-52 pt-[72px] min-h-screen">
+      <!-- Header Section -->
+      <div class="bg-gradient-to-r from-teal-500 to-blue-600 text-white p-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="flex items-center mb-4">
+            <img
+              src="../SRC/ICON/mapview.png"
+              alt="Map View"
+              class="w-12 h-12 mr-4"
+            />
+            <div>
+              <h1 class="text-3xl font-bold">Barangay Spot Map (Admin)</h1>
+              <p class="text-blue-100 mt-1">
+                Manage and update healthcare facilities and services mapping
+                across different barangays
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="p-6 space-y-6">
+        <div class="max-w-7xl mx-auto">
+          <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">
+              Barangay Spot Map Administration
+            </h2>
+            <p class="text-gray-600 mb-8">
+              This admin interface allows you to manage the healthcare
+              facilities map that is displayed to clients.
+            </p>
+            <div class="bg-gray-50 rounded-lg p-6">
+              <img
+                src="../SRC/IMG/bucalmap.jfif"
+                alt="Bucal Map"
+                class="mx-auto max-w-full h-auto"
+              />
+            </div>
+
+            <!-- Admin Controls Section -->
+            <div class="mt-8 border-t pt-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Administrative Controls
+              </h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 rounded-lg p-4 text-left">
+                  <h4 class="font-medium text-blue-700 mb-2">
+                    Update Map Image
+                  </h4>
+                  <div class="flex items-center space-x-2">
+                    <input
+                      type="file"
+                      class="hidden"
+                      id="mapImageUpload"
+                      accept="image/*"
+                    />
+                    <button
+                      onclick="document.getElementById('mapImageUpload').click()"
+                      class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                    >
+                      Select Image
+                    </button>
+                    <span id="selectedFileName" class="text-sm text-gray-600"
+                      >No file selected</span
+                    >
+                  </div>
+                </div>
+
+                <div class="bg-green-50 rounded-lg p-4 text-left">
+                  <h4 class="font-medium text-green-700 mb-2">Map Settings</h4>
+                  <div class="space-y-2">
+                    <label class="flex items-center">
+                      <input
+                        type="checkbox"
+                        class="rounded text-blue-600 mr-2"
+                      />
+                      <span class="text-sm">Show facility names</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input
+                        type="checkbox"
+                        class="rounded text-blue-600 mr-2"
+                      />
+                      <span class="text-sm">Show health risk indicators</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 flex justify-center">
+                <button
+                  class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors shadow-md"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="../JAVASCRIPT/navigation.js"></script>
+    <script>
+      // Simple script to handle file upload display
+      document
+        .getElementById("mapImageUpload")
+        .addEventListener("change", function (e) {
+          const fileName = e.target.files[0]
+            ? e.target.files[0].name
+            : "No file selected";
+          document.getElementById("selectedFileName").textContent = fileName;
+        });
+    </script>
+  </body>
+</html>
