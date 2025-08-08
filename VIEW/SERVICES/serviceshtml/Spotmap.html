@@ -115,6 +115,7 @@
         </div>
       </div>
     </nav>
+    
 
     <!-- Sidebar removed as requested -->
     <div class="hidden"><!-- Empty div to replace the sidebar --></div>
@@ -170,7 +171,9 @@
               ></span>
             </a>
           </div>
+
           <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+
             <h2 class="text-2xl font-bold text-gray-800 mb-4">
               Barangay Spot Map
             </h2>
@@ -178,19 +181,221 @@
               This page displays a map showing healthcare facilities and
               services across different barangays.
             </p>
-            <div class="bg-gray-50 rounded-lg p-6">
+
+            <!-- MAP -->
+            <div class="relative mx-auto max-w-full">
+
+              <!-- Image -->
               <img
                 src="../../SRC/IMG/bucalmap.jfif"
                 alt="Bucal Map"
-                class="mx-auto max-w-full h-auto"
+                class="w-full h-full object-contain rounded-lg"
               />
+
+              <!-- Sitio Place Points -->
+              <button class="absolute group location-point" style="top: 90%; left: 10%;" data-location="familyVille" aria-label="Family Ville">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Family Ville
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 65%; left:2%;" aria-label="Umboy">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Umboy
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 55%; left: 8%;" aria-label="Ibaba">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Ibaba
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 65%; left: 16%;" aria-label="Graceland">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Graceland
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 42%; left: 25%;" aria-label="Health Center">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Health Center
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 50%; left: 28%;" aria-label="Lotte">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Lotte
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 71%; left: 28.5%;" aria-label="Hermeno">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Hermeno             
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 51%; left: 36.5%;" aria-label="Promise Land">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Promise Land               
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 43%; left: 41%;" aria-label="Spring Green">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Spring Green               
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 38%; left: 46%;" aria-label="Ilaya">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Ilaya
+                </span>
+              </button>
+
+
+              <button class="absolute group" style="top: 60%; left: 46%;" aria-label="Country Homes">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Country Homes               
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 21%; left: 58%;" aria-label="Country Homes">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Heart Foundation 1             
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 45%; left: 80%;" aria-label="Annex">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Annex
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 30%; left: 58%;" aria-label="Phase 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 1
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 43%; left: 62%;" aria-label="Phase 2">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 2
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 65%; left: 63%;" aria-label="Phase 3">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 3
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 80%; left: 53%;" aria-label="Phase 4">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 4
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 73%; left: 75%;" aria-label="Southgate 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Southgate 1
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 83%; left: 63%;" aria-label="Southgate 2">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Southgate 2
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 50%; left: 53%;" aria-label="Northgate 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Northgate 1
+                </span>
+              </button>
+
+              <button class="absolute group" style="top: 30%; left: 73%;" aria-label="Northgate 2">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Northgate 2
+                </span>
+              </button>
+
             </div>
+
+            <p class="text-sm text-gray-600 mb-2">
+              Click on the points on the map to view more information about
+              each healthcare facility or service.
+            </p>
+
+            <p class="text-sm text-gray-600">
+              This feature allows you to explore the healthcare landscape of
+              your barangay effectively
+            </p>
           </div>
+
+          <!-- Point Location Information -->
+          <content class="mt-8 max-w-7xl mx-auto bg-white rounded-xl p-6 shadow-sm">
+
+            
+            <div class="mt-8 bg-white rounded-xl p-6 shadow-sm">
+
+              <h1 class="text-3xl font-bold text-gray-800 mb-4">
+                Place Name Address
+              </h1>
+
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">
+                Point Location Information
+              </h3>
+
+              <p class="text-sm text-gray-600 mb-2">
+                Click on the points on the map to view more information about
+                each healthcare facility or service.
+              </p>
+
+              <p class="text-sm text-gray-600">
+                This feature allows you to explore the healthcare landscape of
+                your barangay effectively
+              </p>
+
+
+              <img src="../../SRC/IMG/SITIO_SAMPLE.jpg" alt="">
+
+            </div>
+
+          </content>
+          
+
         </div>
       </div>
     </div>
 
     <!-- External JavaScript -->
     <script src="../../JAVASCRIPT/navigation.js"></script>
+    <script src="../../JAVASCRIPT/SpotMap/location_select.js">
+
+
+
+    </script>
   </body>
 </html>
