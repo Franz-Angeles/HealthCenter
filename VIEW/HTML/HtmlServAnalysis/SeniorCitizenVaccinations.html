@@ -3,11 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Family Planning Analytics</title>
+    <title>Senior Citizen Vaccinations Analytics</title>
     <link href="../../SRC/output.css" rel="stylesheet" />
     <link href="../../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../SRC/dashboardPNativestyle.css" />
-    <link rel="stylesheet" href="../CssServAnalysis/FamilyPlanning.css" />
+    <link
+      rel="stylesheet"
+      href="../CssServAnalysis/SeniorCitizenVaccinations.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
@@ -22,7 +25,9 @@
             alt=""
           />
         </a>
-        <div class="text-xl w-[900px] font-bold">Family Planning Analytics</div>
+        <div class="text-xl w-[900px] font-bold">
+          Senior Citizen Vaccinations
+        </div>
 
         <!-- Desktop Nav: Removed Links Here -->
         <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
@@ -92,13 +97,13 @@
             <hr />
             <a
               href="FamilyPlanning.html"
-              class="dropdown-link active block px-4 py-4 text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all duration-300 ease-in-out transform hover:scale-105"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105"
               >Family Planning</a
             >
             <hr />
             <a
               href="SeniorCitizenVaccinations.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105"
+              class="dropdown-link active block px-4 py-4 text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all duration-300 ease-in-out transform hover:scale-105"
               >Senior Citizen Vaccinations</a
             >
             <hr />
@@ -143,12 +148,12 @@
         >
         <a
           href="FamilyPlanning.html"
-          class="sidebar-link active mods block text-[#2563EB] bg-blue-50 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
           >Family Planning</a
         >
         <a
           href="SeniorCitizenVaccinations.html"
-          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          class="sidebar-link active mods block text-[#2563EB] bg-blue-50 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
           >Senior Citizen Vaccinations</a
         >
         <a
@@ -180,9 +185,9 @@
       <div class="md:ml-[250px] px-6 pb-12 mt-6">
         <div class="mb-8">
           <h2 class="text-2xl font-bold text-gray-800 mb-2">
-            Family Planning Analytics
+            Senior Citizen Vaccinations Analytics
           </h2>
-          <p class="text-gray-600">Family planning method given</p>
+          <p class="text-gray-600">Flu and Anti Pneumonia</p>
         </div>
 
         <!-- Year selector button -->
@@ -221,7 +226,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
           <!-- Total Numbers Card -->
           <div
-            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fp-card"
+            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 scv-card"
           >
             <div class="flex items-center mb-4">
               <div class="p-3 rounded-lg bg-blue-50 mr-4">
@@ -241,24 +246,27 @@
               </div>
               <div>
                 <h3 class="text-sm font-medium text-gray-500">
-                  Total Consultations
+                  Total Senior Vaccinations
                 </h3>
-                <p class="text-2xl font-bold text-gray-800" id="fp-total-count">
-                  3,428
+                <p
+                  class="text-2xl font-bold text-gray-800"
+                  id="scv-total-count"
+                >
+                  3,542
                 </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
               <span class="text-sm text-gray-500">
-                <span class="text-green-600 font-medium">+12.5%</span> from
+                <span class="text-green-600 font-medium">+18.7%</span> from
                 previous year
               </span>
             </div>
           </div>
 
-          <!-- Error Rate Card -->
+          <!-- Adverse Reactions Card -->
           <div
-            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fp-card"
+            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 scv-card"
           >
             <div class="flex items-center mb-4">
               <div class="p-3 rounded-lg bg-blue-50 mr-4">
@@ -277,23 +285,28 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-sm font-medium text-gray-500">Error Rate</h3>
-                <p class="text-2xl font-bold text-gray-800" id="fp-error-rate">
+                <h3 class="text-sm font-medium text-gray-500">
+                  Adverse Reactions
+                </h3>
+                <p
+                  class="text-2xl font-bold text-gray-800"
+                  id="scv-adverse-rate"
+                >
                   2.3%
                 </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
               <span class="text-sm text-gray-500">
-                <span class="text-green-600 font-medium">-0.8%</span> from
+                <span class="text-green-600 font-medium">-0.7%</span> from
                 previous year
               </span>
             </div>
           </div>
 
-          <!-- Confidence Rate Card -->
+          <!-- Coverage Rate Card -->
           <div
-            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fp-card"
+            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 scv-card"
           >
             <div class="flex items-center mb-4">
               <div class="p-3 rounded-lg bg-blue-50 mr-4">
@@ -312,20 +325,18 @@
                 </svg>
               </div>
               <div>
-                <h3 class="text-sm font-medium text-gray-500">
-                  Confidence Rate
-                </h3>
+                <h3 class="text-sm font-medium text-gray-500">Coverage Rate</h3>
                 <p
                   class="text-2xl font-bold text-gray-800"
-                  id="fp-confidence-rate"
+                  id="scv-coverage-rate"
                 >
-                  95.2%
+                  76.8%
                 </p>
               </div>
             </div>
             <div class="flex items-center justify-between">
               <span class="text-sm text-gray-500">
-                <span class="text-green-600 font-medium">+2.1%</span> from
+                <span class="text-green-600 font-medium">+5.2%</span> from
                 previous year
               </span>
             </div>
@@ -333,7 +344,7 @@
 
           <!-- Prediction Card -->
           <div
-            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 fp-card"
+            class="bg-white rounded-xl shadow-md p-6 border border-gray-100 scv-card"
           >
             <div class="flex items-center mb-4">
               <div class="p-3 rounded-lg bg-blue-50 mr-4">
@@ -355,8 +366,8 @@
                 <h3 class="text-sm font-medium text-gray-500">
                   Next Month Prediction
                 </h3>
-                <p class="text-2xl font-bold text-gray-800" id="fp-prediction">
-                  +8.7%
+                <p class="text-2xl font-bold text-gray-800" id="scv-prediction">
+                  +11.2%
                 </p>
               </div>
             </div>
@@ -373,10 +384,22 @@
           class="bg-white rounded-xl shadow-md p-6 border border-gray-100 mb-8"
         >
           <h3 class="text-lg font-bold text-gray-800 mb-4">
-            Family Planning Consultations
+            Senior Vaccination Trends
           </h3>
           <div class="h-[400px]">
-            <canvas id="familyPlanningChart"></canvas>
+            <canvas id="scv-trend-chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Vaccine Type Distribution Chart -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 border border-gray-100 mb-8"
+        >
+          <h3 class="text-lg font-bold text-gray-800 mb-4">
+            Vaccine Type Distribution
+          </h3>
+          <div class="h-[300px]">
+            <canvas id="scv-vaccine-type-chart"></canvas>
           </div>
         </div>
 
@@ -385,23 +408,25 @@
           class="bg-white rounded-xl shadow-md p-6 border border-gray-100 mb-8"
         >
           <h3 class="text-lg font-bold text-gray-800 mb-4">Summary Analysis</h3>
-          <div class="prose max-w-none fp-summary">
+          <div class="prose max-w-none scv-summary">
             <p class="text-gray-700">
-              The Family Planning services have shown consistent growth over the
-              past 12 months, with a 12.5% increase in total consultations
-              compared to the previous year.
+              Senior Citizen Vaccination services have shown remarkable growth
+              with an 18.7% increase in total vaccinations administered compared
+              to the previous year. This reflects the success of our targeted
+              outreach programs for elderly citizens.
             </p>
             <p class="text-gray-700 mt-4">
-              Patient satisfaction has improved, with satisfaction rates
-              increasing from 88% to 93%. The error rate in service delivery has
-              decreased by 0.8 percentage points, indicating improved quality
-              control measures.
+              The adverse reaction rate has decreased by 0.7 percentage points
+              to 2.3%, indicating improved pre-screening processes and better
+              vaccine selection for elderly patients. The coverage rate has
+              increased significantly to 76.8% of the eligible senior
+              population, representing a 5.2% improvement.
             </p>
             <p class="text-gray-700 mt-4">
-              Based on current trends, we predict an 8.7% increase in service
-              utilization for the coming month, with continued growth expected
-              in the 18-35 age demographic. This growth will require
-              proportional resource allocation to maintain service quality.
+              Based on current trends and seasonal patterns, we predict an 11.2%
+              increase in senior vaccination demand for the coming month. This
+              increase coincides with the approaching flu season and our
+              enhanced community awareness campaign targeting elderly citizens.
             </p>
           </div>
         </div>
@@ -451,7 +476,7 @@
             </select>
 
             <p class="mt-4 text-sm text-gray-600 text-center">
-              Select a year to view annual healthcare service data
+              Select a year to view annual senior vaccination data
             </p>
           </div>
         </div>
@@ -475,7 +500,7 @@
 
     <!-- JavaScript -->
     <script src="../../JAVASCRIPT/navigation.js"></script>
-    <script src="../JsServAnalysis/FamilyPlanning.js"></script>
+    <script src="../JsServAnalysis/SeniorCitizenVaccinations.js"></script>
     <script>
       // Date picker modal functionality
       document.addEventListener("DOMContentLoaded", function () {

@@ -1,0 +1,40 @@
+/* Senior Citizen Vaccinations Module CSS */
+
+/* Card hover effects */
+.scv-card {
+  transition: all 0.3s ease-in-out;
+}
+
+.scv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #2563EB;
+}
+
+/* Summary section styling */
+.scv-summary p {
+  line-height: 1.7;
+}
+
+/* Chart container hover effects */
+.chart-container {
+  transition: all 0.3s ease;
+}
+
+.chart-container:hover {
+  box-shadow: 0 8px 15px rgba(37, 99, 235, 0.1);
+}
+
+/* Custom styling for specific elements */
+#scv-trend-chart,
+#scv-vaccine-type-chart {
+  max-height: 100%;
+  width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scv-card {
+    margin-bottom: 1rem;
+  }
+}
