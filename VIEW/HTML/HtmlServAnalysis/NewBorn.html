@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Newborn Care Analytics</title>
+    <title>Newborn and Infants Analytics</title>
     <link href="../../SRC/output.css" rel="stylesheet" />
     <link href="../../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../../SRC/dashboardPNativestyle.css" />
@@ -22,7 +22,9 @@
             alt=""
           />
         </a>
-        <div class="text-xl w-[900px] font-bold">Newborn Care Analytics</div>
+        <div class="text-xl w-[900px] font-bold">
+          Newborn and Infants Analytics
+        </div>
 
         <!-- Desktop Nav: Removed Links Here -->
         <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
@@ -110,8 +112,20 @@
             <hr />
             <a
               href="NewBorn.html"
-              class="dropdown-link active block px-4 py-4 text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Newborn Care</a
+              class="dropdown-link active block px-4 py-4 text-blue-600 bg-blue-50 hover:bg-blue-100 transition-all duration-300 ease-in-out transform hover:scale-105"
+              >Newborn and Infants</a
+            >
+            <hr />
+            <a
+              href="PostPartum.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105"
+              >Postpartum Care</a
+            >
+            <hr />
+            <a
+              href="RiskAssessments.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Risk Assessments</a
             >
           </div>
         </div>
@@ -147,7 +161,17 @@
         <a
           href="NewBorn.html"
           class="sidebar-link active mods block text-[#2563EB] bg-blue-50 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
-          >Newborn Care</a
+          >Newborn and Infants</a
+        >
+        <a
+          href="PostPartum.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Postpartum Care</a
+        >
+        <a
+          href="RiskAssessments.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Risk Assessments</a
         >
       </div>
     </div>
@@ -158,10 +182,11 @@
       <div class="md:ml-[250px] px-6 pb-12 mt-6">
         <div class="mb-8">
           <h2 class="text-2xl font-bold text-gray-800 mb-2">
-            Newborn Care Analytics
+            Newborn and Infants Analytics
           </h2>
           <p class="text-gray-600">
-            Comprehensive analysis of newborn health services and outcomes
+            Comprehensive analysis of newborn and infant health services and
+            outcomes
           </p>
         </div>
 
@@ -361,7 +386,7 @@
           class="bg-white rounded-xl shadow-md p-6 border border-gray-100 mb-8"
         >
           <h3 class="text-lg font-bold text-gray-800 mb-4">
-            Newborn Care Visits
+            Newborn and Infant Care Visits
           </h3>
           <div class="h-[400px]">
             <canvas id="newbornCareChart"></canvas>
@@ -453,7 +478,7 @@
             </select>
 
             <p class="mt-4 text-sm text-gray-600 text-center">
-              Select a year to view annual newborn care data
+              Select a year to view annual newborn and infant data
             </p>
           </div>
         </div>

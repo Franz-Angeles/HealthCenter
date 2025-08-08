@@ -1,14 +1,14 @@
-// Newborn Care Module JavaScript
+// Newborn and Infants Module JavaScript
 // Use a module pattern to prevent multiple initializations
 (function () {
   // Check if already initialized
   if (window.newbornCareModuleInitialized) {
-    console.log("Newborn Care module already initialized, skipping");
+    console.log("Newborn and Infants module already initialized, skipping");
     return;
   }
 
   window.newbornCareModuleInitialized = true;
-  console.log("Newborn Care module loading (first time)");
+  console.log("Newborn and Infants module loading (first time)");
 
   // Clear any previous content to prevent duplication
   const nbSummaryElement = document.querySelector(".nb-summary");
@@ -93,7 +93,7 @@
         labels: months,
         datasets: [
           {
-            label: "Monthly Newborn Checkups",
+            label: "Monthly Newborn and Infant Checkups",
             data: checkupData,
             backgroundColor: "rgba(37, 99, 235, 0.7)",
             borderColor: "rgba(37, 99, 235, 1)",
@@ -109,7 +109,7 @@
         plugins: {
           title: {
             display: true,
-            text: "Newborn Care Checkups - Monthly Trend",
+            text: "Newborn and Infant Care Checkups - Monthly Trend",
             font: {
               size: 16,
               weight: "bold",
@@ -227,9 +227,9 @@
         "+" + (10 + Math.random() * 3).toFixed(1) + "%";
 
       const summaryHTML = `
-        <p>Newborn Care services have shown consistent growth with an 11.7% increase in total checkups compared to the previous year. This reflects improved healthcare access and increased awareness of newborn care importance.</p>
+        <p>Newborn and Infant Care services have shown consistent growth with an 11.7% increase in total checkups compared to the previous year. This reflects improved healthcare access and increased awareness of newborn and infant care importance.</p>
         <p>The healthy birth rate has improved to ${stats.healthyRate}%, showing a 0.7% increase from the previous year. This improvement is attributed to better prenatal care and maternal health programs. The initial vaccination rate for newborns has also increased to ${stats.vaccinationRate}%.</p>
-        <p>Normal birth weight rates have increased by 0.9% to ${stats.weightTrend}%, indicating improved maternal nutrition and prenatal care. The most common weight range is 2.9-3.4 kg, which falls within the healthy range for newborns. Our early intervention programs continue to show positive results in overall newborn health outcomes.</p>
+        <p>Normal birth weight rates have increased by 0.9% to ${stats.weightTrend}%, indicating improved maternal nutrition and prenatal care. The most common weight range is 2.9-3.4 kg, which falls within the healthy range for newborns. Our early intervention programs continue to show positive results in overall newborn and infant health outcomes.</p>
       `;
 
       summaryElement.innerHTML = summaryHTML;
