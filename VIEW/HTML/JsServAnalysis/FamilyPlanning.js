@@ -1,6 +1,20 @@
 // Family Planning Module JavaScript
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Family Planning module loaded");
+// Use a module pattern to prevent multiple initializations
+(function () {
+  // Check if already initialized
+  if (window.familyPlanningModuleInitialized) {
+    console.log("Family Planning module already initialized, skipping");
+    return;
+  }
+
+  window.familyPlanningModuleInitialized = true;
+  console.log("Family Planning module loading (first time)");
+
+  // Clear any previous content to prevent duplication
+  const fpSummaryElement = document.querySelector(".fp-summary");
+  if (fpSummaryElement) {
+    fpSummaryElement.innerHTML = "";
+  }
 
   // Generate random data for the family planning stats
   function generateRandomFPStats() {
@@ -62,6 +76,64 @@ document.addEventListener("DOMContentLoaded", function () {
     consultationData.push(Math.round(baseValue + Math.random() * 40));
   }
 
+  // Create chart
+  const chartElement = document.getElementById("familyPlanningChart");
+  if (chartElement && typeof Chart !== "undefined" && !chartElement.chart) {
+    const ctx = chartElement.getContext("2d");
+
+    // Store the chart instance on the element to prevent double initialization
+    chartElement.chart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: "Monthly Consultations",
+            data: consultationData,
+            backgroundColor: "rgba(37, 99, 235, 0.7)",
+            borderColor: "rgba(37, 99, 235, 1)",
+            borderWidth: 1,
+            borderRadius: 5,
+            maxBarThickness: 35,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: {
+            display: true,
+            text: "Family Planning Consultations - Monthly Trend",
+            font: {
+              size: 16,
+              weight: "bold",
+            },
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: "Number of Consultations",
+            },
+          },
+          x: {
+            title: {
+              display: true,
+              text: "Month",
+            },
+          },
+        },
+      },
+    });
+  }
+
   // Update summary text based on generated data
   function updateSummaryText(stats) {
     const summaryElement = document.querySelector(".fp-summary");
@@ -70,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "+" + (10 + Math.random() * 5).toFixed(1) + "%";
 
       const summaryHTML = `
-        <p>The Family Planning services have shown consistent growth over the past 12 months, with a ${yearOverYearChange} increase in total consultations compared to the previous year. The most popular methods continue to be hormonal contraceptives (42%) and barrier methods (28%).</p>
+        <p>The Family Planning services have shown consistent growth over the past 12 months, with a ${yearOverYearChange} increase in total consultations compared to the previous year.</p>
         <p>Patient satisfaction has improved, with satisfaction rates increasing from 88% to 93%. The error rate in service delivery has decreased to ${stats.errorRate}%, indicating improved quality control measures.</p>
         <p>Based on current trends, we predict a ${stats.prediction} increase in service utilization for the coming month, with continued growth expected in the 18-35 age demographic. This growth will require proportional resource allocation to maintain service quality.</p>
       `;
@@ -81,4 +153,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Update summary with our generated stats
   updateSummaryText(fpStats);
-});
+})();

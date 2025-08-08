@@ -1,6 +1,20 @@
 // Immunization Module JavaScript
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("Immunization module loaded");
+// Use a module pattern to prevent multiple initializations
+(function () {
+  // Check if already initialized
+  if (window.immunizationModuleInitialized) {
+    console.log("Immunization module already initialized, skipping");
+    return;
+  }
+
+  window.immunizationModuleInitialized = true;
+  console.log("Immunization module loading (first time)");
+
+  // Clear any previous content to prevent duplication
+  const immSummaryElement = document.querySelector(".imm-summary");
+  if (immSummaryElement) {
+    immSummaryElement.innerHTML = "";
+  }
 
   // Generate random data for the immunization stats
   function generateRandomImmStats() {
@@ -80,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "+" + (12 + Math.random() * 6).toFixed(1) + "%";
 
       const summaryHTML = `
-        <p>Immunization services have demonstrated strong growth with a ${yearOverYearChange} increase in total vaccinations administered compared to the previous year. Childhood vaccinations remain the largest segment (68%), followed by adult vaccinations (22%) and specialized immunizations (10%).</p>
+        <p>Immunization services have demonstrated strong growth with a ${yearOverYearChange} increase in total vaccinations administered compared to the previous year.</p>
         <p>The error rate in vaccine administration has decreased to ${stats.errorRate}%, indicating improved training and protocol adherence. The confidence rate in data accuracy has increased to ${stats.confidenceRate}%, providing a reliable foundation for predictive analytics.</p>
         <p>Based on current trends and seasonal patterns, we predict a ${stats.prediction} increase in vaccination demand for the coming month. This increase coincides with the start of the school year and seasonal vaccine campaigns.</p>
       `;
@@ -92,33 +106,74 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update summary with our generated stats
   updateSummaryText(immStats);
 
-  // Vaccine type distribution data
-  const vaccineTypes = [
-    { name: "Childhood Vaccines", percentage: 68 },
-    { name: "Adult Vaccines", percentage: 22 },
-    { name: "Specialized Vaccines", percentage: 5 },
-    { name: "Seasonal Vaccines", percentage: 3 },
-    { name: "Others", percentage: 2 },
-  ];
+  // Create trend visualization
+  const chartElement = document.getElementById("imm-trend-chart");
+  if (chartElement && typeof Chart !== "undefined" && !chartElement.chart) {
+    const ctx = chartElement.getContext("2d");
 
-  // Potentially display the distribution data if we have elements for it
-  const vaccineDistributionElement = document.getElementById(
-    "vaccine-distribution"
-  );
-  if (vaccineDistributionElement) {
-    let distributionHTML = "";
+    // Create a trend dataset for year-over-year comparison
+    const lastYearData = vaccinationData.map((value) =>
+      Math.round(value * 0.85)
+    );
 
-    vaccineTypes.forEach((type, index) => {
-      const opacity = 0.8 - index * 0.15;
-      distributionHTML += `
-        <div class="imm-vaccine-type">
-          <div class="imm-vaccine-type-dot" style="background-color: rgba(37, 99, 235, ${opacity})"></div>
-          <span class="imm-vaccine-type-name">${type.name}</span>
-          <span class="imm-vaccine-type-value">${type.percentage}%</span>
-        </div>
-      `;
+    // Store the chart instance on the element to prevent double initialization
+    chartElement.chart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: "Current Year",
+            data: vaccinationData,
+            borderColor: "#2563eb",
+            backgroundColor: "rgba(37, 99, 235, 0.1)",
+            tension: 0.4,
+            fill: true,
+          },
+          {
+            label: "Previous Year",
+            data: lastYearData,
+            borderColor: "#64748b",
+            backgroundColor: "rgba(100, 116, 139, 0.05)",
+            tension: 0.4,
+            borderDash: [5, 5],
+            fill: false,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          title: {
+            display: true,
+            text: "Immunization Trend - Year-over-Year Comparison",
+            font: {
+              size: 16,
+              weight: "bold",
+            },
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+          },
+        },
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: "Number of Vaccinations",
+            },
+          },
+          x: {
+            title: {
+              display: true,
+              text: "Month",
+            },
+          },
+        },
+      },
     });
-
-    vaccineDistributionElement.innerHTML = distributionHTML;
   }
-});
+})();

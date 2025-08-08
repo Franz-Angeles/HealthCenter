@@ -63,27 +63,3 @@
   border-radius: 0.5rem;
   margin-right: 1rem;
 }
-
-.imm-vaccine-type {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.imm-vaccine-type-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 0.5rem;
-}
-
-.imm-vaccine-type-name {
-  font-size: 0.875rem;
-  color: #4b5563;
-}
-
-.imm-vaccine-type-value {
-  margin-left: auto;
-  font-weight: 500;
-  color: #2563eb;
-}
