@@ -27,11 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             label: "Family Planning Consultations",
             data: [65, 59, 80, 81, 76, 85, 90, 95, 87, 92, 98, 105],
-            borderColor: "rgba(59, 130, 246, 1)", // blue-500
-            backgroundColor: "rgba(59, 130, 246, 0.1)",
+            borderColor: "rgba(37, 99, 235, 1)", // #2563EB
+            backgroundColor: "rgba(37, 99, 235, 0.1)",
             tension: 0.4,
             fill: true,
-            pointBackgroundColor: "rgba(59, 130, 246, 1)",
+            pointBackgroundColor: "rgba(37, 99, 235, 1)",
             pointBorderColor: "#fff",
             pointRadius: 5,
             pointHoverRadius: 7,
@@ -428,8 +428,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Show overview section by default
-  showSection("overview");
+  // Show family-planning section by default if it exists
+  const fpSection = document.getElementById("family-planning-section");
+  if (fpSection) {
+    showSection("family-planning");
+  } else {
+    // Fallback to overview section
+    showSection("overview");
+  }
 
   // Check if buttons exist
   const openModalBtn = document.getElementById("openModal");

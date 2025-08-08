@@ -7,6 +7,8 @@
     <link href="../SRC/output.css" rel="stylesheet" />
     <link href="../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../HTML/CssServAnalysis/FamilyPlanning.css" />
+    <link rel="stylesheet" href="../HTML/CssServAnalysis/Immunization.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
@@ -183,6 +185,20 @@
             >
               Service Usage
             </button>
+            
+            <button
+              class="analytics-nav-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-200"
+              data-section="family-planning"
+            >
+              Family Planning
+            </button>
+            
+            <button
+              class="analytics-nav-btn px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium transition-all duration-300 hover:bg-gray-200"
+              data-section="immunization"
+            >
+              Immunization
+            </button>
           </div>
 
           <!-- Mobile view mode selector removed -->
@@ -244,6 +260,52 @@
                 ></path>
               </svg>
               <span>Service Usage Trends</span>
+            </div>
+          </button>
+          
+          <!-- Family Planning Button -->
+          <button
+            class="analytics-nav-btn px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold transition-all duration-300 hover:bg-gray-200 transform hover:scale-105 shadow-sm"
+            data-section="family-planning"
+          >
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                ></path>
+              </svg>
+              <span>Family Planning</span>
+            </div>
+          </button>
+          
+          <!-- Immunization Button -->
+          <button
+            class="analytics-nav-btn px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-semibold transition-all duration-300 hover:bg-gray-200 transform hover:scale-105 shadow-sm"
+            data-section="immunization"
+          >
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+                ></path>
+              </svg>
+              <span>Immunization</span>
             </div>
           </button>
 
@@ -344,8 +406,254 @@
       </div>
     </div>
 
+    <!-- Family Planning Section -->
+    <div id="family-planning-section" class="analytics-section hidden ml-[250px] px-6 pb-12">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Family Planning Analytics</h2>
+        <p class="text-gray-600">Comprehensive analysis of family planning services and utilization</p>
+      </div>
+      
+      <!-- Stats Cards Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+        <!-- Total Numbers Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Total Consultations</h3>
+              <p class="text-2xl font-bold text-gray-800" id="fp-total-count">3,428</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <span class="text-green-600 font-medium">+12.5%</span> from previous year
+            </span>
+          </div>
+        </div>
+        
+        <!-- Error Rate Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Error Rate</h3>
+              <p class="text-2xl font-bold text-gray-800" id="fp-error-rate">2.3%</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <span class="text-green-600 font-medium">-0.8%</span> from previous year
+            </span>
+          </div>
+        </div>
+        
+        <!-- Confidence Rate Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Confidence Rate</h3>
+              <p class="text-2xl font-bold text-gray-800" id="fp-confidence-rate">95.2%</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <span class="text-green-600 font-medium">+2.1%</span> from previous year
+            </span>
+          </div>
+        </div>
+        
+        <!-- Prediction Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Next Month Prediction</h3>
+              <p class="text-2xl font-bold text-gray-800" id="fp-prediction">+8.7%</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Based on 12-month trend analysis</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Charts Row -->
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
+        <!-- Main Chart -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-4">Family Planning Consultations</h3>
+          <div class="h-96">
+            <canvas id="familyPlanningChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Service Type Distribution -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-4">Service Type Distribution</h3>
+          <div class="h-96">
+            <canvas id="fpDistributionChart"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Summary Section -->
+      <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 mb-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-4">Summary Analysis</h3>
+        <div class="prose max-w-none">
+          <p class="text-gray-700">The Family Planning services have shown consistent growth over the past 12 months, with a 12.5% increase in total consultations compared to the previous year. The most popular methods continue to be hormonal contraceptives (42%) and barrier methods (28%).</p>
+          <p class="text-gray-700 mt-4">Patient satisfaction has improved, with satisfaction rates increasing from 88% to 93%. The error rate in service delivery has decreased by 0.8 percentage points, indicating improved quality control measures.</p>
+          <p class="text-gray-700 mt-4">Based on current trends, we predict an 8.7% increase in service utilization for the coming month, with continued growth expected in the 18-35 age demographic. This growth will require proportional resource allocation to maintain service quality.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Immunization Section -->
+    <div id="immunization-section" class="analytics-section hidden ml-[250px] px-6 pb-12">
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Immunization Analytics</h2>
+        <p class="text-gray-600">Comprehensive analysis of immunization services and coverage rates</p>
+      </div>
+      
+      <!-- Stats Cards Row -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+        <!-- Total Numbers Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Total Vaccinations</h3>
+              <p class="text-2xl font-bold text-gray-800" id="imm-total-count">5,842</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <span class="text-green-600 font-medium">+15.3%</span> from previous year
+            </span>
+          </div>
+        </div>
+        
+        <!-- Error Rate Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Error Rate</h3>
+              <p class="text-2xl font-bold text-gray-800" id="imm-error-rate">1.8%</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <span class="text-green-600 font-medium">-0.5%</span> from previous year
+            </span>
+          </div>
+        </div>
+        
+        <!-- Confidence Rate Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Confidence Rate</h3>
+              <p class="text-2xl font-bold text-gray-800" id="imm-confidence-rate">97.5%</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">
+              <span class="text-green-600 font-medium">+1.7%</span> from previous year
+            </span>
+          </div>
+        </div>
+        
+        <!-- Prediction Card -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <div class="flex items-center mb-4">
+            <div class="p-3 rounded-lg bg-blue-50 mr-4">
+              <svg class="w-8 h-8 text-[#2563EB]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-sm font-medium text-gray-500">Next Month Prediction</h3>
+              <p class="text-2xl font-bold text-gray-800" id="imm-prediction">+9.5%</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <span class="text-sm text-gray-500">Based on 12-month trend analysis</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Charts Row -->
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
+        <!-- Main Chart -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-4">Immunization Trends</h3>
+          <div class="h-96">
+            <canvas id="immunizationChart"></canvas>
+          </div>
+        </div>
+        
+        <!-- Vaccine Type Distribution -->
+        <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100">
+          <h3 class="text-lg font-bold text-gray-800 mb-4">Vaccine Type Distribution</h3>
+          <div class="h-96">
+            <canvas id="immDistributionChart"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Summary Section -->
+      <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 mb-8">
+        <h3 class="text-lg font-bold text-gray-800 mb-4">Summary Analysis</h3>
+        <div class="prose max-w-none">
+          <p class="text-gray-700">Immunization services have demonstrated strong growth with a 15.3% increase in total vaccinations administered compared to the previous year. Childhood vaccinations remain the largest segment (68%), followed by adult vaccinations (22%) and specialized immunizations (10%).</p>
+          <p class="text-gray-700 mt-4">The error rate in vaccine administration has decreased by 0.5 percentage points, indicating improved training and protocol adherence. The confidence rate in data accuracy has increased to 97.5%, providing a reliable foundation for predictive analytics.</p>
+          <p class="text-gray-700 mt-4">Based on current trends and seasonal patterns, we predict a 9.5% increase in vaccination demand for the coming month. This increase coincides with the start of the school year and seasonal vaccine campaigns.</p>
+        </div>
+      </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="../JAVASCRIPT/navigation.js"></script>
     <script src="../JAVASCRIPT/Dashboard.js"></script>
+    <script src="../HTML/JsServAnalysis/FamilyPlanning.js"></script>
+    <script src="../HTML/JsServAnalysis/Immunization.js"></script>
   </body>
 </html>
