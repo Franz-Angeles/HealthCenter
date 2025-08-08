@@ -15,7 +15,7 @@
     <!-- MAIN NAV BAR -->
     <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
       <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
-        <a href="../HTML/LandingP.html" class="flex-shrink-0">
+        <a href="../LandingP.html" class="flex-shrink-0">
           <img
             class="h-[50px] mr-[10px]"
             src="../../SRC/IMG/bucallogonobg.png"
@@ -85,11 +85,6 @@
             >
             <hr />
             <a
-              href="../HTML/Dashboard.html"
-              class="dropdown-link active block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Analytics</a
-            >
-            <a
               href="../HTML/AdminSpotMap.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Barangay Spot Map</a
@@ -126,11 +121,6 @@
       <!-- top-[72px] assumes navbar height ~72px -->
       <div class="flex flex-col p-4 font-semibold">
         <a
-          href="../../HTML/Dashboard.html"
-          class="sidebar-link active mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
-          >Analytics</a
-        >
-        <a
           href="../../HTML/AdminSpotMap.html"
           class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
           >Barangay Spot Map</a
@@ -163,10 +153,90 @@
       <!-- Main Content Section with sidebar offset -->
       <div class="md:ml-[250px] px-6 pb-12 mt-6">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold text-gray-800 mb-2">
-            Newborn and Infants Analytics
-          </h2>
-          <p class="text-gray-600">Immunization</p>
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800 mb-2">
+                Newborn and Infants Analytics
+              </h2>
+              <p class="text-gray-600">Immunization</p>
+            </div>
+            <div class="module-nav-container relative">
+              <button
+                class="module-nav-toggle px-4 py-2 bg-blue-600 text-white rounded-lg flex items-center hover:bg-blue-700 transition-all duration-300 shadow-md"
+              >
+                <span class="mr-2">Module Navigation</span>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div
+                class="module-nav-dropdown hidden absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-lg z-50 overflow-hidden transform transition-all duration-200 ease-in-out opacity-0 scale-95"
+              >
+                <div class="p-2">
+                  <a
+                    href="FamilyPlanning.html"
+                    class="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg mb-1 transition-all duration-200"
+                  >
+                    <div class="font-semibold">Family Planning</div>
+                    <div class="text-xs text-gray-500">
+                      Family planning method given
+                    </div>
+                  </a>
+                  <a
+                    href="MaternalCare.html"
+                    class="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg mb-1 transition-all duration-200"
+                  >
+                    <div class="font-semibold">Maternal Care</div>
+                    <div class="text-xs text-gray-500">
+                      Prenatal and pregnancy
+                    </div>
+                  </a>
+                  <a
+                    href="NewBorn.html"
+                    class="block px-4 py-3 text-gray-800 bg-blue-100 rounded-lg mb-1 transition-all duration-200"
+                  >
+                    <div class="font-semibold">Newborn & Infants</div>
+                    <div class="text-xs text-gray-500">Immunization</div>
+                  </a>
+                  <a
+                    href="PostPartum.html"
+                    class="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg mb-1 transition-all duration-200"
+                  >
+                    <div class="font-semibold">Postpartum</div>
+                    <div class="text-xs text-gray-500">Postpartum care</div>
+                  </a>
+                  <a
+                    href="RiskAssessments.html"
+                    class="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg mb-1 transition-all duration-200"
+                  >
+                    <div class="font-semibold">Risk Assessments</div>
+                    <div class="text-xs text-gray-500">
+                      Risk assessments for adults 20+
+                    </div>
+                  </a>
+                  <a
+                    href="SeniorCitizenVaccinations.html"
+                    class="block px-4 py-3 text-gray-800 hover:bg-blue-50 rounded-lg mb-1 transition-all duration-200"
+                  >
+                    <div class="font-semibold">Senior Citizen Vaccinations</div>
+                    <div class="text-xs text-gray-500">
+                      Flu and Anti Pneumonia
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Year selector button -->
@@ -481,6 +551,7 @@
 
     <!-- JavaScript -->
     <script src="../../JAVASCRIPT/navigation.js"></script>
+    <script src="../../JAVASCRIPT/moduleNavigation.js"></script>
     <script src="../JsServAnalysis/NewBorn.js"></script>
     <script>
       // Date picker modal functionality
