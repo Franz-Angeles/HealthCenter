@@ -82,31 +82,6 @@
 .mods:hover {
   border-bottom: 2px solid rgba(128, 128, 128, 0.418);
 }
-@media (min-width: 1360px) {
-  .first2box {
-    width: 550px;
-  }
-}
-@media (min-width: 1444px) {
-  .first2box {
-    width: 590px;
-  }
-}
-@media (min-width: 1690px) {
-  #first2boxholder {
-    left: 400px;
-  }
-
-  #radyoboton {
-    margin-left: 390px !important;
-  }
-}
-
-@media (min-width: 2650px) {
-  #first2boxholder {
-    left: 720px;
-  }
-}
 
 @media (min-width: 1444px) {
   #secondbox {
