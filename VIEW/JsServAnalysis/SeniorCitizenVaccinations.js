@@ -3,10 +3,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Trend Chart Configuration
   const trendChartCanvas = document.getElementById("scv-trend-chart");
-  
+
   if (trendChartCanvas) {
     const ctx = trendChartCanvas.getContext("2d");
-    
+
     // Sample data - Monthly vaccinations administered
     const data = {
       labels: [
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
           borderWidth: 2,
           tension: 0.3,
           fill: true,
-        }
+        },
       ],
     };
 
@@ -93,7 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 return tooltipItems[0].label + " 2025";
               },
               label: function (context) {
-                return context.dataset.label + ": " + context.raw + " vaccinations";
+                return (
+                  context.dataset.label + ": " + context.raw + " vaccinations"
+                );
               },
             },
           },
@@ -129,11 +131,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Vaccine Type Distribution Chart
-  const vaccineTypeChartCanvas = document.getElementById("scv-vaccine-type-chart");
-  
+  const vaccineTypeChartCanvas = document.getElementById(
+    "scv-vaccine-type-chart"
+  );
+
   if (vaccineTypeChartCanvas) {
     const ctx = vaccineTypeChartCanvas.getContext("2d");
-    
+
     // Sample data - Vaccine type distribution
     const data = {
       labels: [
@@ -142,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "COVID-19 Booster",
         "Shingles",
         "Tetanus/Diphtheria",
-        "Other"
+        "Other",
       ],
       datasets: [
         {
@@ -218,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // This function would update the charts and stats based on the selected year
     // For demonstration, we'll just log the selected year
     console.log("Data updated for year: " + year);
-    
+
     // In a real implementation, you would fetch data for the specific year
     // and update the charts and statistics accordingly
   }
@@ -226,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Hook up year selection to the confirmation button
   const confirmDateBtn = document.getElementById("confirmDate");
   if (confirmDateBtn) {
-    confirmDateBtn.addEventListener("click", function() {
+    confirmDateBtn.addEventListener("click", function () {
       const yearSelect = document.getElementById("yearSelect");
       if (yearSelect && yearSelect.value) {
         updateDataForYear(yearSelect.value);
