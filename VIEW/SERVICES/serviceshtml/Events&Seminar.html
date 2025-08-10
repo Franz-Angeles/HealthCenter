@@ -14,6 +14,13 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Rotate animation for dropdown arrows */
+      .rotate-180 {
+        transform: rotate(180deg);
+        transition: transform 0.2s ease;
+      }
+    </style>
   </head>
   <body>
     <!-- MAIN NAV BAR -->
@@ -39,9 +46,34 @@
           >
             Home</a
           >
-          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
-            >Services</a
-          >
+          <div class="relative" id="servicesDropdown">
+            <a
+              href="#"
+              class="text-gray-700 hover:text-blue-600 mx-[20px]"
+              id="servicesDropdownBtn"
+              >Services</a
+            >
+            <div
+              id="servicesDropdownContent"
+              class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+            >
+              <a
+                href="../serviceshtml/Spotmap.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Barangay Spot Map</a
+              >
+              <a
+                href="../serviceshtml/Events&Seminar.html"
+                class="block px-4 py-4 text-blue-600 hover:bg-gray-100"
+                >Events & Seminars</a
+              >
+              <a
+                href="../serviceshtml/HealthProgram.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Health Programs</a
+              >
+            </div>
+          </div>
           <a
             href="../../HTML/ProfileSettings.html"
             class="block text-gray-700 hover:text-blue-600 mx-[20px]"
@@ -78,46 +110,53 @@
               >Home</a
             >
             <hr />
-            <a href="#" class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-              >Services</a
-            >
-            <hr />
             <a
               href="../../HTML/ProfileSettings.html"
               class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
               >Profile</a
             >
             <hr />
-            <a
-              href="../../HTML/HtmlServAnalysis/FamilyPlanning.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Analytics</a
-            >
-            <a
-              href="../../HTML/AdminSpotMap.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Barangay Spot Map</a
-            >
-            <a
-              href="../../HTML/SeasonalityExplorer.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Seasonality Explorer</a
-            >
-            <a
-              href="../../SERVICES/serviceshtml/UserManagement.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Account Management</a
-            >
-            <a
-              href="../../SERVICES/serviceshtml/Logs.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >System Logs</a
-            >
-            <a
-              href="../../HTML/AdminEvents.html"
-              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
-              >Events Management</a
-            >
+
+            <!-- Services Section -->
+            <div class="px-4 py-3">
+              <button
+                id="mobileServicesBtn"
+                class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
+              >
+                <span>Services</span>
+                <svg
+                  id="servicesArrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="mobileServicesContent" class="mt-2 ml-4 hidden">
+                <a
+                  href="../serviceshtml/Spotmap.html"
+                  class="block pt-6 pb-4 text-gray-700 hover:text-blue-600"
+                  >Barangay Spot Map</a
+                >
+                <a
+                  href="../serviceshtml/Events&Seminar.html"
+                  class="block pt-6 pb-4 text-blue-600 hover:text-blue-700 font-semibold"
+                  >Events & Seminars</a
+                >
+                <a
+                  href="../serviceshtml/HealthProgram.html"
+                  class="block pt-6 pb-4 text-gray-700 hover:text-blue-600"
+                  >Health Programs</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -383,6 +422,7 @@
     </div>
 
     <script src="../../JAVASCRIPT/navigation.js"></script>
+    <script src="../../JAVASCRIPT/serviceDropdown.js"></script>
     <script src="../servicesjs/Events&Seminar.js"></script>
   </body>
 </html>

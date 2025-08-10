@@ -1,7 +1,32 @@
-/* Navigation Bar and Sidebar Styles */
+/* Navigation Bar and Sidebar Style# dropdown-menu {
+  transition: transform 0.3s ease, opacity 0.2s ease;
+  transform-origin: top;
+}
 
-/* Body background override */
-body {
+#dropdown-menu.scale-y-0 {
+  transform: scaleY(0);
+}
+
+#dropdown-menu.scale-y-100 {
+  transform: scaleY(1);
+}
+
+/* Services Desktop Dropdown Menu */
+.relative.group .absolute {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform-origin: top;
+  pointer-events: none;
+}
+
+.relative.group:hover .absolute {
+  pointer-events: auto;
+}
+
+/* Services Mobile Submenu */
+.pl-4.bg-gray-50 {
+  display: none; /* Hidden by default, shown on click */
+}
+ody background override */ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   margin: 0;

@@ -76,28 +76,23 @@
               >
               <div
                 id="servicesDropdownContent"
-                class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+                class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden"
               >
-                <a
-                  href="../SERVICES/serviceshtml/Events&Seminar.html"
-                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                  >Events & Seminars</a
-                >
                 <a
                   href="../SERVICES/serviceshtml/Spotmap.html"
                   class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
                   >Barangay Spot Map</a
                 >
                 <a
+                  href="../SERVICES/serviceshtml/Events&Seminar.html"
+                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                  >Events & Seminars</a
+                >
+
+                <a
                   href="../SERVICES/serviceshtml/HealthProgram.html"
                   class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
                   >Health Programs</a
-                >
-                <a
-                  href="#services"
-                  onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
-                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                  >All Services</a
                 >
               </div>
             </div>
@@ -188,65 +183,19 @@
           <div class="py-4 px-2 font-semibold">
             <a
               href="../HTML/LandingP.html"
-              class="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg"
+              class="block px-4 py-4 text-gray-700 hover:bg-gray-100 rounded-lg"
               >Home</a
             >
             <a
               href="#"
               onclick="document.querySelector('section:nth-of-type(3)').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobileSidebar').classList.add('translate-x-full'); document.getElementById('sidebarOverlay').classList.add('hidden');"
-              class="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg"
+              class="block px-4 py-4 text-gray-700 hover:bg-gray-100 rounded-lg"
               >About</a
             >
 
-            <!-- Services Section -->
-            <div class="px-4 py-3">
-              <button
-                id="mobileServicesBtn"
-                class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
-              >
-                <span>Services</span>
-                <svg
-                  id="servicesArrow"
-                  class="w-4 h-4 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              <div id="mobileServicesContent" class="mt-2 ml-4 hidden">
-                <a
-                  href="../SERVICES/serviceshtml/Events&Seminar.html"
-                  class="block py-2 text-gray-700 hover:text-blue-600"
-                  >Events & Seminars</a
-                >
-                <a
-                  href="../SERVICES/serviceshtml/Spotmap.html"
-                  class="block py-2 text-gray-700 hover:text-blue-600"
-                  >Barangay Spot Map</a
-                >
-                <a
-                  href="../SERVICES/serviceshtml/HealthProgram.html"
-                  class="block py-2 text-gray-700 hover:text-blue-600"
-                  >Health Programs</a
-                >
-                <a
-                  href="#services"
-                  onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobileSidebar').classList.add('translate-x-full'); document.getElementById('sidebarOverlay').classList.add('hidden');"
-                  class="block py-2 text-gray-700 hover:text-blue-600"
-                  >All Services</a
-                >
-              </div>
-            </div>
-
+           
             <!-- Profile Section -->
-            <div class="px-4 py-3">
+            <div class="px-4 py-4">
               <button
                 id="mobileProfileBtn"
                 class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
@@ -270,22 +219,63 @@
               <div id="mobileProfileContent" class="mt-2 ml-4 hidden">
                 <a
                   href="../HTML/HtmlServAnalysis/FamilyPlanning.html"
-                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  class="block py-5 text-gray-700 hover:text-blue-600"
                   >Dashboard</a
                 >
                 <a
                   href="../HTML/ProfileSettings.html"
-                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  class="block py-5 text-gray-700 hover:text-blue-600"
                   >Settings</a
                 >
-                <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+                <a href="#" class="block py-5 text-gray-700 hover:text-blue-600"
                   >Preferences</a
                 >
-                <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+                <a href="#" class="block py-5 text-gray-700 hover:text-blue-600"
                   >Logout</a
                 >
               </div>
             </div>
+             <!-- Services Section -->
+            <div class="px-4 py-4">
+              <button
+                id="mobileServicesBtn"
+                class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
+              >
+                <span>Services</span>
+                <svg
+                  id="servicesArrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="mobileServicesContent" class="mt-2 ml-4 hidden">
+                <a
+                  href="../SERVICES/serviceshtml/Spotmap.html"
+                  class="block py-5 text-gray-700 hover:text-blue-600"
+                  >Barangay Spot Map</a
+                >
+                <a
+                  href="../SERVICES/serviceshtml/Events&Seminar.html"
+                  class="block py-5 text-gray-700 hover:text-blue-600"
+                  >Events & Seminars</a
+                >
+                <a
+                  href="../SERVICES/serviceshtml/HealthProgram.html"
+                  class="block py-5 text-gray-700 hover:text-blue-600"
+                  >Health Programs</a
+                >
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -322,7 +312,7 @@
       >
         <!-- Main Hero Card -->
         <div
-          class="bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 max-w-5xl mx-auto transform hover:scale-105 transition-all duration-500"
+          class="mt-[100px] bg-white/90 backdrop-blur-lg rounded-3xl shadow-2xl p-8 md:p-12 max-w-5xl mx-auto transform hover:scale-105 transition-all duration-500"
         >
           <!-- Logo and Title -->
           <div
@@ -397,19 +387,7 @@
           </div>
         </div>
 
-        <!-- Scroll Indicator -->
-        <div
-          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-        >
-          <div
-            class="w-8 h-12 border-2 border-gray-400 rounded-full flex justify-center"
-          >
-            <div
-              class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"
-            ></div>
-          </div>
-        </div>
-      </div>
+
     </section>
 
     <!-- MISSION & VISION SECTION -->

@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("menu-button");
   const dropdown = document.getElementById("dropdown-menu");
 
+  // Initialize services submenus (hide them initially)
+  const servicesSubmenus = document.querySelectorAll(".pl-4.bg-gray-50");
+  servicesSubmenus.forEach((submenu) => {
+    submenu.style.display = "none";
+  });
+
   let isOpen = false;
 
   if (button && dropdown) {
@@ -137,36 +143,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Handle Services link (placeholder functionality)
-  const servicesLinks = document.querySelectorAll('a[href="#"]');
-  servicesLinks.forEach((link) => {
-    if (link.textContent.trim() === "Services") {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        // You can add custom functionality here for the Services link
-        console.log("Services section - Add custom functionality here");
+  // Skip this section if we're in a service page that has its own services dropdown
+  if (
+    !document.getElementById("servicesDropdown") &&
+    !document.getElementById("mobileServicesBtn")
+  ) {
+    const servicesLinks = document.querySelectorAll('a[href="#"]');
+    servicesLinks.forEach((link) => {
+      if (link.textContent.trim().includes("Services")) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
 
-        // Example: Show a tooltip or modal
-        const tooltip = document.createElement("div");
-        tooltip.textContent = "Services section coming soon!";
-        tooltip.style.cssText = `
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: #3b82f6;
-          color: white;
-          padding: 12px 24px;
-          border-radius: 8px;
-          z-index: 1000;
-          font-weight: 500;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        `;
-        document.body.appendChild(tooltip);
-
-        setTimeout(() => {
-          tooltip.remove();
-        }, 2000);
-      });
-    }
-  });
+          // For mobile view, toggle submenu visibility
+          if (window.innerWidth < 768) {
+            const nextElement = this.nextElementSibling;
+            if (nextElement && nextElement.classList.contains("pl-4")) {
+              if (
+                nextElement.style.display === "none" ||
+                !nextElement.style.display
+              ) {
+                nextElement.style.display = "block";
+                this.classList.add("text-blue-600");
+              } else {
+                nextElement.style.display = "none";
+                this.classList.remove("text-blue-600");
+              }
+            }
+          }
+        });
+      }
+    });
+  }
 });
