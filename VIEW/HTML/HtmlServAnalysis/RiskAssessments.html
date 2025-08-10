@@ -254,7 +254,9 @@
         <div class="mb-6 flex space-x-4">
           <div class="relative inline-block">
             <div class="flex items-center">
-              <div class="flex items-center justify-center w-8 h-8 bg-[#2563EB] rounded-lg mr-3">
+              <div
+                class="flex items-center justify-center w-8 h-8 bg-[#2563EB] rounded-lg mr-3"
+              >
                 <svg
                   class="w-5 h-5 text-white"
                   fill="none"
@@ -281,24 +283,26 @@
               </select>
             </div>
           </div>
-          
+
           <!-- Export Report Button -->
           <div class="relative inline-block">
             <button
               id="exportReportBtn"
               class="flex items-center px-5 py-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105 shadow-lg"
             >
-              <div class="flex items-center justify-center w-8 h-8 bg-white/20 rounded-lg mr-3">
-                <svg 
-                  class="w-5 h-5 text-white" 
-                  fill="none" 
-                  stroke="currentColor" 
+              <div
+                class="flex items-center justify-center w-8 h-8 bg-white/20 rounded-lg mr-3"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round" 
-                    stroke-width="2" 
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
                     d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                   />
                 </svg>
@@ -556,7 +560,11 @@
         <div class="space-y-6">
           <!-- Format Selection -->
           <div>
-            <label for="exportFormat" class="block text-sm font-medium text-gray-700 mb-2">Format</label>
+            <label
+              for="exportFormat"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >Format</label
+            >
             <select
               id="exportFormat"
               class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50 text-md"
@@ -569,7 +577,11 @@
 
           <!-- Report Type Selection -->
           <div>
-            <label for="reportType" class="block text-sm font-medium text-gray-700 mb-2">Report Type</label>
+            <label
+              for="reportType"
+              class="block text-sm font-medium text-gray-700 mb-2"
+              >Report Type</label
+            >
             <select
               id="reportType"
               class="w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-green-500 focus:ring focus:ring-green-200 focus:ring-opacity-50 text-md"
@@ -580,7 +592,9 @@
               <option value="newborn-infant">Newborn & Infant</option>
               <option value="postpartum">Postpartum</option>
               <option value="risk-assessments">Risk Assessments</option>
-              <option value="senior-vaccination">Senior Citizen Vaccination</option>
+              <option value="senior-vaccination">
+                Senior Citizen Vaccination
+              </option>
             </select>
           </div>
         </div>
@@ -606,269 +620,6 @@
     <script src="../../JAVASCRIPT/navigation.js"></script>
     <script src="../../JAVASCRIPT/moduleNavigation.js"></script>
     <script src="../JsServAnalysis/RiskAssessments.js"></script>
-    <script>
-      // Year dropdown functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const yearSelect = document.getElementById("yearSelectDropdown");
-        
-        // Populate years
-        if (yearSelect) {
-          const currentYear = new Date().getFullYear();
-          // Add years from 5 years ago to 5 years in the future
-          for (let y = currentYear - 5; y <= currentYear + 5; y++) {
-            const option = document.createElement("option");
-            option.value = y;
-            option.textContent = y;
-            // Set current year as selected by default
-            if (y === currentYear) {
-              option.selected = true;
-            }
-            yearSelect.appendChild(option);
-          }
-          
-          // Add event listener for year selection
-          yearSelect.addEventListener("change", function() {
-            const selectedYear = this.value;
-            console.log("Selected year:", selectedYear);
-            // Add your logic to update data based on selected year here
-          });
-        }
-        
-        // Export Report Modal functionality
-        const exportBtn = document.getElementById("exportReportBtn");
-        const closeExportModalBtn = document.getElementById("closeExportModal");
-        const confirmExportBtn = document.getElementById("confirmExport");
-        const cancelExportBtn = document.getElementById("cancelExport");
-        const exportModal = document.getElementById("exportReportModal");
-        const reportTypeSelect = document.getElementById("reportType");
-        const exportFormatSelect = document.getElementById("exportFormat");
-
-        function openExportModal() {
-          exportModal.classList.remove("hidden");
-          exportModal.classList.add("flex");
-
-          // Force reflow
-          exportModal.offsetHeight;
-
-          setTimeout(() => {
-            exportModal.classList.add("show");
-            const modalContent = exportModal.querySelector(".modal-content");
-            if (modalContent) {
-              modalContent.style.transform = "scale(1)";
-              modalContent.style.opacity = "1";
-            }
-          }, 10);
-          document.body.style.overflow = "hidden"; // Prevent background scrolling
-        }
-
-        function closeExportModal() {
-          const modalContent = exportModal.querySelector(".modal-content");
-
-          exportModal.classList.remove("show");
-          if (modalContent) {
-            modalContent.style.transform = "scale(0.95)";
-            modalContent.style.opacity = "0";
-          }
-
-          setTimeout(() => {
-            exportModal.classList.add("hidden");
-            exportModal.classList.remove("flex");
-            document.body.style.overflow = ""; // Restore scrolling
-
-            // Reset modal content styles
-            if (modalContent) {
-              modalContent.style.transform = "";
-              modalContent.style.opacity = "";
-            }
-          }, 300);
-        }
-
-        if (exportBtn) {
-          exportBtn.addEventListener("click", openExportModal);
-        }
-
-        if (closeExportModalBtn) {
-          closeExportModalBtn.addEventListener("click", closeExportModal);
-        }
-
-        if (cancelExportBtn) {
-          cancelExportBtn.addEventListener("click", closeExportModal);
-        }
-
-        // Close modal when clicking outside
-        if (exportModal) {
-          exportModal.addEventListener("click", (e) => {
-            if (e.target === exportModal) {
-              closeExportModal();
-            }
-          });
-        }
-
-        // Close modal with Escape key
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            exportModal &&
-            !exportModal.classList.contains("hidden")
-          ) {
-            closeExportModal();
-          }
-        });
-
-        // Handle export confirmation
-        if (confirmExportBtn) {
-          confirmExportBtn.addEventListener("click", () => {
-            const reportType = reportTypeSelect.value;
-            const exportFormat = exportFormatSelect.value;
-            const year = yearSelect.value;
-            
-            console.log(`Exporting ${reportType} report in ${exportFormat} format for year ${year}`);
-            // Here you would implement the actual export functionality
-            
-            // For demonstration, show an alert
-            alert(`Report export initiated: ${reportType} (${exportFormat})`);
-            
-            closeExportModal();
-          });
-        }
-
-        // Set the default report type based on the current page
-        if (reportTypeSelect) {
-          // Get the current page from URL
-          const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
-          
-          if (currentPage === "FamilyPlanning") {
-            reportTypeSelect.value = "family-planning";
-          } else if (currentPage === "MaternalCare") {
-            reportTypeSelect.value = "maternal-care";
-          } else if (currentPage === "NewBorn") {
-            reportTypeSelect.value = "newborn-infant";
-          } else if (currentPage === "PostPartum") {
-            reportTypeSelect.value = "postpartum";
-          } else if (currentPage === "RiskAssessments") {
-            reportTypeSelect.value = "risk-assessments";
-          } else if (currentPage === "SeniorCitizenVaccinations") {
-            reportTypeSelect.value = "senior-vaccination";
-          }
-        }
-      });
-    </script>
-
-        function openModal() {
-          modal.classList.remove("hidden");
-          modal.classList.add("flex");
-
-          // Force reflow
-          modal.offsetHeight;
-
-          setTimeout(() => {
-            modal.classList.add("show");
-            const modalContent = modal.querySelector(".modal-content");
-            if (modalContent) {
-              modalContent.style.transform = "scale(1)";
-              modalContent.style.opacity = "1";
-            }
-          }, 10);
-          document.body.style.overflow = "hidden"; // Prevent background scrolling
-        }
-
-        function closeModal() {
-          const modalContent = modal.querySelector(".modal-content");
-
-          modal.classList.remove("show");
-          if (modalContent) {
-            modalContent.style.transform = "scale(0.95)";
-            modalContent.style.opacity = "0";
-          }
-
-          setTimeout(() => {
-            modal.classList.add("hidden");
-            modal.classList.remove("flex");
-            document.body.style.overflow = ""; // Restore scrolling
-
-            // Reset modal content styles
-            if (modalContent) {
-              modalContent.style.transform = "";
-              modalContent.style.opacity = "";
-            }
-          }, 300);
-        }
-
-        if (openModalBtn) {
-          openModalBtn.addEventListener("click", openModal);
-        }
-
-        if (closeModalBtn) {
-          closeModalBtn.addEventListener("click", closeModal);
-        }
-
-        if (cancelBtn) {
-          cancelBtn.addEventListener("click", closeModal);
-        }
-
-        // Close modal when clicking outside
-        if (modal) {
-          modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-              closeModal();
-            }
-          });
-        }
-
-        // Close modal with Escape key
-        document.addEventListener("keydown", (e) => {
-          if (
-            e.key === "Escape" &&
-            modal &&
-            !modal.classList.contains("hidden")
-          ) {
-            closeModal();
-          }
-        });
-
-        // If confirmBtn exists, add event listener for year selection
-        if (confirmBtn) {
-          confirmBtn.addEventListener("click", () => {
-            const yearValue = document.getElementById("yearSelect").value;
-
-            if (yearValue) {
-              // Update the button text
-              const selectTextDesktop =
-                document.getElementById("selecttextDesktop");
-
-              if (selectTextDesktop) {
-                selectTextDesktop.textContent = `Year: ${yearValue}`;
-                selectTextDesktop.classList.remove("mr-[5px]");
-              }
-
-              closeModal();
-            } else {
-              // Show error message if no year is selected
-              alert("Please select a year.");
-            }
-          });
-        }
-
-        // Date picker functionality - populate years
-        const yearSelect = document.getElementById("yearSelect");
-
-        // Populate years
-        if (yearSelect) {
-          const currentYear = new Date().getFullYear();
-          // Add years from 5 years ago to 5 years in the future
-          for (let y = currentYear - 5; y <= currentYear + 5; y++) {
-            const option = document.createElement("option");
-            option.value = y;
-            option.textContent = y;
-            // Set current year as selected by default
-            if (y === currentYear) {
-              option.selected = true;
-            }
-            yearSelect.appendChild(option);
-          }
-        }
-      });
-    </script>
+    <script></script>
   </body>
 </html>
-
