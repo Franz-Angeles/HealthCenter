@@ -7,7 +7,7 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: white;
   min-height: 100vh;
   color: #333;
   margin: 0;
@@ -22,8 +22,7 @@ body {
 
 /* Header Styles */
 .header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: white;
   border-radius: 15px;
   padding: 25px;
   margin-bottom: 30px;
@@ -445,8 +444,7 @@ body {
 
 /* Programs Feed */
 .programs-feed {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: white;
   border-radius: 15px;
   padding: 25px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -501,7 +499,7 @@ body {
 }
 
 .program-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  background: white;
   border-radius: 16px;
   padding: 25px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
@@ -522,22 +520,22 @@ body {
 .program-card.completed {
   border-left-color: #95a5a6;
   opacity: 0.95;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: white;
 }
 
 .program-card.ongoing {
   border-left-color: #f39c12;
-  background: linear-gradient(135deg, #fff8e1 0%, #fff3c4 100%);
+  background: white;
 }
 
 .program-card.upcoming {
   border-left-color: #3498db;
-  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+  background: white;
 }
 
 .program-card.registration-open {
   border-left-color: #9b59b6;
-  background: linear-gradient(135deg, #f8f5ff 0%, #f0e6ff 100%);
+  background: white;
 }
 
 .program-header {
