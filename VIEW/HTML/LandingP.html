@@ -8,6 +8,39 @@
     <link href="../SRC/input.css" rel="stylesheet" />
     <link rel="stylesheet" href="../SRC/LandingPNativestyle.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Sidebar animation styles */
+      #mobileSidebar {
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar-item-enter {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      .sidebar-item-enter-active {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 300ms, transform 300ms;
+      }
+      .sidebar-item-exit {
+        opacity: 1;
+      }
+      .sidebar-item-exit-active {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: opacity 300ms, transform 300ms;
+      }
+
+      /* Rotate animation for dropdown arrows */
+      .rotate-180 {
+        transform: rotate(180deg);
+      }
+
+      /* Sidebar overlay fade effect */
+      #sidebarOverlay {
+        transition: opacity 300ms ease;
+      }
+    </style>
   </head>
   <body>
     <!--MAIN NAV BAR-->
@@ -34,12 +67,40 @@
               class="text-gray-700 hover:text-blue-600 cursor-pointer"
               >About</a
             >
-            <a
-              href="#services"
-              onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
-              class="text-gray-700 hover:text-blue-600 cursor-pointer"
-              >Services</a
-            >
+            <div class="relative" id="servicesDropdown">
+              <a
+                href="#"
+                class="text-gray-700 hover:text-blue-600"
+                id="servicesDropdownBtn"
+                >Services</a
+              >
+              <div
+                id="servicesDropdownContent"
+                class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+              >
+                <a
+                  href="../SERVICES/serviceshtml/Events&Seminar.html"
+                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                  >Events & Seminars</a
+                >
+                <a
+                  href="../SERVICES/serviceshtml/Spotmap.html"
+                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                  >Barangay Spot Map</a
+                >
+                <a
+                  href="../SERVICES/serviceshtml/HealthProgram.html"
+                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                  >Health Programs</a
+                >
+                <a
+                  href="#services"
+                  onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
+                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                  >All Services</a
+                >
+              </div>
+            </div>
             <div class="relative" id="profileDropdown">
               <a
                 href="#"
@@ -77,12 +138,39 @@
         </div>
         <!---->
 
-        <!-- Mobile Dropdown -->
+        <!-- Mobile Menu Button -->
         <div class="md:hidden w-full flex justify-end pr-4">
-          <details class="relative">
-            <summary class="cursor-pointer list-none">
+          <button
+            id="mobileMenuBtn"
+            class="focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-8 h-7 text-zinc-950"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Sidebar Menu -->
+        <div
+          id="mobileSidebar"
+          class="fixed top-0 right-0 w-64 h-full bg-white shadow-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out"
+        >
+          <div class="flex justify-between items-center p-4 border-b">
+            <h3 class="text-lg font-semibold text-gray-800">Menu</h3>
+            <button id="closeSidebarBtn" class="focus:outline-none">
               <svg
-                class="w-8 h-7 text-zinc-950"
+                class="w-6 h-6 text-gray-600"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -91,67 +179,121 @@
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                  d="M6 18L18 6M6 6l12 12"
+                ></path>
               </svg>
-            </summary>
-            <div
-              class="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-md z-50 font-semibold"
+            </button>
+          </div>
+
+          <div class="py-4 px-2 font-semibold">
+            <a
+              href="../HTML/LandingP.html"
+              class="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg"
+              >Home</a
             >
-              <a
-                href="../HTML/LandingP.html"
-                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                >Home</a
+            <a
+              href="#"
+              onclick="document.querySelector('section:nth-of-type(3)').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobileSidebar').classList.add('translate-x-full'); document.getElementById('sidebarOverlay').classList.add('hidden');"
+              class="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg"
+              >About</a
+            >
+
+            <!-- Services Section -->
+            <div class="px-4 py-3">
+              <button
+                id="mobileServicesBtn"
+                class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
               >
-              <a
-                href="#"
-                onclick="document.querySelector('section:nth-of-type(3)').scrollIntoView({behavior: 'smooth'})"
-                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                >About</a
-              >
-              <a
-                href="#services"
-                onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"
-                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                >Services</a
-              >
-              <!-- Profile dropdown for mobile -->
-              <div class="relative" id="mobileProfileDropdown">
+                <span>Services</span>
+                <svg
+                  id="servicesArrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="mobileServicesContent" class="mt-2 ml-4 hidden">
                 <a
-                  href="#"
-                  id="mobileProfileBtn"
-                  class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                  >Profile</a
+                  href="../SERVICES/serviceshtml/Events&Seminar.html"
+                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Events & Seminars</a
                 >
-                <div
-                  id="mobileProfileContent"
-                  class="absolute right-0 mt-1 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+                <a
+                  href="../SERVICES/serviceshtml/Spotmap.html"
+                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Barangay Spot Map</a
                 >
-                  <a
-                    href="../HTML/HtmlServAnalysis/FamilyPlanning.html"
-                    class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                    >Dashboard</a
-                  >
-                  <a
-                    href="../HTML/ProfileSettings.html"
-                    class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                    >Settings</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                    >Preferences</a
-                  >
-                  <a
-                    href="#"
-                    class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                    >Logout</a
-                  >
-                </div>
+                <a
+                  href="../SERVICES/serviceshtml/HealthProgram.html"
+                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Health Programs</a
+                >
+                <a
+                  href="#services"
+                  onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobileSidebar').classList.add('translate-x-full'); document.getElementById('sidebarOverlay').classList.add('hidden');"
+                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  >All Services</a
+                >
               </div>
             </div>
-          </details>
+
+            <!-- Profile Section -->
+            <div class="px-4 py-3">
+              <button
+                id="mobileProfileBtn"
+                class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
+              >
+                <span>Profile</span>
+                <svg
+                  id="profileArrow"
+                  class="w-4 h-4 transition-transform duration-200"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <div id="mobileProfileContent" class="mt-2 ml-4 hidden">
+                <a
+                  href="../HTML/HtmlServAnalysis/FamilyPlanning.html"
+                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Dashboard</a
+                >
+                <a
+                  href="../HTML/ProfileSettings.html"
+                  class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Settings</a
+                >
+                <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Preferences</a
+                >
+                <a href="#" class="block py-2 text-gray-700 hover:text-blue-600"
+                  >Logout</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Overlay for sidebar -->
+        <div
+          id="sidebarOverlay"
+          class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden transition-opacity duration-300"
+        ></div>
       </div>
     </nav>
     <!---->
@@ -1229,89 +1371,10 @@
     </section>
 
     <!--BOTTOM NAV BAR, MODULES-->
-    <nav
-      id="navbot"
-      class="hidden lg:flex fixed bottom-0 w-full h-[120px] bg-white"
-    >
-      <div class="flex justify-center w-full">
-        <a href="../SERVICES/serviceshtml/Events&Seminar.html"
-          ><button class="buts">
-            <img class="icons" src="../SRC/ICON/seminar.png" alt="" />
-            Events & Seminars
-          </button>
-        </a>
-        <a href="../SERVICES/serviceshtml/Spotmap.html"
-          ><button class="buts">
-            <img class="icons" src="../SRC/ICON/mapview.png" alt="" />
-            Barangay Spot Map
-          </button>
-        </a>
-        <a href="../SERVICES/serviceshtml/HealthProgram.html"
-          ><button class="buts">
-            <img class="icons" src="../SRC/ICON/Seasonality.png" alt="" />
-            Health Programs
-          </button>
-        </a>
-      </div>
-    </nav>
+    <!-- Bottom nav bar removed as requested and items moved to Services dropdown -->
     <!---->
 
-    <!-- DROP UP NAV-->
-    <nav
-      id="navbot2"
-      class="fixed bottom-0 w-full h-[100px] bg-white lg:hidden"
-    >
-      <div class="relative w-full">
-        <!-- Toggle input -->
-        <input type="checkbox" id="dropup-toggle" class="peer hidden" />
-
-        <!-- Toggle Label -->
-        <label
-          id="button"
-          for="dropup-toggle"
-          class="block w-full border-2 border-[#808080ab] text-[black] cursor-pointer text-center px-4 py-3 bg-[white] rounded-t-md hover:bg-[#e9e9e9] peer-checked:bg-[white] peer-checked:rounded-b-none transition-all duration-300"
-        >
-          <!-- Show text directly in label, no nested spans -->
-          <span id="open" class="block"
-            ><img
-              class="h-[25px] w-[50px] flex justify-self-center"
-              src="../SRC/ICON/up-arrows.png"
-              alt=""
-          /></span>
-          <span id="close" class="hidden"
-            ><img
-              class="h-[25px] w-[50px] flex justify-self-center"
-              src="../SRC/ICON/down.png"
-              alt=""
-          /></span>
-        </label>
-
-        <!-- Drop-up Content -->
-        <div
-          class="hidden peer-checked:flex flex-col items-center w-full bg-gray-100 border border-t-0 border-gray-300 rounded-b-md absolute bottom-full mb-1 z-10"
-        >
-          <a href="../SERVICES/serviceshtml/Events&Seminar.html"
-            ><p class="py-2 px-4 w-full text-center hover:bg-gray-200">
-              Events & Seminars
-            </p>
-          </a>
-          <a href="../SERVICES/serviceshtml/Spotmap.html"
-            ><p class="py-2 px-4 w-full text-center hover:bg-gray-200">
-              Barangay Spot Map
-            </p>
-          </a>
-          <a href="../SERVICES/serviceshtml/HealthProgram.html"
-            ><p class="py-2 px-4 w-full text-center hover:bg-gray-200">
-              Health Programs
-            </p>
-          </a>
-          <a href="#"
-            ><p class="py-2 px-4 w-full text-center hover:bg-gray-200">Blank</p>
-          </a>
-        </div>
-      </div>
-      <!---->
-    </nav>
+    <!-- DROP UP NAV (Removed as requested and items moved to Services dropdown) -->
     <!---->
     <!-- JavaScript -->
     <script src="../JAVASCRIPT/Landingpage.js"></script>
