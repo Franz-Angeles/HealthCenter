@@ -9,10 +9,41 @@
     <link rel="stylesheet" href="../../SRC/dashboardPNativestyle.css" />
     <link rel="stylesheet" href="../servicescss/Spotmap.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
       body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+      
+      .location-point.active span:first-child {
+        background-color: #dc2626 !important;
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+        }
+        50% {
+          transform: scale(1.1);
+          box-shadow: 0 0 25px rgba(220, 38, 38, 0.8);
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+        }
+      }
+      
+      .location-point {
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .location-point:hover span:first-child {
+        transform: scale(1.2);
       }
     </style>
   </head>
@@ -115,6 +146,7 @@
         </div>
       </div>
     </nav>
+    
 
     <!-- Sidebar removed as requested -->
     <div class="hidden"><!-- Empty div to replace the sidebar --></div>
@@ -170,7 +202,9 @@
               ></span>
             </a>
           </div>
+
           <div class="bg-white rounded-xl p-8 shadow-sm text-center">
+
             <h2 class="text-2xl font-bold text-gray-800 mb-4">
               Barangay Spot Map
             </h2>
@@ -178,19 +212,367 @@
               This page displays a map showing healthcare facilities and
               services across different barangays.
             </p>
-            <div class="bg-gray-50 rounded-lg p-6">
+
+            <!-- MAP -->
+            <div class="relative mx-auto max-w-full">
+
+              <!-- Image -->
               <img
                 src="../../SRC/IMG/bucalmap.jfif"
                 alt="Bucal Map"
-                class="mx-auto max-w-full h-auto"
+                class="w-full h-full object-contain rounded-lg"
               />
+
+              <!-- Sitio Place Points -->
+              <button class="absolute group location-point" style="top: 90%; left: 10%;" data-location="familyVille" aria-label="Family Ville">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Family Ville
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 65%; left:2%;" data-location="umboy" aria-label="Umboy">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Umboy
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 55%; left: 8%;" data-location="ibaba" aria-label="Ibaba">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Ibaba
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 65%; left: 16%;" data-location="graceland" aria-label="Graceland">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Graceland
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 42%; left: 25%;" data-location="healthCenter" aria-label="Health Center">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Health Center
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 50%; left: 28%;" data-location="lotte" aria-label="Lotte">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Lotte
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 71%; left: 28.5%;" data-location="hermeno" aria-label="Hermeno">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Hermeno             
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 51%; left: 36.5%;" data-location="promiseLand" aria-label="Promise Land">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Promise Land               
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 43%; left: 41%;" data-location="springGreen" aria-label="Spring Green">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Spring Green               
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 38%; left: 46%;" data-location="ilaya" aria-label="Ilaya">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Ilaya
+                </span>
+              </button>
+
+
+              <button class="absolute group location-point" style="top: 60%; left: 46%;" data-location="countryHomes" aria-label="Country Homes">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Country Homes               
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 21%; left: 58%;" data-location="heartFoundation1" aria-label="Heart Foundation 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Heart Foundation 1             
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 45%; left: 80%;" data-location="annex" aria-label="Annex">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Annex
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 30%; left: 58%;" data-location="phase1" aria-label="Phase 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 1
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 43%; left: 62%;" data-location="phase2" aria-label="Phase 2">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 2
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 65%; left: 63%;" data-location="phase3" aria-label="Phase 3">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 3
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 80%; left: 53%;" data-location="phase4" aria-label="Phase 4">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Phase 4
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 73%; left: 75%;" data-location="southgate1" aria-label="Southgate 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Southgate 1
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 83%; left: 63%;" data-location="southgate2" aria-label="Southgate 2">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Southgate 2
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 50%; left: 53%;" data-location="northgate1" aria-label="Northgate 1">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Northgate 1
+                </span>
+              </button>
+
+              <button class="absolute group location-point" style="top: 30%; left: 73%;" data-location="northgate2" aria-label="Northgate 2">
+                <span class="w-5 h-5 bg-blue-600 rounded-full border-2 border-white shadow-lg block hover:scale-125 transition-transform duration-200"></span>
+                <span class="absolute left-1/2 -translate-x-1/2 -top-8 px-2 py-1 bg-black text-white text-xs rounded whitespace-nowrap z-50 tooltip-label">
+                  Northgate 2
+                </span>
+              </button>
+
             </div>
+
+            <p class="text-sm text-gray-600 mb-2">
+              Click on the points on the map to view more information about
+              each healthcare facility or service.
+            </p>
+
+            <p class="text-sm text-gray-600">
+              This feature allows you to explore the healthcare landscape of
+              your barangay effectively
+            </p>
           </div>
+
+          <!-- Location Information Display -->
+          <div id="location-info" class="mt-8 max-w-7xl mx-auto bg-white rounded-xl p-6 shadow-sm" style="display: none;">
+            <div class="mb-6">
+              <h1 id="location-name" class="text-3xl font-bold text-gray-800 mb-2">Select a Location</h1>
+              <p id="location-address" class="text-lg text-gray-600 mb-4">Click on any point on the map to view detailed information</p>
+            </div>
+
+            <!-- Statistics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <!-- Population -->
+              <div class="bg-blue-50 p-4 rounded-lg">
+                <div class="flex items-center">
+                  <div class="p-3 bg-blue-500 rounded-full text-white mr-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm text-blue-600 font-medium">Total Population</p>
+                    <p id="stat-population" class="text-2xl font-bold text-blue-900">-</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Vaccinated -->
+              <div class="bg-green-50 p-4 rounded-lg">
+                <div class="flex items-center">
+                  <div class="p-3 bg-green-500 rounded-full text-white mr-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm text-green-600 font-medium">Vaccinated/Immunized</p>
+                    <p id="stat-vaccinated" class="text-2xl font-bold text-green-900">-</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Consultations -->
+              <div class="bg-purple-50 p-4 rounded-lg">
+                <div class="flex items-center">
+                  <div class="p-3 bg-purple-500 rounded-full text-white mr-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm text-purple-600 font-medium">Total Consultations</p>
+                    <p id="stat-consultations" class="text-2xl font-bold text-purple-900">-</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Users with Accounts -->
+              <div class="bg-yellow-50 p-4 rounded-lg">
+                <div class="flex items-center">
+                  <div class="p-3 bg-yellow-500 rounded-full text-white mr-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="text-sm text-yellow-600 font-medium">Registered Users</p>
+                    <p id="stat-users" class="text-2xl font-bold text-yellow-900">-</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Health Categories -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <!-- Maternal Care -->
+              <div class="bg-pink-50 p-4 rounded-lg">
+                <div class="text-center">
+                  <p class="text-sm text-pink-600 font-medium">Maternal Care</p>
+                  <p id="stat-maternal" class="text-xl font-bold text-pink-900">-</p>
+                </div>
+              </div>
+
+              <!-- Newborn & Infants -->
+              <div class="bg-cyan-50 p-4 rounded-lg">
+                <div class="text-center">
+                  <p class="text-sm text-cyan-600 font-medium">Newborn & Infants</p>
+                  <p id="stat-newborn" class="text-xl font-bold text-cyan-900">-</p>
+                </div>
+              </div>
+
+              <!-- Postpartum -->
+              <div class="bg-indigo-50 p-4 rounded-lg">
+                <div class="text-center">
+                  <p class="text-sm text-indigo-600 font-medium">Postpartum</p>
+                  <p id="stat-postpartum" class="text-xl font-bold text-indigo-900">-</p>
+                </div>
+              </div>
+
+              <!-- Senior Citizens -->
+              <div class="bg-orange-50 p-4 rounded-lg">
+                <div class="text-center">
+                  <p class="text-sm text-orange-600 font-medium">Senior Citizens</p>
+                  <p id="stat-seniors" class="text-xl font-bold text-orange-900">-</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Age Distribution Chart -->
+            <div class="bg-gray-50 p-6 rounded-lg mb-6">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Age Distribution</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                
+                <!-- Bar Chart Visualization -->
+                <div class="grid grid-cols-5 gap-2">
+                  <div class="text-center">
+                    <div class="bg-blue-200 h-20 rounded-t flex items-end justify-center mb-2">
+                      <div id="age-0-18" class="bg-blue-500 w-full rounded-t" style="height: 60%;"></div>
+                    </div>
+                    <p class="text-sm font-medium">0-18</p>
+                    <p id="age-0-18-count" class="text-xs text-gray-600">-</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-green-200 h-20 rounded-t flex items-end justify-center mb-2">
+                      <div id="age-19-35" class="bg-green-500 w-full rounded-t" style="height: 80%;"></div>
+                    </div>
+                    <p class="text-sm font-medium">19-35</p>
+                    <p id="age-19-35-count" class="text-xs text-gray-600">-</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-yellow-200 h-20 rounded-t flex items-end justify-center mb-2">
+                      <div id="age-36-50" class="bg-yellow-500 w-full rounded-t" style="height: 70%;"></div>
+                    </div>
+                    <p class="text-sm font-medium">36-50</p>
+                    <p id="age-36-50-count" class="text-xs text-gray-600">-</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-orange-200 h-20 rounded-t flex items-end justify-center mb-2">
+                      <div id="age-51-65" class="bg-orange-500 w-full rounded-t" style="height: 50%;"></div>
+                    </div>
+                    <p class="text-sm font-medium">51-65</p>
+                    <p id="age-51-65-count" class="text-xs text-gray-600">-</p>
+                  </div>
+                  <div class="text-center">
+                    <div class="bg-red-200 h-20 rounded-t flex items-end justify-center mb-2">
+                      <div id="age-65plus" class="bg-red-500 w-full rounded-t" style="height: 40%;"></div>
+                    </div>
+                    <p class="text-sm font-medium">65+</p>
+                    <p id="age-65plus-count" class="text-xs text-gray-600">-</p>
+                  </div>
+                </div>
+                
+                <!-- Pie Chart -->
+                <div class="flex justify-center items-center">
+                  <div style="width: 250px; height: 250px;">
+                    <canvas id="ageChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Information -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Location Details</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <p class="text-sm text-gray-600"><strong>Nearest Health Facility:</strong> <span id="nearest-facility">-</span></p>
+                  <p class="text-sm text-gray-600"><strong>Distance to Health Center:</strong> <span id="distance-hc">-</span></p>
+                  <p class="text-sm text-gray-600"><strong>Primary Healthcare Provider:</strong> <span id="primary-provider">-</span></p>
+                </div>
+                <div>
+                  <p class="text-sm text-gray-600"><strong>Last Health Survey:</strong> <span id="last-survey">-</span></p>
+                  <p class="text-sm text-gray-600"><strong>Vaccination Coverage:</strong> <span id="vax-coverage">-</span></p>
+                  <p class="text-sm text-gray-600"><strong>Health Risk Level:</strong> <span id="risk-level">-</span></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+
         </div>
       </div>
     </div>
 
     <!-- External JavaScript -->
     <script src="../../JAVASCRIPT/navigation.js"></script>
+    <script src="../../JAVASCRIPT/SpotMap/location_select.js">
+
+
+
+    </script>
   </body>
 </html>
