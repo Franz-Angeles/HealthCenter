@@ -16,19 +16,9 @@ class AdminEventsManager {
   updateAnalytics() {
     // Calculate analytics
     const total = this.events.length;
-    const approved = this.events.filter((e) => e.status === "approved").length;
-    const featured = this.events.filter((e) => e.status === "featured").length;
-    const pending = this.events.filter(
-      (e) => e.status === "pending" || !e.status
-    ).length;
-    const canceled = this.events.filter((e) => e.status === "canceled").length;
 
     // Update DOM
     document.getElementById("totalEvents").textContent = total;
-    document.getElementById("approvedEvents").textContent = approved;
-    document.getElementById("featuredEvents").textContent = featured;
-    document.getElementById("pendingEvents").textContent = pending;
-    document.getElementById("canceledEvents").textContent = canceled;
   }
 
   bindEventListeners() {
@@ -68,9 +58,6 @@ class AdminEventsManager {
     document
       .getElementById("filterType")
       .addEventListener("change", () => this.filterEvents());
-    document
-      .getElementById("filterStatus")
-      .addEventListener("change", () => this.filterEvents());
 
     // Modal background click
     window.addEventListener("click", (e) => {
@@ -106,15 +93,9 @@ class AdminEventsManager {
       if (e.target.closest(".edit-event-btn")) {
         const eventId = e.target.closest("[data-event-id]")?.dataset.eventId;
         if (eventId) this.openEditModal(eventId);
-      } else if (e.target.closest(".approve-event-btn")) {
-        const eventId = e.target.closest("[data-event-id]")?.dataset.eventId;
-        if (eventId) this.approveEvent(eventId);
       } else if (e.target.closest(".feature-event-btn")) {
         const eventId = e.target.closest("[data-event-id]")?.dataset.eventId;
         if (eventId) this.featureEvent(eventId);
-      } else if (e.target.closest(".cancel-event-btn")) {
-        const eventId = e.target.closest("[data-event-id]")?.dataset.eventId;
-        if (eventId) this.cancelEvent(eventId);
       } else if (e.target.closest(".delete-event-btn")) {
         const eventId = e.target.closest("[data-event-id]")?.dataset.eventId;
         if (eventId) this.deleteEvent(eventId);
@@ -170,11 +151,6 @@ class AdminEventsManager {
       this.populateForm(event);
       document.getElementById("modalTitle").textContent = "Edit Event/Seminar";
       document.getElementById("eventModal").style.display = "block";
-
-      // Set event status in form
-      if (event.status) {
-        document.getElementById("eventStatus").value = event.status;
-      }
     }
   }
 
@@ -208,11 +184,6 @@ class AdminEventsManager {
     document.getElementById("closingTime").value = event.closingTime;
     document.getElementById("location").value = event.location;
     document.getElementById("description").value = event.description;
-
-    // Set event status if it exists
-    if (event.status && document.getElementById("eventStatus")) {
-      document.getElementById("eventStatus").value = event.status;
-    }
 
     // Populate speakers
     this.resetSpeakers();
@@ -344,7 +315,6 @@ class AdminEventsManager {
       location: formData.get("location"),
       speakers: speakers,
       description: formData.get("description"),
-      status: formData.get("eventStatus") || "pending", // Admin specific field
       image: this.currentEditingEvent ? this.currentEditingEvent.image : null,
       createdAt: this.currentEditingEvent
         ? this.currentEditingEvent.createdAt
@@ -401,67 +371,6 @@ class AdminEventsManager {
     }
   }
 
-  // Admin specific methods
-  approveEvent(eventId) {
-    this.showConfirmModal(
-      "Approve Event",
-      "Are you sure you want to approve this event? It will be published and visible to all users.",
-      () => {
-        const index = this.events.findIndex((e) => e.id === eventId);
-        if (index !== -1) {
-          this.events[index].status = "approved";
-          this.events[index].updatedAt = new Date().toISOString();
-          this.saveEventsToStorage();
-          this.renderEvents();
-          this.updateAnalytics();
-          this.showToast("Event approved successfully!", "success");
-          // Close details modal if open
-          this.closeDetailsModal();
-        }
-      }
-    );
-  }
-
-  featureEvent(eventId) {
-    this.showConfirmModal(
-      "Feature Event",
-      "Are you sure you want to feature this event? It will be highlighted on the main page.",
-      () => {
-        const index = this.events.findIndex((e) => e.id === eventId);
-        if (index !== -1) {
-          this.events[index].status = "featured";
-          this.events[index].updatedAt = new Date().toISOString();
-          this.saveEventsToStorage();
-          this.renderEvents();
-          this.updateAnalytics();
-          this.showToast("Event featured successfully!", "success");
-          // Close details modal if open
-          this.closeDetailsModal();
-        }
-      }
-    );
-  }
-
-  cancelEvent(eventId) {
-    this.showConfirmModal(
-      "Cancel Event",
-      "Are you sure you want to cancel this event? This will mark it as canceled and notify registrants.",
-      () => {
-        const index = this.events.findIndex((e) => e.id === eventId);
-        if (index !== -1) {
-          this.events[index].status = "canceled";
-          this.events[index].updatedAt = new Date().toISOString();
-          this.saveEventsToStorage();
-          this.renderEvents();
-          this.updateAnalytics();
-          this.showToast("Event canceled successfully!", "success");
-          // Close details modal if open
-          this.closeDetailsModal();
-        }
-      }
-    );
-  }
-
   deleteEvent(eventId) {
     this.showConfirmModal(
       "Delete Event",
@@ -488,7 +397,6 @@ class AdminEventsManager {
         ...event,
         id: this.generateId(),
         title: `${event.title} (Copy)`,
-        status: "pending", // Reset status for the copy
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
@@ -510,9 +418,7 @@ class AdminEventsManager {
 
   renderEventDetails(event) {
     const timeStatus = this.getEventTimeStatus(event);
-    const adminStatus = event.status || "pending";
     const timeStatusClass = timeStatus.toLowerCase();
-    const adminStatusClass = adminStatus.toLowerCase();
     const formattedStartDate = this.formatDate(event.startDate);
     const formattedEndDate = this.formatDate(event.endDate);
 
@@ -524,9 +430,6 @@ class AdminEventsManager {
                 )}</span>
                 <div class="event-statuses">
                     <span class="event-status ${timeStatusClass}">${timeStatus}</span>
-                    <span class="admin-status ${adminStatusClass}">${this.formatEventStatus(
-      adminStatus
-    )}</span>
                 </div>
             </div>
 
@@ -579,42 +482,18 @@ class AdminEventsManager {
                 <p><strong>Last Updated:</strong> ${this.formatDateTime(
                   event.updatedAt
                 )}</p>
-                <p><strong>Status:</strong> ${this.formatEventStatus(
-                  adminStatus
-                )}</p>
             </div>
 
             <div class="admin-actions">
                 <button class="btn-primary edit-event-btn" data-event-id="${
                   event.id
                 }">
-                    <i class="fas fa-edit"></i> Edit Event
+                    <i class="fas fa-edit"></i> <span>Edit Event</span>
                 </button>
-                ${
-                  adminStatus !== "approved"
-                    ? `<button class="btn-success approve-event-btn" data-event-id="${event.id}">
-                        <i class="fas fa-check-circle"></i> Approve Event
-                    </button>`
-                    : ""
-                }
-                ${
-                  adminStatus !== "featured"
-                    ? `<button class="btn-feature feature-event-btn" data-event-id="${event.id}">
-                        <i class="fas fa-star"></i> Feature Event
-                    </button>`
-                    : ""
-                }
-                ${
-                  adminStatus !== "canceled"
-                    ? `<button class="btn-danger cancel-event-btn" data-event-id="${event.id}">
-                        <i class="fas fa-ban"></i> Cancel Event
-                    </button>`
-                    : ""
-                }
                 <button class="btn-danger delete-event-btn" data-event-id="${
                   event.id
                 }">
-                    <i class="fas fa-trash-alt"></i> Delete Event
+                    <i class="fas fa-trash-alt"></i> <span>Delete Event</span>
                 </button>
             </div>
         `;
@@ -646,21 +525,14 @@ class AdminEventsManager {
 
   createEventCard(event) {
     const timeStatus = this.getEventTimeStatus(event);
-    const adminStatus = event.status || "pending";
     const timeStatusClass = timeStatus.toLowerCase();
-    const adminStatusClass = adminStatus.toLowerCase();
     const formattedStartDate = this.formatDate(event.startDate);
     const formattedEndDate = this.formatDate(event.endDate);
 
     return `
-            <div class="event-card ${adminStatusClass}" data-event-id="${
-      event.id
-    }">
+            <div class="event-card" data-event-id="${event.id}">
                 <div class="event-statuses">
                     <div class="event-status ${timeStatusClass}">${timeStatus}</div>
-                    <div class="admin-status ${adminStatusClass}">${this.formatEventStatus(
-      adminStatus
-    )}</div>
                 </div>
                 
                 <div class="event-header">
@@ -717,39 +589,18 @@ class AdminEventsManager {
                 <div class="event-actions">
                     <button class="btn-secondary btn-small view-details-btn" data-event-id="${
                       event.id
-                    }">
-                        <i class="fas fa-eye"></i> View Details
+                    }" aria-label="View Details">
+                        <i class="fas fa-eye"></i> <span>View</span>
                     </button>
                     <button class="btn-secondary btn-small edit-event-btn" data-event-id="${
                       event.id
-                    }">
-                        <i class="fas fa-edit"></i> Edit
+                    }" aria-label="Edit Event">
+                        <i class="fas fa-edit"></i> <span>Edit</span>
                     </button>
-                    ${
-                      adminStatus !== "approved"
-                        ? `<button class="btn-success btn-small approve-event-btn" data-event-id="${event.id}">
-                            <i class="fas fa-check-circle"></i> Approve
-                        </button>`
-                        : ""
-                    }
-                    ${
-                      adminStatus !== "featured"
-                        ? `<button class="btn-feature btn-small feature-event-btn" data-event-id="${event.id}">
-                            <i class="fas fa-star"></i> Feature
-                        </button>`
-                        : ""
-                    }
-                    ${
-                      adminStatus !== "canceled"
-                        ? `<button class="btn-danger btn-small cancel-event-btn" data-event-id="${event.id}">
-                            <i class="fas fa-ban"></i> Cancel
-                        </button>`
-                        : ""
-                    }
                     <button class="btn-danger btn-small delete-event-btn" data-event-id="${
                       event.id
-                    }">
-                        <i class="fas fa-trash"></i> Delete
+                    }" aria-label="Delete Event">
+                        <i class="fas fa-trash"></i> <span>Delete</span>
                     </button>
                 </div>
             </div>
@@ -773,30 +624,6 @@ class AdminEventsManager {
       });
     });
 
-    // Approve event
-    document.querySelectorAll(".approve-event-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const eventId = e.target.closest("[data-event-id]").dataset.eventId;
-        this.approveEvent(eventId);
-      });
-    });
-
-    // Feature event
-    document.querySelectorAll(".feature-event-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const eventId = e.target.closest("[data-event-id]").dataset.eventId;
-        this.featureEvent(eventId);
-      });
-    });
-
-    // Cancel event
-    document.querySelectorAll(".cancel-event-btn").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        const eventId = e.target.closest("[data-event-id]").dataset.eventId;
-        this.cancelEvent(eventId);
-      });
-    });
-
     // Delete event
     document.querySelectorAll(".delete-event-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
@@ -808,28 +635,10 @@ class AdminEventsManager {
 
   getFilteredEvents() {
     const typeFilter = document.getElementById("filterType").value;
-    const statusFilter = document.getElementById("filterStatus").value;
 
     return this.events.filter((event) => {
       const typeMatch = typeFilter === "all" || event.type === typeFilter;
-
-      // Handle both time status and admin status in filtering
-      let statusMatch = statusFilter === "all";
-
-      if (!statusMatch) {
-        // Check admin status first (pending, approved, featured)
-        if (
-          ["pending", "approved", "featured", "canceled"].includes(statusFilter)
-        ) {
-          statusMatch = (event.status || "pending") === statusFilter;
-        } else {
-          // Check time status (upcoming, ongoing, completed)
-          statusMatch =
-            this.getEventTimeStatus(event).toLowerCase() === statusFilter;
-        }
-      }
-
-      return typeMatch && statusMatch;
+      return typeMatch;
     });
   }
 
@@ -856,10 +665,6 @@ class AdminEventsManager {
       .split("-")
       .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
       .join(" ");
-  }
-
-  formatEventStatus(status) {
-    return status.charAt(0).toUpperCase() + status.slice(1);
   }
 
   formatDate(dateString) {
@@ -990,7 +795,6 @@ class AdminEventsManager {
         ],
         description:
           "A comprehensive seminar focused on maternal health care, covering prenatal care, nutrition during pregnancy, and postnatal recovery. This seminar aims to educate expecting mothers and their families about proper healthcare practices.",
-        status: "approved",
         image: null,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
@@ -1010,7 +814,6 @@ class AdminEventsManager {
         ],
         description:
           "Free COVID-19 booster vaccination for all eligible residents. Please bring your vaccination cards and valid ID. First come, first served basis.",
-        status: "featured",
         image: null,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
@@ -1030,7 +833,6 @@ class AdminEventsManager {
         ],
         description:
           "Workshop focused on diabetes management strategies, including diet planning, glucose monitoring, and physical activity recommendations for diabetic patients and their families.",
-        status: "pending",
         image: null,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),
@@ -1047,7 +849,6 @@ class AdminEventsManager {
         speakers: ["Dr. Ramon Cruz - Dentist", "Dental Hygienist Team"],
         description:
           "Program designed to educate school children about proper dental hygiene practices, including toothbrushing techniques, flossing, and regular dental check-ups.",
-        status: "completed",
         image: null,
         createdAt: new Date(lastWeek).toISOString(),
         updatedAt: new Date(lastWeek).toISOString(),
@@ -1064,7 +865,6 @@ class AdminEventsManager {
         speakers: ["Dr. Sofia Mendoza - Psychologist", "Counselor John Santos"],
         description:
           "Regular support group meeting for community members dealing with mental health issues. The session will focus on stress management techniques and building resilience.",
-        status: "canceled",
         image: null,
         createdAt: new Date().toISOString(),
         updatedAt: new Date().toISOString(),

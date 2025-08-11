@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../SERVICES/servicescss/Events&Seminar.css" />
     <link rel="stylesheet" href="../SRC/AdminEvents.css" />
     <link rel="stylesheet" href="../SRC/navigation.css" />
+    <link rel="stylesheet" href="../SRC/button-layout.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -177,41 +178,9 @@
             </h1>
           </div>
           <button class="btn-primary" id="createEventBtn">
-            <i class="fas fa-plus"></i> Create New Event
+            <i class="fas fa-plus"></i> <span>Create New Event</span>
           </button>
         </header>
-
-        <!-- Analytics Summary Section -->
-        <div class="admin-analytics">
-          <h2><i class="fas fa-chart-bar"></i> Events Analytics Overview</h2>
-          <div class="analytics-grid">
-            <div class="analytics-card total">
-              <i class="fas fa-calendar-alt"></i>
-              <h3 id="totalEvents">0</h3>
-              <p>Total Events</p>
-            </div>
-            <div class="analytics-card approved">
-              <i class="fas fa-check-circle"></i>
-              <h3 id="approvedEvents">0</h3>
-              <p>Approved</p>
-            </div>
-            <div class="analytics-card featured">
-              <i class="fas fa-star"></i>
-              <h3 id="featuredEvents">0</h3>
-              <p>Featured</p>
-            </div>
-            <div class="analytics-card pending">
-              <i class="fas fa-clock"></i>
-              <h3 id="pendingEvents">0</h3>
-              <p>Pending</p>
-            </div>
-            <div class="analytics-card canceled">
-              <i class="fas fa-ban"></i>
-              <h3 id="canceledEvents">0</h3>
-              <p>Canceled</p>
-            </div>
-          </div>
-        </div>
 
         <!-- Event Creation Modal -->
         <div id="eventModal" class="modal">
@@ -363,26 +332,13 @@
                 ></textarea>
               </div>
 
-              <!-- Admin-specific options -->
-              <div class="form-group">
-                <label for="eventStatus">
-                  <i class="fas fa-toggle-on"></i> Event Status
-                </label>
-                <select id="eventStatus" name="eventStatus">
-                  <option value="pending">Pending</option>
-                  <option value="approved">Approved</option>
-                  <option value="featured">Featured</option>
-                  <option value="canceled">Canceled</option>
-                </select>
-              </div>
-
               <!-- Form Actions -->
               <div class="form-actions">
                 <button type="button" class="btn-secondary" id="cancelBtn">
-                  Cancel
+                  <i class="fas fa-times"></i> <span>Cancel</span>
                 </button>
                 <button type="submit" class="btn-primary">
-                  <i class="fas fa-save"></i> Save Event
+                  <i class="fas fa-save"></i> <span>Save Event</span>
                 </button>
               </div>
             </form>
@@ -404,16 +360,11 @@
                 <option value="vaccination-drive">Vaccination Drives</option>
                 <option value="community-event">Community Events</option>
               </select>
-              <select id="filterStatus" class="filter-select">
-                <option value="all">All Status</option>
-                <option value="pending">Pending</option>
-                <option value="approved">Approved</option>
-                <option value="featured">Featured</option>
-                <option value="upcoming">Upcoming</option>
-                <option value="ongoing">Ongoing</option>
-                <option value="completed">Completed</option>
-                <option value="canceled">Canceled</option>
-              </select>
+              <div class="analytics-card total">
+                <i class="fas fa-calendar-alt"></i>
+                <h3 id="totalEvents">0</h3>
+                <p>Total Events</p>
+              </div>
             </div>
           </div>
 
@@ -448,12 +399,6 @@
             <button class="btn-primary edit-event-btn">
               <i class="fas fa-edit"></i> Edit Event
             </button>
-            <button class="btn-success approve-event-btn">
-              <i class="fas fa-check-circle"></i> Approve Event
-            </button>
-            <button class="btn-feature feature-event-btn">
-              <i class="fas fa-star"></i> Feature Event
-            </button>
             <button class="btn-danger delete-event-btn">
               <i class="fas fa-trash-alt"></i> Delete Event
             </button>
@@ -474,8 +419,12 @@
             Are you sure you want to perform this action?
           </p>
           <div class="confirm-actions">
-            <button class="btn-secondary" id="confirmCancel">Cancel</button>
-            <button class="btn-danger" id="confirmOk">Confirm</button>
+            <button class="btn-secondary" id="confirmCancel">
+              <i class="fas fa-times"></i> <span>Cancel</span>
+            </button>
+            <button class="btn-danger" id="confirmOk">
+              <i class="fas fa-check"></i> <span>Confirm</span>
+            </button>
           </div>
         </div>
       </div>
