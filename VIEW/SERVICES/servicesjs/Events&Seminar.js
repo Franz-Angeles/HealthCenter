@@ -544,25 +544,10 @@ class EventsManager {
                 }
 
                 <div class="event-actions">
-                    <button class="btn-secondary btn-small view-details-btn" data-event-id="${
+                    <button class="btn-primary btn-small view-details-btn" data-event-id="${
                       event.id
                     }">
                         <i class="fas fa-eye"></i> View Details
-                    </button>
-                    <button class="btn-secondary btn-small edit-event-btn" data-event-id="${
-                      event.id
-                    }">
-                        <i class="fas fa-edit"></i> Edit
-                    </button>
-                    <button class="btn-secondary btn-small duplicate-event-btn" data-event-id="${
-                      event.id
-                    }">
-                        <i class="fas fa-copy"></i> Duplicate
-                    </button>
-                    <button class="btn-danger btn-small delete-event-btn" data-event-id="${
-                      event.id
-                    }">
-                        <i class="fas fa-trash"></i> Delete
                     </button>
                 </div>
             </div>

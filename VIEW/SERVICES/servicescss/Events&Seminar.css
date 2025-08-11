@@ -614,7 +614,7 @@ body {
 .event-actions {
   display: flex;
   gap: 12px;
-  justify-content: flex-end;
+  justify-content: center;
   padding-top: 20px;
   border-top: 2px solid #e0e6ed;
   margin-top: auto;
@@ -624,6 +624,23 @@ body {
   padding: 6px 12px;
   font-size: 12px;
   border-radius: 6px;
+}
+
+.view-details-btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+
+.view-details-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* No Events Message */
@@ -807,7 +824,15 @@ body {
 
   .event-actions {
     flex-direction: column;
+    align-items: center;
     gap: 10px;
+  }
+
+  .view-details-btn {
+    width: 100%;
+    max-width: none;
+    padding: 14px 20px;
+    font-size: 16px;
   }
 
   .form-actions {
