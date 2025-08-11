@@ -26,7 +26,7 @@
     <!-- MAIN NAV BAR -->
     <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
       <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
-        <a href="../HTML/LandingP.html" class="flex-shrink-0">
+        <a href="LandingP.html" class="flex-shrink-0">
           <img
             class="h-[50px] mr-[10px]"
             src="../SRC/IMG/bucallogonobg.png"
@@ -41,41 +41,16 @@
         </div>
         <div class="hidden md:flex font-semibold">
           <a
-            href="../../HTML/LandingP.html"
+            href="../HTML/LandingP.html"
             class="block text-gray-700 hover:text-blue-600 mx-[20px]"
           >
             Home</a
           >
-          <div class="relative" id="servicesDropdown">
-            <a
-              href="#"
-              class="text-gray-700 hover:text-blue-600 mx-[20px]"
-              id="servicesDropdownBtn"
-              >Services</a
-            >
-            <div
-              id="servicesDropdownContent"
-              class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden"
-            >
-              <a
-                href="../serviceshtml/Spotmap.html"
-                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                >Barangay Spot Map</a
-              >
-              <a
-                href="../serviceshtml/Events&Seminar.html"
-                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
-                >Events & Seminars</a
-              >
-              <a
-                href="../serviceshtml/HealthProgram.html"
-                class="block px-4 py-4 text-blue-600 hover:bg-gray-100"
-                >Health Programs</a
-              >
-            </div>
-          </div>
+          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
+            >Services</a
+          >
           <a
-            href="../../HTML/ProfileSettings.html"
+            href="../HTML/ProfileSettings.html"
             class="block text-gray-700 hover:text-blue-600 mx-[20px]"
             >Profile</a
           >
@@ -110,60 +85,99 @@
               >Home</a
             >
             <hr />
+            <a href="#" class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+              >Services</a
+            >
+            <hr />
             <a
               href="../../HTML/ProfileSettings.html"
               class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
               >Profile</a
             >
             <hr />
+            <a
+              href="../HtmlServAnalysis/FamilyPlanning.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Analytics</a
+            >
+            <a
+              href="../../HTML/AdminSpotMap.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Barangay Spot Map</a
+            >
+            <a
+              href="../../HTML/SeasonalityExplorer.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Seasonality Explorer</a
+            >
 
-            <!-- Services Section -->
-            <div class="px-4 py-3">
-              <button
-                id="mobileServicesBtn"
-                class="flex justify-between items-center w-full text-left text-gray-700 hover:text-blue-600 focus:outline-none"
-              >
-                <span>Services</span>
-                <svg
-                  id="servicesArrow"
-                  class="w-4 h-4 transition-transform duration-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              <div id="mobileServicesContent" class="mt-2 ml-4 hidden">
-                <a
-                  href="../serviceshtml/Spotmap.html"
-                  class="block pt-6 pb-4 text-gray-700 hover:text-blue-600"
-                  >Barangay Spot Map</a
-                >
-                <a
-                  href="../serviceshtml/Events&Seminar.html"
-                  class="block pt-6 pb-4 text-gray-700 hover:text-blue-600"
-                  >Events & Seminars</a
-                >
-                <a
-                  href="../serviceshtml/HealthProgram.html"
-                  class="block pt-6 pb-4 text-blue-600 hover:text-blue-700 font-semibold"
-                  >Health Programs</a
-                >
-              </div>
-            </div>
+            <a
+              href="../../SERVICES/serviceshtml/UserManagement.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Account Management</a
+            >
+            <a
+              href="../../SERVICES/serviceshtml/Logs.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >System Logs</a
+            >
+            <a
+              href="../../HTML/AdminEvents.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Events Management</a
+            >
           </div>
         </div>
       </div>
     </nav>
 
+    <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
+    <div
+      class="hidden md:block bg-white w-52 h-screen shadow-md fixed top-[72px] left-0 z-40 overflow-y-auto"
+    >
+      <!-- top-[72px] assumes navbar height ~72px -->
+      <div class="flex flex-col p-4 font-semibold">
+        <a
+          href="../HTML/HtmlServAnalysis/FamilyPlanning.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Analytics</a
+        >
+        <a
+          href="../HTML/AdminSpotMap.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Barangay Spot Map</a
+        >
+        <a
+          href="../HTML/SeasonalityExplorer.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Seasonality Explorer</a
+        >
+
+        <a
+          href="../SERVICES/serviceshtml/UserManagement.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Account Management</a
+        >
+        <a
+          href="../SERVICES/serviceshtml/Logs.html"
+          class="sidebar-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >System Logs</a
+        >
+        <a
+          href="../HTML/AdminEvents.html"
+          class="dropdown-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Events Management</a
+        >
+        <a
+          href="../HTML/AdminHealthPrograms.html"
+          class="dropdown-link mods block text-gray-700 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-blue-50 text-sm"
+          >Programs Management</a
+        >
+      </div>
+    </div>
+
     <div class="pt-20">
-      <div class="px-6 pb-12">
+      <div class="px-6 pb-12 md:ml-[250px]">
         <!-- Header -->
         <header class="header">
           <div class="header-row">
