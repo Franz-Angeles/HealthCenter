@@ -50,7 +50,7 @@ foreach ($file in $files) {
               id="exportReportBtn"
               class="flex items-center px-5 py-2 bg-gradient-to-r from-green-600 to-green-500 hover:from-green-500 hover:to-green-600 text-white rounded-xl font-semibold transition-all duration-300 hover:shadow-xl transform hover:scale-105 shadow-lg"
             >
-              <div class="flex items-center justify-center w-8 h-8 bg-white/20 rounded-lg mr-3">
+              <div class="flex items-center justify-center w-8 h-8 bg-white/20 rounded-lg mr-1">
                 <svg 
                   class="w-5 h-5 text-white" 
                   fill="none" 
