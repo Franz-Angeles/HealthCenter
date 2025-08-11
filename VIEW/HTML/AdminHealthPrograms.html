@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Health Programs - Health Center Management</title>
-    <link href="../../SRC/output.css" rel="stylesheet" />
-    <link href="../../SRC/input.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../../SRC/dashboardPNativestyle.css" />
-    <link rel="stylesheet" href="../servicescss/HealthProgram.css" />
-    <link rel="stylesheet" href="../../SRC/navigation.css" />
+    <title>ADMIN Health Programs - Health Center Management</title>
+    <link href="../SRC/output.css" rel="stylesheet" />
+    <link href="../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../SRC/AdminHealthPrograms.css" />
+    <link rel="stylesheet" href="../SRC/navigation.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
       rel="stylesheet"
@@ -26,14 +26,14 @@
     <!-- MAIN NAV BAR -->
     <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
       <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
-        <a href="../../HTML/LandingP.html" class="flex-shrink-0">
+        <a href="../HTML/LandingP.html" class="flex-shrink-0">
           <img
             class="h-[50px] mr-[10px]"
-            src="../../SRC/IMG/bucallogonobg.png"
+            src="../SRC/IMG/bucallogonobg.png"
             alt=""
           />
         </a>
-        <div class="text-xl w-[900px] font-bold">Health Programs</div>
+        <div class="text-xl w-[900px] font-bold">Admin Health Programs</div>
 
         <!-- Desktop Nav: Removed Links Here -->
         <div class="hidden md:flex w-full justify-end pr-4 font-semibold">
@@ -167,11 +167,13 @@
         <!-- Header -->
         <header class="header">
           <div class="header-row">
-            <h1 class="pl-[110px]">
-              <i class="fas fa-heartbeat"></i> Health Programs
+            <h1 class="pl-[250px]">
+              <i class="fas fa-heartbeat"></i> Health Programs Management
             </h1>
           </div>
-          <button id="createProgramBtn"></button>
+          <button class="btn-primary" id="createProgramBtn">
+            <i class="fas fa-plus"></i> Create New Program
+          </button>
         </header>
 
         <!-- Program Creation Modal -->
@@ -656,8 +658,8 @@
       </div>
     </div>
 
-    <script src="../../JAVASCRIPT/navigation.js"></script>
-    <script src="../../JAVASCRIPT/serviceDropdown.js"></script>
-    <script src="../servicesjs/HealthProgram.js"></script>
+    <script src="../JAVASCRIPT/navigation.js"></script>
+    <script src="../JAVASCRIPT/serviceDropdown.js"></script>
+    <script src="../JAVASCRIPT/AdminHealthPrograms.js"></script>
   </body>
 </html>

@@ -586,6 +586,16 @@ class HealthProgramsManager {
           `
               : ""
           }
+          <button class="btn-small btn-primary" onclick="healthPrograms.editProgram(${
+            program.id
+          })">
+            <i class="fas fa-edit"></i> Edit
+          </button>
+          <button class="btn-small btn-danger" onclick="healthPrograms.confirmDeleteProgram(${
+            program.id
+          })">
+            <i class="fas fa-trash"></i> Delete
+          </button>
         </div>
       </div>
     `;
