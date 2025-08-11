@@ -46,9 +46,35 @@
           >
             Home</a
           >
-          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
-            >Services</a
-          >
+          <div class="relative" id="servicesDropdown">
+            <a
+              href="#"
+              class="text-gray-700 hover:text-blue-600 mx-[20px]"
+              id="servicesDropdownBtn"
+              >Services</a
+            >
+            <div
+              id="servicesDropdownContent"
+              class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+            >
+              <a
+                href="../SERVICES/serviceshtml/Spotmap.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Barangay Spot Map</a
+              >
+              <a
+                href="../SERVICES/serviceshtml/Events&Seminar.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Events & Seminars</a
+              >
+
+              <a
+                href="../SERVICES/serviceshtml/HealthProgram.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Health Programs</a
+              >
+            </div>
+          </div>
           <a
             href="../HTML/ProfileSettings.html"
             class="block text-gray-700 hover:text-blue-600 mx-[20px]"
@@ -96,35 +122,40 @@
             >
             <hr />
             <a
-              href="../HtmlServAnalysis/FamilyPlanning.html"
+              href="../HTML/HtmlServAnalysis/FamilyPlanning.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Analytics</a
             >
             <a
-              href="../../HTML/AdminSpotMap.html"
+              href="../HTML/AdminSpotMap.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Barangay Spot Map</a
             >
             <a
-              href="../../HTML/SeasonalityExplorer.html"
+              href="../HTML/SeasonalityExplorer.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Seasonality Explorer</a
             >
 
             <a
-              href="../../SERVICES/serviceshtml/UserManagement.html"
+              href="../SERVICES/serviceshtml/UserManagement.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Account Management</a
             >
             <a
-              href="../../SERVICES/serviceshtml/Logs.html"
+              href="../SERVICES/serviceshtml/Logs.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >System Logs</a
             >
             <a
-              href="../../HTML/AdminEvents.html"
+              href="../HTML/AdminEvents.html"
               class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
               >Events Management</a
+            >
+            <a
+              href="../HTML/AdminHealthPrograms.html"
+              class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-all duration-300 ease-in-out transform hover:scale-105 mb-2"
+              >Programs Management</a
             >
           </div>
         </div>
@@ -675,5 +706,6 @@
     <script src="../JAVASCRIPT/navigation.js"></script>
     <script src="../JAVASCRIPT/serviceDropdown.js"></script>
     <script src="../JAVASCRIPT/AdminHealthPrograms.js"></script>
+    <script src="../../JAVASCRIPT/Landingpage.js"></script>
   </body>
 </html>
