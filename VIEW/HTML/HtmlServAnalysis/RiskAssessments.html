@@ -35,9 +35,35 @@
           >
             Home</a
           >
-          <a href="#" class="block text-gray-700 hover:text-blue-600 mx-[20px]"
-            >Services</a
-          >
+          <div class="relative" id="servicesDropdown">
+            <a
+              href="#"
+              class="text-gray-700 hover:text-blue-600 mx-[20px]"
+              id="servicesDropdownBtn"
+              >Services</a
+            >
+            <div
+              id="servicesDropdownContent"
+              class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden"
+            >
+              <a
+                href="../../SERVICES/serviceshtml/Spotmap.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Barangay Spot Map</a
+              >
+              <a
+                href="../../SERVICES/serviceshtml/Events&Seminar.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Events & Seminars</a
+              >
+
+              <a
+                href="../../SERVICES/serviceshtml/HealthProgram.html"
+                class="block px-4 py-4 text-gray-700 hover:bg-gray-100"
+                >Health Programs</a
+              >
+            </div>
+          </div>
           <a
             href="../../HTML/ProfileSettings.html"
             class="block text-gray-700 hover:text-blue-600 mx-[20px]"
@@ -620,6 +646,6 @@
     <script src="../../JAVASCRIPT/navigation.js"></script>
     <script src="../../JAVASCRIPT/moduleNavigation.js"></script>
     <script src="../JsServAnalysis/RiskAssessments.js"></script>
-    <script></script>
+    <script src="../../JAVASCRIPT/Landingpage.js"></script>
   </body>
 </html>
