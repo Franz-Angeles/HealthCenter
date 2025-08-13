@@ -39,9 +39,8 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
-  flex: 1; /* Allow to grow and take available space */
   min-width: 0; /* Allow shrinking */
-  justify-content: center; /* Center the title */
+  justify-content: start; /* Align the title to the start */
   position: relative;
 }
 
@@ -143,7 +142,7 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  background: linear-gradient(135deg, #2563eb);
   color: white;
 }
 

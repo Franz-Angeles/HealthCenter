@@ -62,7 +62,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border-left: 3px solid #3498db;
+  border-left: 3px solid #2563eb;
   margin: 0;
   min-width: 150px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -72,7 +72,7 @@
   font-size: 1.5rem;
   margin: 0;
   font-weight: 700;
-  color: #3498db;
+  color: #2563eb;
 }
 
 .filter-options .analytics-card p {
@@ -84,7 +84,7 @@
 
 .filter-options .analytics-card i {
   font-size: 1.3rem;
-  color: #3498db;
+  color: #2563eb;
 }
 
 /* Event card for admin - additional spacing for more actions */
@@ -110,7 +110,7 @@
 
 /* Make sure the event-type in the header uses the original styling from Events&Seminar.css */
 .event-header .event-type {
-  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: white;
   font-size: 13px;
   font-weight: 600;
@@ -118,7 +118,7 @@
   letter-spacing: 0.5px;
   padding: 8px 16px;
   border-radius: 25px;
-  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* Mobile-optimized button styles */

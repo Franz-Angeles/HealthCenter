@@ -80,12 +80,12 @@
 
 /* Button colors and gradients */
 .btn-primary {
-  background: linear-gradient(135deg, #3498db, #2980b9);
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
   color: white;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2980b9, #1f5f8b);
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
 }
 
 .btn-secondary {
