@@ -529,7 +529,7 @@ body {
 }
 
 .program-card.upcoming {
-  border-left-color: #3498db;
+  border-left-color: #27ae60;
   background: white;
 }
 
@@ -589,7 +589,7 @@ body {
 }
 
 .program-status.upcoming {
-  background: linear-gradient(135deg, #3498db 0%, #5dade2 100%);
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
   color: white;
 }
 
@@ -924,7 +924,7 @@ body {
 }
 
 .toast.success #toastIcon {
-  color: #2563eb;
+  color: #27ae60;
 }
 
 .toast.error #toastIcon {
