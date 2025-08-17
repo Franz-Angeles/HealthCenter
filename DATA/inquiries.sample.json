@@ -1,0 +1,888 @@
+[
+  {
+    "id": 1,
+    "date": "2025-08-18",
+    "name": "Juan Dela Cruz",
+    "email": "juan.delacruz@email.com",
+    "subject": "General Inquiry - Appointment Booking",
+    "status": "pending",
+    "unreadUser": false,
+    "repliedBy": "",
+    "category": "General",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Juan Dela Cruz",
+        "text": "Good morning! I would like to know how I can book an appointment for a general check-up. Also, what documents do I need to bring?",
+        "time": "2025-08-18 09:00"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "date": "2025-08-17",
+    "name": "Maria Santos",
+    "email": "maria.santos@email.com",
+    "subject": "Vaccine Schedule Information",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Reyes",
+    "category": "Immunization",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Maria Santos",
+        "text": "When is the next community vaccine schedule? My child missed the last session.",
+        "time": "2025-08-17 08:00"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Reyes",
+        "text": "The next vaccination schedule is on August 25, 2025, from 8:00 AM to 4:00 PM. Please bring your child's vaccination record.",
+        "time": "2025-08-17 09:15"
+      },
+      {
+        "sender": "user",
+        "name": "Maria Santos",
+        "text": "Thank you! We'll be there.",
+        "time": "2025-08-17 09:20"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "date": "2025-08-16",
+    "name": "Pedro Garcia",
+    "email": "pedro.garcia@email.com",
+    "subject": "Prescription Refill - Hypertension Medication",
+    "status": "pending",
+    "unreadUser": true,
+    "repliedBy": "",
+    "category": "Medication",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Pedro Garcia",
+        "text": "I need to refill my blood pressure medication (Amlodipine 10mg). My current supply will run out in 3 days.",
+        "time": "2025-08-16 14:30"
+      },
+      {
+        "sender": "user",
+        "name": "Pedro Garcia",
+        "text": "Also, I've been experiencing some dizziness lately. Should I be concerned?",
+        "time": "2025-08-16 14:35"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "date": "2025-08-15",
+    "name": "Ana Rodriguez",
+    "email": "ana.rodriguez@email.com",
+    "subject": "Laboratory Results Request",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Linda",
+    "category": "Laboratory",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Ana Rodriguez",
+        "text": "Can I get my lab results from last week's blood chemistry test?",
+        "time": "2025-08-15 10:15"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Linda",
+        "text": "Your results are ready. Please visit the clinic between 8 AM - 5 PM to collect them. Bring a valid ID.",
+        "time": "2025-08-15 11:00"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "date": "2025-08-14",
+    "name": "Carlos Mendoza",
+    "email": "carlos.mendoza@email.com",
+    "subject": "Diabetes Management Program Registration",
+    "status": "pending",
+    "unreadUser": false,
+    "repliedBy": "Dr. Cruz",
+    "category": "Health Programs",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Carlos Mendoza",
+        "text": "How can I register for the diabetes management program? What are the requirements?",
+        "time": "2025-08-14 16:45"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Cruz",
+        "text": "You can register at our clinic. Please bring your medical records, recent lab results, and a completed health assessment form.",
+        "time": "2025-08-14 17:20"
+      },
+      {
+        "sender": "user",
+        "name": "Carlos Mendoza",
+        "text": "Where can I get the health assessment form?",
+        "time": "2025-08-14 17:25"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "date": "2025-08-13",
+    "name": "Isabella Torres",
+    "email": "isabella.torres@email.com",
+    "subject": "Emergency Contact Information",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Admin Staff",
+    "category": "Emergency",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Isabella Torres",
+        "text": "What is the emergency contact number for after-hours medical emergencies?",
+        "time": "2025-08-13 12:00"
+      },
+      {
+        "sender": "admin",
+        "name": "Admin Staff",
+        "text": "For life-threatening emergencies, call 911. For urgent medical concerns, our 24/7 hotline is (043) 778-1234.",
+        "time": "2025-08-13 12:15"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "date": "2025-08-12",
+    "name": "Roberto Silva",
+    "email": "roberto.silva@email.com",
+    "subject": "Consultation Fees and Insurance Coverage",
+    "status": "pending",
+    "unreadUser": true,
+    "repliedBy": "",
+    "category": "Billing",
+    "priority": "Low",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Roberto Silva",
+        "text": "What are the consultation fees for general check-up and specialist consultation?",
+        "time": "2025-08-12 08:30"
+      },
+      {
+        "sender": "user",
+        "name": "Roberto Silva",
+        "text": "Also, do you accept PhilHealth and private health insurance?",
+        "time": "2025-08-12 08:32"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "date": "2025-08-11",
+    "name": "Sofia Morales",
+    "email": "sofia.morales@email.com",
+    "subject": "Medical Certificate for Work",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Martinez",
+    "category": "Documentation",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Sofia Morales",
+        "text": "I need a medical certificate for work absence due to flu. What's the process?",
+        "time": "2025-08-11 13:45"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Martinez",
+        "text": "Please visit the clinic with your ID and medical records. The certificate will be ready within 1 hour. Fee is ₱150.",
+        "time": "2025-08-11 14:00"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "date": "2025-08-10",
+    "name": "Miguel Fernandez",
+    "email": "miguel.fernandez@email.com",
+    "subject": "Regular Blood Pressure Monitoring",
+    "status": "pending",
+    "unreadUser": false,
+    "repliedBy": "Nurse Carmen",
+    "category": "Monitoring",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Miguel Fernandez",
+        "text": "I need regular blood pressure monitoring. What's the schedule and do I need an appointment?",
+        "time": "2025-08-10 09:20"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Carmen",
+        "text": "BP monitoring is available every Tuesday and Thursday, 8 AM - 12 PM. No appointment needed, walk-ins welcome.",
+        "time": "2025-08-10 10:15"
+      },
+      {
+        "sender": "user",
+        "name": "Miguel Fernandez",
+        "text": "Is there a fee for this service?",
+        "time": "2025-08-10 10:20"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2025-08-09",
+    "name": "Carmen Lopez",
+    "email": "carmen.lopez@email.com",
+    "subject": "Prenatal Care Services",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Santos",
+    "category": "Maternal Care",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Carmen Lopez",
+        "text": "What prenatal care services do you offer? I'm 8 weeks pregnant.",
+        "time": "2025-08-09 11:30"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Santos",
+        "text": "We offer complete prenatal care: monthly check-ups, ultrasound, nutritional counseling, and birthing classes. Please schedule your first visit.",
+        "time": "2025-08-09 12:00"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "date": "2025-08-08",
+    "name": "Antonio Ramirez",
+    "email": "antonio.ramirez@email.com",
+    "subject": "Dental Services Availability",
+    "status": "pending",
+    "unreadUser": true,
+    "repliedBy": "",
+    "category": "Dental",
+    "priority": "Low",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Antonio Ramirez",
+        "text": "Do you provide dental services at the health center? I need tooth extraction.",
+        "time": "2025-08-08 15:10"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "date": "2025-08-07",
+    "name": "Lucia Herrera",
+    "email": "lucia.herrera@email.com",
+    "subject": "Child Immunization Schedule",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Patricia",
+    "category": "Immunization",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Lucia Herrera",
+        "text": "What vaccines does my 2-year-old need according to the DOH schedule?",
+        "time": "2025-08-07 10:00"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Patricia",
+        "text": "At 2 years, your child needs MMR second dose, Varicella, and Hepatitis A vaccines. Please bring the vaccination card.",
+        "time": "2025-08-07 10:30"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "date": "2025-08-06",
+    "name": "Ricardo Vega",
+    "email": "ricardo.vega@email.com",
+    "subject": "Senior Citizen Health Program",
+    "status": "pending",
+    "unreadUser": false,
+    "repliedBy": "",
+    "category": "Health Programs",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Ricardo Vega",
+        "text": "What health programs are available for senior citizens? I'm 68 years old.",
+        "time": "2025-08-06 14:20"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "date": "2025-08-05",
+    "name": "Elena Castro",
+    "email": "elena.castro@email.com",
+    "subject": "Family Planning Services",
+    "status": "pending",
+    "unreadUser": true,
+    "repliedBy": "",
+    "category": "Family Planning",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Elena Castro",
+        "text": "What family planning methods are available at your center? Do you provide free consultations?",
+        "time": "2025-08-05 11:45"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "date": "2025-08-04",
+    "name": "Gabriel Ortiz",
+    "email": "gabriel.ortiz@email.com",
+    "subject": "Mental Health Counseling",
+    "status": "pending",
+    "unreadUser": false,
+    "repliedBy": "",
+    "category": "Mental Health",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Gabriel Ortiz",
+        "text": "Do you offer mental health counseling services? I've been dealing with anxiety and depression.",
+        "time": "2025-08-04 16:30"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "date": "2025-08-03",
+    "name": "Francisca Delgado",
+    "email": "francisca.delgado@email.com",
+    "subject": "Nutritional Counseling",
+    "status": "pending",
+    "unreadUser": true,
+    "repliedBy": "",
+    "category": "Nutrition",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Francisca Delgado",
+        "text": "I need nutritional counseling for weight management. What programs do you have?",
+        "time": "2025-08-03 09:15"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "date": "2025-08-02",
+    "name": "Alejandro Ruiz",
+    "email": "alejandro.ruiz@email.com",
+    "subject": "Physical Therapy Services",
+    "status": "pending",
+    "unreadUser": false,
+    "repliedBy": "",
+    "category": "Rehabilitation",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Alejandro Ruiz",
+        "text": "Do you provide physical therapy services? I need rehabilitation after knee surgery.",
+        "time": "2025-08-02 13:40"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "date": "2025-07-30",
+    "name": "Beatriz Navarro",
+    "email": "beatriz.navarro@email.com",
+    "subject": "Breast Cancer Screening",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Luna",
+    "category": "Screening",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Beatriz Navarro",
+        "text": "When is the next breast cancer screening program? I'm 45 years old.",
+        "time": "2025-07-30 10:20"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Luna",
+        "text": "Our next screening is scheduled for September 15, 2025. Registration starts August 20. Please bring valid ID and health records.",
+        "time": "2025-07-30 11:00"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "date": "2025-07-28",
+    "name": "Fernando Jimenez",
+    "email": "fernando.jimenez@email.com",
+    "subject": "Diabetes Screening Request",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Rosa",
+    "category": "Screening",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Fernando Jimenez",
+        "text": "I would like to get tested for diabetes. What's the procedure and cost?",
+        "time": "2025-07-28 14:15"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Rosa",
+        "text": "Diabetes screening includes FBS and random blood sugar tests. Cost is ₱200. Available Monday-Friday, 6-8 AM (fasting required).",
+        "time": "2025-07-28 15:00"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "date": "2025-07-26",
+    "name": "Valentina Guerrero",
+    "email": "valentina.guerrero@email.com",
+    "subject": "Hypertension Management Program",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Fernandez",
+    "category": "Health Programs",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Valentina Guerrero",
+        "text": "I was recently diagnosed with hypertension. What management programs do you offer?",
+        "time": "2025-07-26 11:30"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Fernandez",
+        "text": "We have a comprehensive hypertension management program including medication, lifestyle counseling, and regular monitoring. Please schedule a consultation.",
+        "time": "2025-07-26 12:15"
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "date": "2025-07-24",
+    "name": "Rodrigo Medina",
+    "email": "rodrigo.medina@email.com",
+    "subject": "Eye Examination Services",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Vision",
+    "category": "Ophthalmology",
+    "priority": "Low",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Rodrigo Medina",
+        "text": "Do you offer eye examination services? I'm having vision problems.",
+        "time": "2025-07-24 09:45"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Vision",
+        "text": "Yes, we have ophthalmology services every Wednesday. Please call (043) 778-1234 to schedule an appointment.",
+        "time": "2025-07-24 10:30"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "date": "2025-07-22",
+    "name": "Adriana Moreno",
+    "email": "adriana.moreno@email.com",
+    "subject": "Tuberculosis Screening",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Miguel",
+    "category": "Screening",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Adriana Moreno",
+        "text": "I need TB screening for employment. What documents do I need?",
+        "time": "2025-07-22 13:20"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Miguel",
+        "text": "For TB screening, bring valid ID and chest X-ray request from employer. Screening is available daily 8 AM - 4 PM.",
+        "time": "2025-07-22 14:00"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "date": "2025-07-20",
+    "name": "Esteban Vargas",
+    "email": "esteban.vargas@email.com",
+    "subject": "Wound Care Services",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Ana",
+    "category": "Treatment",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Esteban Vargas",
+        "text": "I have a diabetic foot ulcer that needs regular dressing. Do you provide wound care?",
+        "time": "2025-07-20 16:10"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Ana",
+        "text": "Yes, we provide wound care services. Please visit our clinic daily for proper wound dressing and monitoring.",
+        "time": "2025-07-20 16:45"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "date": "2025-07-18",
+    "name": "Natalia Romero",
+    "email": "natalia.romero@email.com",
+    "subject": "Cervical Cancer Screening",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Maria",
+    "category": "Screening",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Natalia Romero",
+        "text": "When is the next cervical cancer screening program? I'm 35 years old.",
+        "time": "2025-07-18 10:00"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Maria",
+        "text": "Cervical screening is available every Friday. Please schedule an appointment. Bring valid ID and wear comfortable clothing.",
+        "time": "2025-07-18 10:45"
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "date": "2025-07-16",
+    "name": "Mauricio Herrera",
+    "email": "mauricio.herrera@email.com",
+    "subject": "Health Certificate for Travel",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Travel",
+    "category": "Documentation",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Mauricio Herrera",
+        "text": "I need a health certificate for international travel. What's required?",
+        "time": "2025-07-16 11:30"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Travel",
+        "text": "For travel health certificate, you need medical examination, chest X-ray, and recent lab tests. Processing takes 2-3 days.",
+        "time": "2025-07-16 12:15"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "date": "2025-07-14",
+    "name": "Lorena Aguilar",
+    "email": "lorena.aguilar@email.com",
+    "subject": "Smoking Cessation Program",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Wellness",
+    "category": "Health Programs",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Lorena Aguilar",
+        "text": "Do you have smoking cessation programs? I want to quit smoking.",
+        "time": "2025-07-14 14:20"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Wellness",
+        "text": "Yes, we offer smoking cessation counseling every Tuesday. Group sessions and individual counseling available. Call to register.",
+        "time": "2025-07-14 15:00"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "date": "2025-07-12",
+    "name": "Sergio Peña",
+    "email": "sergio.pena@email.com",
+    "subject": "Blood Donation Drive",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Blood",
+    "category": "Community Health",
+    "priority": "Low",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Sergio Peña",
+        "text": "When is the next blood donation drive? I want to donate blood.",
+        "time": "2025-07-12 09:30"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Blood",
+        "text": "Our next blood donation drive is August 30, 2025, 8 AM - 4 PM. Donors must be 18-65 years old and in good health.",
+        "time": "2025-07-12 10:15"
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "date": "2025-07-10",
+    "name": "Diana Castillo",
+    "email": "diana.castillo@email.com",
+    "subject": "Childhood Obesity Program",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nutritionist Joy",
+    "category": "Pediatric Health",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Diana Castillo",
+        "text": "My 10-year-old is overweight. Do you have programs for childhood obesity?",
+        "time": "2025-07-10 13:15"
+      },
+      {
+        "sender": "admin",
+        "name": "Nutritionist Joy",
+        "text": "We have a pediatric nutrition program with diet counseling and physical activity guidance. Please schedule a consultation.",
+        "time": "2025-07-10 14:00"
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "date": "2025-07-08",
+    "name": "Armando Silva",
+    "email": "armando.silva@email.com",
+    "subject": "Kidney Function Test",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Kidney",
+    "category": "Laboratory",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Armando Silva",
+        "text": "I need kidney function tests. What tests are included and what's the cost?",
+        "time": "2025-07-08 08:45"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Kidney",
+        "text": "Kidney function tests include creatinine, BUN, and urinalysis. Total cost is ₱800. Results available in 24 hours.",
+        "time": "2025-07-08 09:30"
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "date": "2025-07-06",
+    "name": "Pilar Mendez",
+    "email": "pilar.mendez@email.com",
+    "subject": "Arthritis Management",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Rheumatology",
+    "category": "Chronic Disease",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Pilar Mendez",
+        "text": "I have arthritis in my hands. What treatment options are available?",
+        "time": "2025-07-06 15:20"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Rheumatology",
+        "text": "We offer arthritis management including medication, physical therapy, and lifestyle counseling. Please schedule a consultation for proper assessment.",
+        "time": "2025-07-06 16:00"
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "date": "2025-07-04",
+    "name": "Octavio Ramos",
+    "email": "octavio.ramos@email.com",
+    "subject": "Allergy Testing Services",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Allergy",
+    "category": "Allergy",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Octavio Ramos",
+        "text": "Do you offer allergy testing? I have frequent allergic reactions but don't know the cause.",
+        "time": "2025-07-04 11:10"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Allergy",
+        "text": "Yes, we offer skin prick tests and blood allergy panels. Please schedule an appointment. Avoid antihistamines 48 hours before testing.",
+        "time": "2025-07-04 12:00"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "date": "2025-07-02",
+    "name": "Remedios Santos",
+    "email": "remedios.santos@email.com",
+    "subject": "Geriatric Care Program",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. Geriatrics",
+    "category": "Geriatric Health",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Remedios Santos",
+        "text": "What specialized care do you provide for elderly patients? My mother is 85 years old.",
+        "time": "2025-07-02 10:30"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. Geriatrics",
+        "text": "We offer comprehensive geriatric care including health assessment, medication management, and fall prevention programs. Schedule a consultation.",
+        "time": "2025-07-02 11:15"
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "date": "2025-06-30",
+    "name": "Esperanza Flores",
+    "email": "esperanza.flores@email.com",
+    "subject": "Postpartum Care Services",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Midwife Carmen",
+    "category": "Maternal Care",
+    "priority": "High",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Esperanza Flores",
+        "text": "I gave birth 2 weeks ago. What postpartum care services do you provide?",
+        "time": "2025-06-30 14:45"
+      },
+      {
+        "sender": "admin",
+        "name": "Midwife Carmen",
+        "text": "We provide postpartum check-ups, breastfeeding support, newborn care guidance, and family planning counseling. Please visit for assessment.",
+        "time": "2025-06-30 15:30"
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "date": "2025-06-28",
+    "name": "Teodoro Vidal",
+    "email": "teodoro.vidal@email.com",
+    "subject": "Hepatitis B Vaccination",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Nurse Vaccine",
+    "category": "Immunization",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Teodoro Vidal",
+        "text": "I need Hepatitis B vaccination for work. Is it available and what's the schedule?",
+        "time": "2025-06-28 12:20"
+      },
+      {
+        "sender": "admin",
+        "name": "Nurse Vaccine",
+        "text": "Hepatitis B vaccine is available. It's a 3-dose series: initial, 1 month, and 6 months later. Cost is ₱500 per dose.",
+        "time": "2025-06-28 13:00"
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "date": "2025-06-26",
+    "name": "Milagros Cruz",
+    "email": "milagros.cruz@email.com",
+    "subject": "Hearing Test Services",
+    "status": "resolved",
+    "unreadUser": false,
+    "repliedBy": "Dr. ENT",
+    "category": "ENT",
+    "priority": "Medium",
+    "messages": [
+      {
+        "sender": "user",
+        "name": "Milagros Cruz",
+        "text": "I'm experiencing hearing loss. Do you offer hearing tests?",
+        "time": "2025-06-26 09:15"
+      },
+      {
+        "sender": "admin",
+        "name": "Dr. ENT",
+        "text": "Yes, we have ENT services with audiometry testing every Monday. Please schedule an appointment for proper evaluation.",
+        "time": "2025-06-26 10:00"
+      }
+    ]
+  }
+]

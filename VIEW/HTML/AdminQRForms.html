@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin QR Forms</title>
+    <link href="../SRC/output.css" rel="stylesheet" />
+    <link href="../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../SRC/navigation.css" />
+    <link rel="stylesheet" href="../SRC/button-layout.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- MAIN NAV BAR -->
+    <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <a href="../HTML/LandingP.html" class="flex-shrink-0">
+          <img class="h-[50px] mr-[10px]" src="../SRC/IMG/bucallogonobg.png" alt="" />
+        </a>
+        <div class="text-xl w-[900px] font-bold">Admin QR Forms</div>
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold"></div>
+        <div class="hidden md:flex font-semibold">
+          <a href="../HTML/LandingP.html" class="block text-gray-700 hover:text-[#2563EB] mx-[20px]">Home</a>
+          <div class="relative" id="servicesDropdown">
+            <a href="#" class="text-gray-700 hover:text-[#2563EB] mx-[20px]" id="servicesDropdownBtn">Services</a>
+            <div id="servicesDropdownContent" class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden">
+              <a href="../SERVICES/serviceshtml/Spotmap.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Barangay Spot Map</a>
+              <a href="../SERVICES/serviceshtml/Events&Seminar.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Events & Seminars</a>
+              <a href="../SERVICES/serviceshtml/HealthProgram.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Health Programs</a>
+            </div>
+          </div>
+          <a href="../HTML/ProfileSettings.html" class="block text-gray-700 hover:text-[#2563EB] mx-[20px]">Profile</a>
+        </div>
+      </div>
+    </nav>
+    <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
+    <div class="hidden md:block bg-white w-52 h-screen shadow-md fixed top-[72px] left-0 z-40 overflow-y-auto">
+      <div class="flex flex-col p-4 font-semibold">
+        <a href="../HTML/HtmlServAnalysis/FamilyPlanning.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Analytics</a>
+        <a href="../HTML/AdminSpotMap.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Barangay Spot Map</a>
+        <a href="../HTML/SeasonalityExplorer.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Seasonality Explorer</a>
+        <a href="../SERVICES/serviceshtml/UserManagement.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Account Management</a>
+        <a href="../SERVICES/serviceshtml/Logs.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">System Logs</a>
+        <a href="../HTML/AdminEvents.html" class="dropdown-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Events Management</a>
+        <a href="../HTML/AdminHealthPrograms.html" class="dropdown-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Programs Management</a>
+        <a href="../HTML/AdminInquiries.html" class="dropdown-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Inquiries</a>
+        <a href="../HTML/AdminQRForms.html" class="dropdown-link mods block text-blue-600 font-bold bg-blue-50 transition-all duration-300 ease-in-out transform scale-105 translate-x-1 px-2 py-4 rounded-md text-sm">QR Forms</a>
+      </div>
+    </div>
+    <div class="pt-20">
+      <div class="md:ml-[250px] px-6 pb-12">
+        <header class="header">
+          <div class="header-row">
+            <h1><i class="fas fa-qrcode"></i> QR Forms Management</h1>
+          </div>
+        </header>
+        <div class="bg-white rounded-xl shadow-md p-8 mt-8">
+          <h2 class="text-2xl font-bold mb-4 text-blue-700 flex items-center"><i class="fas fa-qrcode mr-2"></i> QR Forms List</h2>
+          <div class="overflow-x-auto">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead class="bg-blue-50">
+                <tr>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Form Name</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">QR Code</th>
+                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <tr>
+                  <td class="px-6 py-4 whitespace-nowrap">Health Declaration</td>
+                  <td class="px-6 py-4 whitespace-nowrap">Form for health declaration upon entry</td>
+                  <td class="px-6 py-4 whitespace-nowrap"><img src="../SRC/IMG/sample-qr.png" alt="QR Code" class="w-12 h-12" /></td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <button class="text-blue-600 hover:text-blue-900 font-semibold mr-2"><i class="fas fa-eye"></i> View</button>
+                    <button class="text-green-600 hover:text-green-900 font-semibold"><i class="fas fa-download"></i> Download</button>
+                  </td>
+                </tr>
+                <!-- More rows can be dynamically added here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../JAVASCRIPT/navigation.js"></script>
+  </body>
+</html>

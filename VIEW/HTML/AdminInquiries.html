@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Inquiries</title>
+    <link href="../SRC/output.css" rel="stylesheet" />
+    <link href="../SRC/input.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../SRC/dashboardPNativestyle.css" />
+    <link rel="stylesheet" href="../SRC/navigation.css" />
+    <link rel="stylesheet" href="../SRC/button-layout.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- MAIN NAV BAR -->
+    <nav id="mainnav" class="bg-white shadow-md z-50 fixed top-0 w-full">
+      <div class="max-w-7xl mx-auto px-4 py-2 flex items-center">
+        <a href="../HTML/LandingP.html" class="flex-shrink-0">
+          <img class="h-[50px] mr-[10px]" src="../SRC/IMG/bucallogonobg.png" alt="" />
+        </a>
+        <div class="text-xl w-[900px] font-bold">Admin Inquiries</div>
+        <div class="hidden md:flex w-full justify-end pr-4 font-semibold"></div>
+        <div class="hidden md:flex font-semibold">
+          <a href="../HTML/LandingP.html" class="block text-gray-700 hover:text-[#2563EB] mx-[20px]">Home</a>
+          <div class="relative" id="servicesDropdown">
+            <a href="#" class="text-gray-700 hover:text-[#2563EB] mx-[20px]" id="servicesDropdownBtn">Services</a>
+            <div id="servicesDropdownContent" class="absolute left-0 mt-4 w-48 bg-white shadow-lg rounded-md z-50 hidden">
+              <a href="../SERVICES/serviceshtml/Spotmap.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Barangay Spot Map</a>
+              <a href="../SERVICES/serviceshtml/Events&Seminar.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Events & Seminars</a>
+              <a href="../SERVICES/serviceshtml/HealthProgram.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Health Programs</a>
+            </div>
+          </div>
+          <a href="../HTML/ProfileSettings.html" class="block text-gray-700 hover:text-[#2563EB] mx-[20px]">Profile</a>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden w-full flex justify-end pr-4 relative">
+          <!-- Toggle button -->
+          <button id="menu-button" class="p-2">
+            <svg class="w-8 h-7 text-zinc-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <!-- Dropdown Menu -->
+          <div id="dropdown-menu" class="transition-all duration-500 ease-in-out origin-top scale-y-0 opacity-0 absolute right-0 top-14 w-[230px] bg-white shadow-lg rounded-md z-50 font-semibold pointer-events-none">
+            <a href="../HTML/LandingP.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Home</a>
+            <hr />
+            <a href="#" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Services</a>
+            <hr />
+            <a href="../HTML/ProfileSettings.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Profile</a>
+            <hr />
+            <a href="../HTML/HtmlServAnalysis/FamilyPlanning.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Analytics</a>
+            <a href="../HTML/AdminSpotMap.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Barangay Spot Map</a>
+            <a href="../HTML/SeasonalityExplorer.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Seasonality Explorer</a>
+            <a href="../SERVICES/serviceshtml/UserManagement.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Account Management</a>
+            <a href="../SERVICES/serviceshtml/Logs.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">System Logs</a>
+            <a href="../HTML/AdminEvents.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Events Management</a>
+            <a href="../HTML/AdminHealthPrograms.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Programs Management</a>
+            <a href="../HTML/AdminInquiries.html" class="dropdown-link block px-4 py-4 text-blue-600 font-bold bg-blue-50 transition-all duration-300 ease-in-out transform scale-105 mb-2">Inquiries</a>
+            <a href="../HTML/AdminQRForms.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">QR Forms</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
+    <div class="hidden md:block bg-white w-52 h-screen shadow-md fixed top-[72px] left-0 z-40 overflow-y-auto">
+      <div class="flex flex-col p-4 font-semibold">
+        <a href="../HTML/HtmlServAnalysis/FamilyPlanning.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Analytics</a>
+        <a href="../HTML/AdminSpotMap.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Barangay Spot Map</a>
+        <a href="../HTML/SeasonalityExplorer.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Seasonality Explorer</a>
+        <a href="../SERVICES/serviceshtml/UserManagement.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Account Management</a>
+        <a href="../SERVICES/serviceshtml/Logs.html" class="sidebar-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">System Logs</a>
+        <a href="../HTML/AdminEvents.html" class="dropdown-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Events Management</a>
+        <a href="../HTML/AdminHealthPrograms.html" class="dropdown-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">Programs Management</a>
+        <a href="../HTML/AdminInquiries.html" class="dropdown-link mods block text-blue-600 font-bold bg-blue-50 transition-all duration-300 ease-in-out transform scale-105 translate-x-1 px-2 py-4 rounded-md text-sm">Inquiries</a>
+        <a href="../HTML/AdminQRForms.html" class="dropdown-link mods block text-gray-700 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 hover:translate-x-1 px-2 py-4 rounded-md hover:bg-[#2563EB]/10 text-sm">QR Forms</a>
+      </div>
+    </div>
+    <div class="pt-20">
+      <div class="md:ml-[250px] px-6 pb-12">
+
+        <!-- Inquiries Feed Section -->
+        <div class="inquiries-feed">
+          <div class="feed-header">
+            <h2><i class="fas fa-envelope"></i> Patient Inquiries</h2>
+          </div>
+
+        <div class="bg-white rounded-xl shadow-md p-8 mt-8">
+            <div class="mb-6">
+              <h2 class="text-2xl font-bold mb-2 text-blue-700 flex items-center"><i class="fas fa-envelope mr-2"></i> Inquiries</h2>
+              <!-- Controls -->
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+                <div class="flex gap-3">
+                  <button id="pendingTab" class="tab-btn px-4 py-2 rounded-lg font-semibold bg-blue-600 text-white focus:outline-none relative">Pending <span id="pendingCount" class="ml-2 bg-white text-blue-700 text-xs font-bold px-2 py-0.5 rounded-full">0</span></button>
+                  <button id="resolvedTab" class="tab-btn px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-700 focus:outline-none relative">Resolved <span id="resolvedCount" class="ml-2 bg-white text-gray-700 text-xs font-bold px-2 py-0.5 rounded-full">0</span></button>
+                </div>
+                <div class="flex flex-wrap gap-3 w-full md:w-auto items-center">
+                  <div class="relative flex-1 md:w-72">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input id="searchInputInquiry" type="text" placeholder="Search name or subject..." class="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                  </div>
+                  <button id="clearSearchBtn" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-semibold hidden">Clear</button>
+                  <select id="statusFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="resolved">Resolved</option>
+                  </select>
+                  <select id="sortSelect" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                  </select>
+                  <select id="pageSizeSelect" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="5">5 / page</option>
+                    <option value="10" selected>10 / page</option>
+                    <option value="20">20 / page</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Pending Inquiries Table -->
+              <div id="pendingInquiriesSection">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-blue-50">
+                    <tr>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-4 py-3">2025-08-18</td>
+                      <td class="px-4 py-3">Juan Dela Cruz</td>
+                      <td class="px-4 py-3">General Inquiry</td>
+                      <td class="px-4 py-3"><span class="inline-block px-2 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded">Pending</span></td>
+                      <td class="px-4 py-3">
+                        <button class="text-blue-600 hover:text-blue-900 font-semibold mr-2 view-btn" data-inquiry-id="1"><i class="fas fa-eye"></i> View</button>
+                      </td>
+                    </tr>
+                    <!-- More rows can be dynamically added here -->
+                  </tbody>
+                </table>
+              </div>
+              <!-- Resolved Inquiries Table -->
+              <div id="resolvedInquiriesSection" class="hidden">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-blue-50">
+                    <tr>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Replied By</th>
+                      <th class="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-4 py-3">2025-08-10</td>
+                      <td class="px-4 py-3">Maria Santos</td>
+                      <td class="px-4 py-3">Vaccine Schedule</td>
+                      <td class="px-4 py-3"><span class="inline-block px-2 py-1 text-xs font-semibold bg-gray-200 text-gray-700 rounded">Resolved</span></td>
+                      <td class="px-4 py-3">Admin: Dr. Reyes</td>
+                      <td class="px-4 py-3">
+                        <button class="text-blue-600 hover:text-blue-900 font-semibold mr-2 view-btn" data-inquiry-id="2"><i class="fas fa-eye"></i> View</button>
+                      </td>
+                    </tr>
+                    <!-- More rows can be dynamically added here -->
+                  </tbody>
+                </table>
+              </div>
+              <div class="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="text-sm text-gray-600">Showing <span id="rangeStart">0</span>-<span id="rangeEnd">0</span> of <span id="totalItems">0</span> inquiries</div>
+                <div class="flex items-center gap-2">
+                  <button id="prevPageBtn" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded disabled:opacity-40">Prev</button>
+                  <div id="pageIndicator" class="text-sm font-semibold"></div>
+                  <button id="nextPageBtn" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded disabled:opacity-40">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Inquiry Conversation Modal -->
+            <div id="inquiryModal" class="fixed inset-0 bg-gray-700 bg-opacity-50 items-center justify-center z-50 hidden">
+              <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+                <button id="closeModalBtn" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-2xl"><i class="fas fa-times"></i></button>
+                <h3 class="text-xl font-bold mb-2 text-blue-700 flex items-center"><i class="fas fa-comments mr-2"></i> Inquiry Conversation</h3>
+                <div class="mb-4">
+                  <div class="text-sm text-gray-500 mb-1"><span id="modalSubject">Subject: General Inquiry</span></div>
+                  <div class="text-sm text-gray-500 mb-1"><span id="modalFrom">From: Juan Dela Cruz (juan@email.com)</span></div>
+                  <div class="text-sm text-gray-500 mb-1"><span id="modalDate">Date: 2025-08-18</span></div>
+                  <div class="text-sm text-gray-500 mb-1"><span id="modalStatus">Status: <span class="font-semibold text-green-700">Pending</span></span></div>
+                </div>
+                <div class="bg-gray-50 rounded p-4 h-56 overflow-y-auto mb-4" id="conversationThread">
+                  <!-- Conversation messages go here -->
+                  <div class="mb-3">
+                    <div class="font-semibold text-gray-700">Juan Dela Cruz <span class="text-xs text-gray-400">(User)</span></div>
+                    <div class="text-gray-600">How do I book an appointment?</div>
+                    <div class="text-xs text-gray-400">2025-08-18 09:00</div>
+                  </div>
+                  <!-- Example admin reply -->
+                  <!--
+                  <div class="mb-3">
+                    <div class="font-semibold text-blue-700">Dr. Reyes <span class="text-xs text-gray-400">(Admin)</span></div>
+                    <div class="text-gray-700">You can book via the appointment page.</div>
+                    <div class="text-xs text-gray-400">2025-08-18 10:00</div>
+                  </div>
+                  -->
+                </div>
+                <div id="replySection" class="space-y-3">
+                  <form id="replyForm" class="flex gap-2">
+                    <input type="text" id="adminName" placeholder="Your Name" class="border border-gray-300 rounded px-2 py-1 w-32" required />
+                    <input type="text" id="replyMessage" placeholder="Type your reply..." class="border border-gray-300 rounded px-2 py-1 flex-1" required />
+                    <button type="submit" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 font-semibold">Send</button>
+                  </form>
+                  <div class="flex gap-2 text-xs">
+                    <button id="simulateUserMsgBtn" type="button" class="px-3 py-1 bg-indigo-100 hover:bg-indigo-200 text-indigo-700 rounded font-semibold">Simulate User Message</button>
+                    <button id="attemptResolveBtn" type="button" class="px-3 py-1 bg-gray-100 text-gray-500 rounded cursor-not-allowed" title="Only the user can resolve this inquiry">Mark as Resolved</button>
+                  </div>
+                </div>
+                <div id="resolvedNotice" class="hidden mt-4 text-green-700 font-semibold items-center gap-2"><i class="fas fa-check-circle"></i> This inquiry has been resolved by the user.</div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      /* Modal overlay fix */
+  #inquiryModal { display: none; }
+  #inquiryModal.active { display: flex; }
+      .tab-btn.active, .tab-btn.bg-blue-600 { background: #2563eb; color: #fff; }
+      .tab-btn.inactive, .tab-btn.bg-gray-200 { background: #e5e7eb; color: #374151; }
+  .inquiry-row-unread { background: #eff6ff; }
+  .inquiry-row-unread:hover { background: #dbeafe; }
+  .unread-dot { width:10px; height:10px; background:#2563eb; border-radius:9999px; display:inline-block; margin-left:4px; box-shadow:0 0 0 2px #fff; }
+  .toast { position:fixed; bottom:24px; right:24px; background:#1f2937; color:#fff; padding:10px 16px; border-radius:8px; font-size:14px; opacity:0; transform:translateY(10px); transition:all .3s; z-index:9999; display:flex; align-items:center; gap:8px; }
+  .toast.show { opacity:1; transform:translateY(0); }
+
+  /* Feed Styles */
+  .inquiries-feed {
+    margin-top: 1.5rem;
+  }
+  .feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  .feed-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e40af;
+    margin: 0;
+  }
+  .feed-header i {
+    margin-right: 0.5rem;
+  }
+    </style>
+    <script src="../JAVASCRIPT/navigation.js"></script>
+    <script>
+    // --- Demo Data ---
+    const STORAGE_KEY = 'adminInquiriesData_v1';
+    const DATA_URL = '../../DATA/inquiries.sample.json';
+    async function loadStoredInquiries() {
+      try { 
+        const raw = localStorage.getItem(STORAGE_KEY); 
+        if (raw) {
+          console.log('Loading from localStorage');
+          return JSON.parse(raw); 
+        }
+      } catch(e) { console.error('localStorage error:', e); }
+      
+      try { 
+        console.log('Fetching from:', DATA_URL);
+        const res = await fetch(DATA_URL); 
+        if(res.ok) {
+          const data = await res.json();
+          console.log('Loaded from JSON:', data.length, 'inquiries');
+          return data;
+        } else {
+          console.error('Fetch failed:', res.status, res.statusText);
+        }
+      } catch(e) { console.error('Fetch error:', e); }
+      
+      console.log('Returning empty array');
+      return [];
+    }
+    let inquiries = [];
+    function saveInquiries() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inquiries)); } catch(e) {} }
+
+    // --- Tab Switching ---
+    const pendingTab = document.getElementById('pendingTab');
+    const resolvedTab = document.getElementById('resolvedTab');
+    const pendingSection = document.getElementById('pendingInquiriesSection');
+    const resolvedSection = document.getElementById('resolvedInquiriesSection');
+
+    pendingTab.addEventListener('click', () => {
+      pendingTab.classList.add('active');
+      resolvedTab.classList.remove('active');
+      pendingSection.style.display = '';
+      resolvedSection.style.display = 'none';
+    });
+    resolvedTab.addEventListener('click', () => {
+      resolvedTab.classList.add('active');
+      pendingTab.classList.remove('active');
+      resolvedSection.style.display = '';
+      pendingSection.style.display = 'none';
+    });
+
+    // --- Render Inquiries ---
+    const searchInput = document.getElementById('searchInputInquiry');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const statusFilter = document.getElementById('statusFilter');
+    const sortSelect = document.getElementById('sortSelect');
+    const pageSizeSelect = document.getElementById('pageSizeSelect');
+    const prevPageBtn = document.getElementById('prevPageBtn');
+    const nextPageBtn = document.getElementById('nextPageBtn');
+    const pageIndicator = document.getElementById('pageIndicator');
+    const rangeStartEl = document.getElementById('rangeStart');
+    const rangeEndEl = document.getElementById('rangeEnd');
+    const totalItemsEl = document.getElementById('totalItems');
+    let currentPage = 1;
+    function parseDate(d){ return new Date(d+ 'T00:00:00'); }
+    function filteredInquiries() {
+      const term = (searchInput.value || '').trim().toLowerCase();
+      let list = inquiries.slice();
+      if(term) list = list.filter(q => q.name.toLowerCase().includes(term) || q.subject.toLowerCase().includes(term));
+      if(statusFilter.value) list = list.filter(q => q.status === statusFilter.value);
+      list.sort((a,b)=> sortSelect.value==='newest' ? parseDate(b.date)-parseDate(a.date) : parseDate(a.date)-parseDate(b.date));
+      return list;
+    }
+    function updateCounts(list) {
+      const pending = list.filter(q => q.status==='pending').length;
+      const resolved = list.filter(q => q.status==='resolved').length;
+      document.getElementById('pendingCount').textContent = pending;
+      document.getElementById('resolvedCount').textContent = resolved;
+    }
+    function renderInquiries(){
+      const list = filteredInquiries();
+      const pageSize = parseInt(pageSizeSelect.value,10);
+      const pendingList = list.filter(q=>q.status==='pending');
+      const resolvedList = list.filter(q=>q.status==='resolved');
+      updateCounts(list);
+      const activeData = pendingTab.classList.contains('active') ? pendingList : resolvedList;
+      const total = activeData.length;
+      const totalPages = Math.max(1, Math.ceil(total / pageSize));
+      if(currentPage>totalPages) currentPage=totalPages;
+      const startIdx = (currentPage-1)*pageSize;
+      const endIdx = startIdx + pageSize;
+      const pageSlice = activeData.slice(startIdx, endIdx);
+      // Clear tables
+      const pendingTbody = pendingSection.querySelector('tbody');
+      const resolvedTbody = resolvedSection.querySelector('tbody');
+      pendingTbody.innerHTML='';
+      resolvedTbody.innerHTML='';
+      pageSlice.forEach(q=>{
+        const tr = document.createElement('tr');
+        const common = q.status==='pending' ? `<td class=\"px-4 py-3\"><span class=\"inline-block px-2 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded\">Pending</span></td>` : `<td class=\"px-4 py-3\"><span class=\"inline-block px-2 py-1 text-xs font-semibold bg-gray-200 text-gray-700 rounded\">Resolved</span></td>`;
+        tr.innerHTML = `
+          <td class=\"px-4 py-3\">${q.date}</td>
+          <td class=\"px-4 py-3\">${q.name}${q.unreadUser ? '<span class=\\"unread-dot\\" title=\\"New user message\\"></span>' : ''}</td>
+          <td class=\"px-4 py-3\">${q.subject}</td>
+          ${common}
+          ${q.status==='resolved' ? `<td class=\"px-4 py-3\">Admin: ${q.repliedBy||''}</td>` : ''}
+          <td class=\"px-4 py-3 whitespace-nowrap\"><button class=\"text-blue-600 hover:text-blue-900 font-semibold mr-2 view-btn\" data-inquiry-id=\"${q.id}\"><i class=\"fas fa-eye\"></i> View</button></td>`;
+        if(q.status==='pending'){ if(q.unreadUser) tr.classList.add('inquiry-row-unread'); pendingTbody.appendChild(tr);} else { resolvedTbody.appendChild(tr);} });
+      clearSearchBtn.classList.toggle('hidden', !(searchInput.value||'').trim());
+      const rs = total ? startIdx+1 : 0; const re = Math.min(endIdx, total);
+      document.getElementById('rangeStart').textContent = rs;
+      document.getElementById('rangeEnd').textContent = re;
+      document.getElementById('totalItems').textContent = total;
+      document.getElementById('pageIndicator').textContent = `Page ${total?currentPage:0} / ${total?totalPages:0}`;
+      prevPageBtn.disabled = currentPage===1;
+      nextPageBtn.disabled = currentPage===totalPages;
+    }
+
+    // --- Modal Logic ---
+    const inquiryModal = document.getElementById('inquiryModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const conversationThread = document.getElementById('conversationThread');
+  const replySection = document.getElementById('replySection');
+    const resolvedNotice = document.getElementById('resolvedNotice');
+    const replyForm = document.getElementById('replyForm');
+  const simulateUserMsgBtn = document.getElementById('simulateUserMsgBtn');
+  const attemptResolveBtn = document.getElementById('attemptResolveBtn');
+    let currentInquiry = null;
+
+    function openModal(inquiry) {
+      currentInquiry = inquiry;
+      document.getElementById('modalSubject').textContent = 'Subject: ' + inquiry.subject;
+      document.getElementById('modalFrom').textContent = 'From: ' + inquiry.name + ' (' + inquiry.email + ')';
+      document.getElementById('modalDate').textContent = 'Date: ' + inquiry.date;
+      document.getElementById('modalStatus').innerHTML = 'Status: ' + (inquiry.status === 'pending' ? '<span class="font-semibold text-green-700">Pending</span>' : '<span class="font-semibold text-gray-700">Resolved</span>');
+  // Mark unread as seen when opening
+  if (inquiry.unreadUser) { inquiry.unreadUser = false; saveInquiries(); }
+  // Render conversation
+      conversationThread.innerHTML = '';
+      inquiry.messages.forEach(msg => {
+        const div = document.createElement('div');
+        div.className = 'mb-3';
+        if (msg.sender === 'user') {
+          div.innerHTML = `<div class="font-semibold text-gray-700">${msg.name} <span class="text-xs text-gray-400">(User)</span></div><div class="text-gray-600">${msg.text}</div><div class="text-xs text-gray-400">${msg.time}</div>`;
+        } else {
+          div.innerHTML = `<div class="font-semibold text-blue-700">${msg.name} <span class="text-xs text-gray-400">(Admin)</span></div><div class="text-gray-700">${msg.text}</div><div class="text-xs text-gray-400">${msg.time}</div>`;
+        }
+        conversationThread.appendChild(div);
+      });
+      // Show/hide reply section
+      if (inquiry.status === 'pending') {
+        replySection.style.display = '';
+        resolvedNotice.style.display = 'none';
+      } else {
+        replySection.style.display = 'none';
+        resolvedNotice.style.display = '';
+      }
+  inquiryModal.classList.add('active');
+  conversationThread.scrollTop = conversationThread.scrollHeight;
+    }
+
+    function closeModal() {
+      inquiryModal.classList.remove('active');
+    }
+    closeModalBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', function(e) {
+      if (e.target === inquiryModal) closeModal();
+    });
+
+    // --- View Button Logic ---
+    function addViewBtnListeners() {
+      document.querySelectorAll('.view-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const id = parseInt(this.getAttribute('data-inquiry-id'));
+          const inquiry = inquiries.find(q => q.id === id);
+          openModal(inquiry);
+        });
+      });
+    }
+
+    // --- Reply Logic ---
+    replyForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const adminName = document.getElementById('adminName').value.trim();
+      const replyMessage = document.getElementById('replyMessage').value.trim();
+      if (!adminName || !replyMessage) return;
+      const now = new Date();
+      const time = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0') + ' ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+      currentInquiry.messages.push({ sender: 'admin', name: adminName, text: replyMessage, time });
+      currentInquiry.repliedBy = adminName;
+      // Optionally, auto-resolve after reply:
+      // currentInquiry.status = 'resolved';
+      saveInquiries();
+      renderInquiries();
+      openModal(currentInquiry);
+      addViewBtnListeners();
+      replyForm.reset();
+    });
+
+    // Simulate user message (for demo/testing)
+    simulateUserMsgBtn.addEventListener('click', () => {
+      if (!currentInquiry) return;
+      const now = new Date();
+      const time = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0') + ' ' + String(now.getHours()).padStart(2,'0') + ':' + String(now.getMinutes()).padStart(2,'0');
+      currentInquiry.messages.push({ sender: 'user', name: currentInquiry.name, text: 'Follow-up question from user...', time });
+      currentInquiry.unreadUser = true;
+      saveInquiries();
+      openModal(currentInquiry);
+      renderInquiries();
+      addViewBtnListeners();
+      showToast('New user message received.');
+    });
+
+    attemptResolveBtn.addEventListener('click', () => {
+      showToast('Only the user can resolve this inquiry.');
+    });
+
+  function refresh(reset=false){ if(reset) currentPage=1; renderInquiries(); addViewBtnListeners(); }
+  searchInput.addEventListener('input', ()=> refresh(true));
+  clearSearchBtn.addEventListener('click', ()=> { searchInput.value=''; refresh(true); });
+  document.getElementById('statusFilter').addEventListener('change', ()=> refresh(true));
+  document.getElementById('sortSelect').addEventListener('change', ()=> refresh(true));
+  document.getElementById('pageSizeSelect').addEventListener('change', ()=> refresh(true));
+  document.getElementById('prevPageBtn').addEventListener('click', ()=> { if(currentPage>1){ currentPage--; refresh(); }});
+  document.getElementById('nextPageBtn').addEventListener('click', ()=> { currentPage++; refresh(); });
+  pendingTab.addEventListener('click', ()=> { currentPage=1; refresh(); });
+  resolvedTab.addEventListener('click', ()=> { currentPage=1; refresh(); });
+
+    // Toast helper
+    let toastEl; function showToast(msg) {
+      if (!toastEl) { toastEl = document.createElement('div'); toastEl.className='toast'; document.body.appendChild(toastEl); }
+      toastEl.innerHTML = '<i class="fas fa-info-circle"></i>'+msg; toastEl.classList.add('show');
+      setTimeout(()=> toastEl.classList.remove('show'), 3000);
+    }
+
+    // --- Initial Render ---
+    async function init() {
+      // Clear localStorage for testing to force JSON load
+      // localStorage.removeItem(STORAGE_KEY);
+      inquiries = await loadStoredInquiries();
+      console.log('Loaded inquiries:', inquiries.length); // Debug log
+      saveInquiries();
+      renderInquiries();
+      addViewBtnListeners();
+      // Default to pending tab
+      pendingTab.classList.add('active');
+      resolvedTab.classList.remove('active');
+      pendingSection.style.display = '';
+      resolvedSection.style.display = 'none';
+    }
+    // Re-add listeners after each render
+    pendingSection.addEventListener('click', function(e) {
+      if (e.target.closest('.view-btn')) addViewBtnListeners();
+    });
+    resolvedSection.addEventListener('click', function(e) {
+      if (e.target.closest('.view-btn')) addViewBtnListeners();
+    });
+    document.addEventListener('DOMContentLoaded', init);
+
+    // Mobile menu functionality
+    const menuButton = document.getElementById('menu-button');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    
+    if (menuButton && dropdownMenu) {
+      menuButton.addEventListener('click', function() {
+        if (dropdownMenu.classList.contains('scale-y-0')) {
+          dropdownMenu.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+          dropdownMenu.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
+        } else {
+          dropdownMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+          dropdownMenu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+        }
+      });
+    }
+
+    // Export functionality
+    document.getElementById('exportInquiriesBtn').addEventListener('click', function() {
+      const dataStr = JSON.stringify(inquiries, null, 2);
+      const dataBlob = new Blob([dataStr], {type: 'application/json'});
+      const url = URL.createObjectURL(dataBlob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'inquiries_export_' + new Date().toISOString().split('T')[0] + '.json';
+      link.click();
+      URL.revokeObjectURL(url);
+      showToast('Inquiries data exported successfully!');
+    });
+    </script>
+  </body>
+</html>
