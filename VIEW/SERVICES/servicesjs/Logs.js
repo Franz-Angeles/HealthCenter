@@ -16,70 +16,68 @@ let logsData = [
   {
     id: 1,
     timestamp: new Date(Date.now() - 2 * 60 * 1000), // 2 minutes ago
-    user: "Dr. Maria Santos",
-    action: "login",
+    user: "Lisa Chen",
+    action: "service_add",
     level: "info",
-    description: "logged into the system",
-    details: "IP: 192.168.1.45 • Location: Admin Office",
-    icon: "fas fa-sign-in-alt",
+    description: "added new service",
+    details: "Service: Free Dental Checkup • Category: Dental",
+    icon: "fas fa-plus",
     color: "green",
   },
   {
     id: 2,
     timestamp: new Date(Date.now() - 15 * 60 * 1000), // 15 minutes ago
-    user: "Nurse Jennifer Cruz",
-    action: "create",
+    user: "Arman Dela Cruz",
+    action: "service_delete",
     level: "info",
-    description: "created new health seminar",
-    details: 'Event: "Diabetes Prevention Workshop" • Date: Aug 15, 2025',
-    icon: "fas fa-calendar-plus",
-    color: "blue",
+    description: "deleted service",
+    details: "Service: Nutrition Counseling • Reason: Deprecated",
+    icon: "fas fa-trash",
+    color: "red",
   },
   {
     id: 3,
     timestamp: new Date(Date.now() - 32 * 60 * 1000), // 32 minutes ago
-    user: "Admin Rodriguez",
-    action: "create",
+    user: "System",
+    action: "system",
     level: "info",
-    description: "added new user account",
-    details: "User: Dr. Carlos Martinez • Role: Healthcare Provider",
-    icon: "fas fa-user-plus",
-    color: "purple",
+    description: "performed automated backup",
+    details: "Backup Size: 2.4 GB • Duration: 3m 42s • Status: Successful",
+    icon: "fas fa-database",
+    color: "indigo",
   },
   {
     id: 4,
     timestamp: new Date(Date.now() - 60 * 60 * 1000), // 1 hour ago
-    user: "System",
-    action: "warning",
-    level: "warning",
-    description: "detected low inventory alert",
-    details:
-      "Item: Paracetamol 500mg • Remaining: 15 units • Threshold: 20 units",
-    icon: "fas fa-exclamation-triangle",
-    color: "yellow",
+    user: "Robert Kim",
+    action: "service_add",
+    level: "info",
+    description: "added new service",
+    details: "Service: Prenatal Care • Category: Maternal Care",
+    icon: "fas fa-plus",
+    color: "green",
   },
   {
     id: 5,
     timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
-    user: "Dr. Ana Reyes",
-    action: "export",
+    user: "Jenny Cruz",
+    action: "service_delete",
     level: "info",
-    description: "exported patient reports",
-    details:
-      "Report Type: Monthly Health Summary • File: health_report_july_2025.pdf",
-    icon: "fas fa-file-export",
-    color: "indigo",
+    description: "deleted service",
+    details: "Service: Blood Pressure Check • Reason: Duplicate",
+    icon: "fas fa-trash",
+    color: "red",
   },
   {
     id: 6,
     timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000), // 3 hours ago
-    user: "Nurse Patricia Go",
+    user: "System",
     action: "update",
     level: "info",
-    description: "updated patient record",
-    details: "Patient: Juan Dela Cruz • Record ID: HC-2025-0847",
-    icon: "fas fa-user-edit",
-    color: "green",
+    description: "updated security settings",
+    details: "Policy: Password min length set to 10",
+    icon: "fas fa-shield-alt",
+    color: "purple",
   },
   {
     id: 7,
@@ -96,13 +94,13 @@ let logsData = [
   {
     id: 8,
     timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago
-    user: "System",
-    action: "system",
+    user: "Admin",
+    action: "service_add",
     level: "info",
-    description: "performed automated backup",
-    details: "Backup Size: 2.4 GB • Duration: 3m 42s • Status: Successful",
-    icon: "fas fa-database",
-    color: "blue",
+    description: "added new service",
+    details: "Service: Child Immunization • Category: Pediatrics",
+    icon: "fas fa-plus",
+    color: "green",
   },
   {
     id: 9,
@@ -110,21 +108,21 @@ let logsData = [
     user: "System Admin",
     action: "update",
     level: "info",
-    description: "updated security settings",
-    details: "Action: Password policy updated • Min length: 8 characters",
+    description: "updated system configuration",
+    details: "Timezone set to UTC+8 • Session timeout: 30m",
     icon: "fas fa-shield-alt",
     color: "purple",
   },
   {
     id: 10,
     timestamp: new Date(Date.now() - 25 * 60 * 60 * 1000), // Yesterday
-    user: "Dr. Roberto Silva",
-    action: "logout",
+    user: "System",
+    action: "system",
     level: "info",
-    description: "logged out of the system",
-    details: "Session Duration: 4h 23m • Last Activity: Patient consultation",
-    icon: "fas fa-sign-out-alt",
-    color: "green",
+    description: "nightly maintenance completed",
+    details: "Index rebuilt • Cache cleared",
+    icon: "fas fa-cogs",
+    color: "indigo",
   },
 ];
 
@@ -154,12 +152,11 @@ function setupEventListeners() {
   if (dateFilter) dateFilter.addEventListener("change", applyFilters);
 
   // Export functionality
+  // Export elements may not exist on this page; guard if present
   const exportBtn = document.getElementById("exportBtn");
-  const exportModal = document.getElementById("exportModal");
   const closeExportModal = document.getElementById("closeExportModal");
   const cancelExportBtn = document.getElementById("cancelExportBtn");
   const exportForm = document.getElementById("exportForm");
-
   if (exportBtn)
     exportBtn.addEventListener("click", () => showModal("exportModal"));
   if (closeExportModal)
@@ -168,18 +165,7 @@ function setupEventListeners() {
     cancelExportBtn.addEventListener("click", () => hideModal("exportModal"));
   if (exportForm) exportForm.addEventListener("submit", handleExport);
 
-  // Clear logs functionality
-  const clearLogsBtn = document.getElementById("clearLogsBtn");
-  const clearModal = document.getElementById("clearModal");
-  const cancelClearBtn = document.getElementById("cancelClearBtn");
-  const confirmClearBtn = document.getElementById("confirmClearBtn");
-
-  if (clearLogsBtn)
-    clearLogsBtn.addEventListener("click", () => showModal("clearModal"));
-  if (cancelClearBtn)
-    cancelClearBtn.addEventListener("click", () => hideModal("clearModal"));
-  if (confirmClearBtn)
-    confirmClearBtn.addEventListener("click", handleClearLogs);
+  // Clear logs UI removed per request
 
   // Load more functionality
   const loadMoreBtn = document.getElementById("loadMoreBtn");
@@ -243,9 +229,9 @@ function createLogElement(log) {
                 </div>
             </div>
             <div class="text-right">
-                <p class="text-sm font-medium text-gray-900 capitalize">${
+                <p class="text-sm font-medium text-gray-900">${getActionLabel(
                   log.action
-                }</p>
+                )}</p>
                 <p class="text-xs text-gray-500">${formatTimeAgo(
                   log.timestamp
                 )}</p>
@@ -383,19 +369,14 @@ function loadMoreLogs() {
 }
 
 function generateSampleLogs(count) {
-  const sampleActions = [
-    "view",
-    "update",
-    "delete",
-    "export",
-    "login",
-    "logout",
-  ];
+  const sampleActions = ["service_add", "service_delete"];
   const sampleUsers = [
-    "Dr. Sarah Johnson",
-    "Nurse Mike Torres",
-    "Admin Lisa Chen",
-    "Dr. Robert Kim",
+    "Lisa Chen",
+    "Arman Dela Cruz",
+    "Robert Kim",
+    "Jenny Cruz",
+    "Sarah Johnson",
+    "Mike Torres",
   ];
   const newLogs = [];
 
@@ -404,14 +385,23 @@ function generateSampleLogs(count) {
       sampleActions[Math.floor(Math.random() * sampleActions.length)];
     const user = sampleUsers[Math.floor(Math.random() * sampleUsers.length)];
 
+    const isAdd = action === "service_add";
+    const serviceNames = [
+      "Prenatal Care",
+      "Child Immunization",
+      "Dental Checkup",
+      "Nutrition Counseling",
+      "Blood Pressure Check",
+    ];
+    const svc = serviceNames[Math.floor(Math.random() * serviceNames.length)];
     newLogs.push({
       id: logsData.length + i + 1,
       timestamp: new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000), // Random time in last week
       user: user,
       action: action,
       level: "info",
-      description: `performed ${action} action`,
-      details: `Sample activity performed by ${user}`,
+      description: isAdd ? "added new service" : "deleted service",
+      details: `Service: ${svc}`,
       icon: getIconForAction(action),
       color: getColorForAction(action),
     });
@@ -422,6 +412,8 @@ function generateSampleLogs(count) {
 
 function getIconForAction(action) {
   const iconMap = {
+    service_add: "fas fa-plus",
+    service_delete: "fas fa-trash",
     login: "fas fa-sign-in-alt",
     logout: "fas fa-sign-out-alt",
     create: "fas fa-plus",
@@ -435,6 +427,8 @@ function getIconForAction(action) {
 
 function getColorForAction(action) {
   const colorMap = {
+    service_add: "green",
+    service_delete: "red",
     login: "green",
     logout: "blue",
     create: "purple",
@@ -444,6 +438,23 @@ function getColorForAction(action) {
     export: "yellow",
   };
   return colorMap[action] || "gray";
+}
+
+function getActionLabel(action) {
+  const labelMap = {
+    service_add: "Service Added",
+    service_delete: "Service Deleted",
+    login: "Login",
+    logout: "Logout",
+    create: "Create",
+    update: "Update",
+    delete: "Delete",
+    view: "View",
+    export: "Export",
+    system: "System",
+    error: "Error",
+  };
+  return labelMap[action] || action;
 }
 
 function handleExport(event) {
@@ -483,20 +494,34 @@ function handleExport(event) {
 }
 
 function handleClearLogs() {
-  const clearPeriod = document.getElementById("clearPeriod").value;
-  const cutoffDate = new Date();
-  const daysToSubtract = parseInt(clearPeriod) || 30; // Default to 30 days if NaN
-  cutoffDate.setDate(cutoffDate.getDate() - daysToSubtract);
+  // If there's a period selector, use it; otherwise clear all
+  const clearPeriodEl = document.getElementById("clearPeriod");
+  if (clearPeriodEl) {
+    const clearPeriod = clearPeriodEl.value;
+    const cutoffDate = new Date();
+    const daysToSubtract = parseInt(clearPeriod) || 30; // Default to 30 days if NaN
+    cutoffDate.setDate(cutoffDate.getDate() - daysToSubtract);
 
-  const initialCount = logsData.length;
-  logsData = logsData.filter((log) => log.timestamp > cutoffDate);
-  const removedCount = initialCount - logsData.length;
+    const initialCount = logsData.length;
+    logsData = logsData.filter((log) => log.timestamp > cutoffDate);
+    const removedCount = initialCount - logsData.length;
 
-  hideModal("clearModal");
-  applyFilters();
-  updateStatistics();
+    hideModal("clearModal");
+    applyFilters();
+    updateStatistics();
 
-  showAlert(`Successfully removed ${removedCount} old log entries.`, "success");
+    showAlert(
+      `Successfully removed ${removedCount} old log entries.`,
+      "success"
+    );
+  } else {
+    const removedCount = logsData.length;
+    logsData = [];
+    hideModal("clearModal");
+    applyFilters();
+    updateStatistics();
+    showAlert(`Cleared ${removedCount} log entries.`, "success");
+  }
 }
 
 function showModal(modalId) {
