@@ -1,0 +1,177 @@
+[
+  {
+    "id": 1,
+    "name": "Patient Registration Form",
+    "description": "Complete patient registration with personal and medical information",
+    "type": "form",
+    "category": "Registration",
+    "status": "active",
+    "created": "2025-08-15",
+    "creator": "Admin Staff",
+    "formFields": [
+      {"id": "fname", "type": "text", "label": "First Name", "required": true},
+      {"id": "lname", "type": "text", "label": "Last Name", "required": true},
+      {"id": "email", "type": "email", "label": "Email Address", "required": true},
+      {"id": "phone", "type": "tel", "label": "Phone Number", "required": true},
+      {"id": "birthdate", "type": "date", "label": "Date of Birth", "required": true},
+      {"id": "gender", "type": "select", "label": "Gender", "required": true, "options": ["Male", "Female", "Other"]},
+      {"id": "address", "type": "textarea", "label": "Complete Address", "required": true},
+      {"id": "emergency_contact", "type": "text", "label": "Emergency Contact Name", "required": true},
+      {"id": "emergency_phone", "type": "tel", "label": "Emergency Contact Phone", "required": true},
+      {"id": "medical_history", "type": "textarea", "label": "Medical History", "required": false},
+      {"id": "allergies", "type": "textarea", "label": "Known Allergies", "required": false},
+      {"id": "medications", "type": "textarea", "label": "Current Medications", "required": false}
+    ],
+    "submissions": 245,
+    "lastUpdated": "2025-08-16"
+  },
+  {
+    "id": 2,
+    "name": "Health Declaration Form",
+    "description": "COVID-19 health screening and declaration form",
+    "type": "form",
+    "category": "Health Screening",
+    "status": "active",
+    "created": "2025-08-10",
+    "creator": "Dr. Reyes",
+    "formFields": [
+      {"id": "full_name", "type": "text", "label": "Full Name", "required": true},
+      {"id": "temperature", "type": "number", "label": "Body Temperature (°C)", "required": true},
+      {"id": "symptoms", "type": "checkbox", "label": "Current Symptoms", "required": false, "options": ["Fever", "Cough", "Sore Throat", "Difficulty Breathing", "Body Aches", "Loss of Taste/Smell"]},
+      {"id": "travel_history", "type": "radio", "label": "Recent Travel History", "required": true, "options": ["Yes", "No"]},
+      {"id": "contact_covid", "type": "radio", "label": "Contact with COVID-19 Patient", "required": true, "options": ["Yes", "No"]},
+      {"id": "vaccination_status", "type": "select", "label": "Vaccination Status", "required": true, "options": ["Fully Vaccinated", "Partially Vaccinated", "Not Vaccinated"]},
+      {"id": "declaration", "type": "checkbox", "label": "Declaration", "required": true, "options": ["I declare that all information provided is true and accurate"]}
+    ],
+    "submissions": 1024,
+    "lastUpdated": "2025-08-17"
+  },
+  {
+    "id": 3,
+    "name": "Appointment Booking Form",
+    "description": "Online appointment scheduling for consultations",
+    "type": "form",
+    "category": "Appointments",
+    "status": "active",
+    "created": "2025-08-12",
+    "creator": "Nurse Linda",
+    "formFields": [
+      {"id": "patient_name", "type": "text", "label": "Patient Name", "required": true},
+      {"id": "contact_number", "type": "tel", "label": "Contact Number", "required": true},
+      {"id": "service_type", "type": "select", "label": "Service Type", "required": true, "options": ["General Consultation", "Dental", "Family Planning", "Immunization", "Laboratory", "Maternal Care"]},
+      {"id": "preferred_date", "type": "date", "label": "Preferred Date", "required": true},
+      {"id": "preferred_time", "type": "select", "label": "Preferred Time", "required": true, "options": ["8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM"]},
+      {"id": "reason", "type": "textarea", "label": "Reason for Visit", "required": true},
+      {"id": "insurance", "type": "radio", "label": "PhilHealth Member", "required": true, "options": ["Yes", "No"]}
+    ],
+    "submissions": 189,
+    "lastUpdated": "2025-08-18"
+  },
+  {
+    "id": 4,
+    "name": "Maternal Care Assessment",
+    "description": "Prenatal and postnatal care evaluation form",
+    "type": "form",
+    "category": "Maternal Care",
+    "status": "active",
+    "created": "2025-08-08",
+    "creator": "Dr. Santos",
+    "formFields": [
+      {"id": "mother_name", "type": "text", "label": "Mother's Name", "required": true},
+      {"id": "age", "type": "number", "label": "Age", "required": true},
+      {"id": "pregnancy_week", "type": "number", "label": "Weeks of Pregnancy", "required": false},
+      {"id": "gravida", "type": "number", "label": "Gravida (Total Pregnancies)", "required": true},
+      {"id": "para", "type": "number", "label": "Para (Live Births)", "required": true},
+      {"id": "lmp", "type": "date", "label": "Last Menstrual Period", "required": false},
+      {"id": "prenatal_visits", "type": "number", "label": "Number of Prenatal Visits", "required": false},
+      {"id": "complications", "type": "checkbox", "label": "Pregnancy Complications", "required": false, "options": ["Hypertension", "Diabetes", "Bleeding", "Preeclampsia", "None"]},
+      {"id": "delivery_plan", "type": "select", "label": "Planned Place of Delivery", "required": true, "options": ["Hospital", "Birthing Center", "Home Birth", "Undecided"]}
+    ],
+    "submissions": 156,
+    "lastUpdated": "2025-08-14"
+  },
+  {
+    "id": 5,
+    "name": "Child Immunization Record",
+    "description": "Vaccination tracking and scheduling form",
+    "type": "form",
+    "category": "Immunization",
+    "status": "active",
+    "created": "2025-08-05",
+    "creator": "Nurse Patricia",
+    "formFields": [
+      {"id": "child_name", "type": "text", "label": "Child's Name", "required": true},
+      {"id": "birth_date", "type": "date", "label": "Date of Birth", "required": true},
+      {"id": "parent_name", "type": "text", "label": "Parent/Guardian Name", "required": true},
+      {"id": "parent_contact", "type": "tel", "label": "Parent Contact Number", "required": true},
+      {"id": "birth_weight", "type": "number", "label": "Birth Weight (kg)", "required": true},
+      {"id": "vaccines_received", "type": "checkbox", "label": "Vaccines Received", "required": false, "options": ["BCG", "Hepatitis B", "DPT", "OPV", "MMR", "Varicella"]},
+      {"id": "next_vaccine", "type": "select", "label": "Next Vaccine Due", "required": false, "options": ["BCG", "Hepatitis B", "DPT", "OPV", "MMR", "Varicella", "None"]},
+      {"id": "allergic_reactions", "type": "textarea", "label": "Previous Allergic Reactions", "required": false}
+    ],
+    "submissions": 312,
+    "lastUpdated": "2025-08-16"
+  },
+  {
+    "id": 6,
+    "name": "Senior Citizen Health Assessment",
+    "description": "Comprehensive health evaluation for elderly patients",
+    "type": "form",
+    "category": "Geriatric Care",
+    "status": "active",
+    "created": "2025-07-30",
+    "creator": "Dr. Geriatrics",
+    "formFields": [
+      {"id": "senior_name", "type": "text", "label": "Senior Citizen Name", "required": true},
+      {"id": "age", "type": "number", "label": "Age", "required": true},
+      {"id": "osca_id", "type": "text", "label": "OSCA ID Number", "required": false},
+      {"id": "medical_conditions", "type": "checkbox", "label": "Existing Medical Conditions", "required": false, "options": ["Hypertension", "Diabetes", "Heart Disease", "Arthritis", "Osteoporosis", "Dementia", "None"]},
+      {"id": "mobility", "type": "select", "label": "Mobility Status", "required": true, "options": ["Independent", "Uses Walking Aid", "Wheelchair Bound", "Bed Ridden"]},
+      {"id": "living_situation", "type": "select", "label": "Living Situation", "required": true, "options": ["Lives Alone", "With Family", "Assisted Living", "Nursing Home"]},
+      {"id": "caregiver_contact", "type": "tel", "label": "Caregiver Contact", "required": false}
+    ],
+    "submissions": 87,
+    "lastUpdated": "2025-08-12"
+  },
+  {
+    "id": 7,
+    "name": "Mental Health Screening",
+    "description": "Initial mental health assessment and support form",
+    "type": "form",
+    "category": "Mental Health",
+    "status": "draft",
+    "created": "2025-08-14",
+    "creator": "Dr. Psychology",
+    "formFields": [
+      {"id": "patient_name", "type": "text", "label": "Patient Name", "required": true},
+      {"id": "age", "type": "number", "label": "Age", "required": true},
+      {"id": "mood_rating", "type": "select", "label": "Current Mood (1-10)", "required": true, "options": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]},
+      {"id": "symptoms", "type": "checkbox", "label": "Symptoms Experienced", "required": false, "options": ["Anxiety", "Depression", "Sleep Issues", "Panic Attacks", "Mood Swings", "Difficulty Concentrating"]},
+      {"id": "support_system", "type": "radio", "label": "Has Support System", "required": true, "options": ["Yes", "No"]},
+      {"id": "previous_treatment", "type": "radio", "label": "Previous Mental Health Treatment", "required": true, "options": ["Yes", "No"]},
+      {"id": "crisis_risk", "type": "radio", "label": "Immediate Crisis Risk", "required": true, "options": ["Yes", "No"]}
+    ],
+    "submissions": 0,
+    "lastUpdated": "2025-08-14"
+  },
+  {
+    "id": 8,
+    "name": "Dental Service Request",
+    "description": "Dental care appointment and service request form",
+    "type": "form",
+    "category": "Dental",
+    "status": "active",
+    "created": "2025-08-11",
+    "creator": "Dr. Dental",
+    "formFields": [
+      {"id": "patient_name", "type": "text", "label": "Patient Name", "required": true},
+      {"id": "contact", "type": "tel", "label": "Contact Number", "required": true},
+      {"id": "service_needed", "type": "checkbox", "label": "Services Needed", "required": true, "options": ["Cleaning", "Extraction", "Filling", "Root Canal", "Consultation", "Oral Surgery"]},
+      {"id": "pain_level", "type": "select", "label": "Pain Level (0-10)", "required": false, "options": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]},
+      {"id": "urgency", "type": "radio", "label": "Urgency", "required": true, "options": ["Emergency", "Urgent", "Routine"]},
+      {"id": "dental_history", "type": "textarea", "label": "Previous Dental Work", "required": false}
+    ],
+    "submissions": 124,
+    "lastUpdated": "2025-08-17"
+  }
+]

@@ -33,6 +33,33 @@
           </div>
           <a href="../HTML/ProfileSettings.html" class="block text-gray-700 hover:text-[#2563EB] mx-[20px]">Profile</a>
         </div>
+        <!-- Mobile Dropdown -->
+        <div class="md:hidden w-full flex justify-end pr-4 relative">
+          <!-- Toggle button -->
+          <button id="menu-button" class="p-2">
+            <svg class="w-8 h-7 text-zinc-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <!-- Dropdown Menu -->
+          <div id="dropdown-menu" class="transition-all duration-500 ease-in-out origin-top scale-y-0 opacity-0 absolute right-0 top-14 w-[230px] bg-white shadow-lg rounded-md z-50 font-semibold pointer-events-none">
+            <a href="../HTML/LandingP.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Home</a>
+            <hr />
+            <a href="#" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Services</a>
+            <hr />
+            <a href="../HTML/ProfileSettings.html" class="block px-4 py-4 text-gray-700 hover:bg-gray-100">Profile</a>
+            <hr />
+            <a href="../HTML/HtmlServAnalysis/FamilyPlanning.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Analytics</a>
+            <a href="../HTML/AdminSpotMap.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Barangay Spot Map</a>
+            <a href="../HTML/SeasonalityExplorer.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Seasonality Explorer</a>
+            <a href="../SERVICES/serviceshtml/UserManagement.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Account Management</a>
+            <a href="../SERVICES/serviceshtml/Logs.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">System Logs</a>
+            <a href="../HTML/AdminEvents.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Events Management</a>
+            <a href="../HTML/AdminHealthPrograms.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Programs Management</a>
+            <a href="../HTML/AdminInquiries.html" class="dropdown-link block px-4 py-4 text-gray-700 hover:bg-[#2563EB]/10 hover:text-[#2563EB] transition-all duration-300 ease-in-out transform hover:scale-105 mb-2">Inquiries</a>
+            <a href="../HTML/AdminQRForms.html" class="dropdown-link block px-4 py-4 text-blue-600 font-bold bg-blue-50 transition-all duration-300 ease-in-out transform scale-105 mb-2">QR Forms</a>
+          </div>
+        </div>
       </div>
     </nav>
     <!-- SIDEBAR BELOW NAV, FOR DESKTOP ONLY -->
@@ -51,40 +78,826 @@
     </div>
     <div class="pt-20">
       <div class="md:ml-[250px] px-6 pb-12">
+        <!-- Header -->
         <header class="header">
           <div class="header-row">
             <h1><i class="fas fa-qrcode"></i> QR Forms Management</h1>
           </div>
+          <button class="btn-primary" id="createQRBtn">
+            <i class="fas fa-plus"></i> <span>Create New QR</span>
+          </button>
         </header>
-        <div class="bg-white rounded-xl shadow-md p-8 mt-8">
-          <h2 class="text-2xl font-bold mb-4 text-blue-700 flex items-center"><i class="fas fa-qrcode mr-2"></i> QR Forms List</h2>
-          <div class="overflow-x-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-              <thead class="bg-blue-50">
-                <tr>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Form Name</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Description</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">QR Code</th>
-                  <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
-                </tr>
-              </thead>
-              <tbody class="bg-white divide-y divide-gray-200">
-                <tr>
-                  <td class="px-6 py-4 whitespace-nowrap">Health Declaration</td>
-                  <td class="px-6 py-4 whitespace-nowrap">Form for health declaration upon entry</td>
-                  <td class="px-6 py-4 whitespace-nowrap"><img src="../SRC/IMG/sample-qr.png" alt="QR Code" class="w-12 h-12" /></td>
-                  <td class="px-6 py-4 whitespace-nowrap">
-                    <button class="text-blue-600 hover:text-blue-900 font-semibold mr-2"><i class="fas fa-eye"></i> View</button>
-                    <button class="text-green-600 hover:text-green-900 font-semibold"><i class="fas fa-download"></i> Download</button>
-                  </td>
-                </tr>
-                <!-- More rows can be dynamically added here -->
-              </tbody>
-            </table>
+
+        <!-- QR Management Feed Section -->
+        <div class="qr-feed">
+          <div class="feed-header">
+            <h2><i class="fas fa-qrcode"></i> QR Code Management</h2>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-md p-8 mt-8">
+            <div class="mb-6">
+              <!-- Tab Controls -->
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+                <div class="flex gap-3">
+                  <button id="qrFormsTab" class="tab-btn px-4 py-2 rounded-lg font-semibold bg-blue-600 text-white focus:outline-none relative">
+                    QR Forms <span id="formsCount" class="ml-2 bg-white text-blue-700 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                  </button>
+                  <button id="qrLinksTab" class="tab-btn px-4 py-2 rounded-lg font-semibold bg-gray-200 text-gray-700 focus:outline-none relative">
+                    QR Links <span id="linksCount" class="ml-2 bg-white text-gray-700 text-xs font-bold px-2 py-0.5 rounded-full">0</span>
+                  </button>
+                </div>
+                
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap gap-3 w-full md:w-auto items-center">
+                  <div class="relative flex-1 md:w-72">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                    <input id="searchInput" type="text" placeholder="Search QR codes..." class="w-full pl-9 pr-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm" />
+                  </div>
+                  <button id="clearSearchBtn" class="px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-semibold hidden">Clear</button>
+                  <select id="categoryFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="">All Categories</option>
+                  </select>
+                  <select id="statusFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="">All Status</option>
+                    <option value="active">Active</option>
+                    <option value="draft">Draft</option>
+                    <option value="inactive">Inactive</option>
+                  </select>
+                  <select id="sortSelect" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="name">Name A-Z</option>
+                    <option value="popular">Most Popular</option>
+                  </select>
+                  <select id="pageSizeSelect" class="px-3 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+                    <option value="6">6 / page</option>
+                    <option value="12" selected>12 / page</option>
+                    <option value="24">24 / page</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- QR Forms Section -->
+              <div id="qrFormsSection">
+                <div id="qrFormsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- QR Forms cards will be dynamically loaded here -->
+                </div>
+              </div>
+
+              <!-- QR Links Section -->
+              <div id="qrLinksSection" class="hidden">
+                <div id="qrLinksContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- QR Links cards will be dynamically loaded here -->
+                </div>
+              </div>
+
+              <!-- Pagination Controls -->
+              <div class="mt-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="text-sm text-gray-600">
+                  Showing <span id="rangeStart">0</span>-<span id="rangeEnd">0</span> of <span id="totalItems">0</span> items
+                </div>
+                <div class="flex items-center gap-2">
+                  <button id="prevPageBtn" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded disabled:opacity-40">Prev</button>
+                  <div id="pageIndicator" class="text-sm font-semibold"></div>
+                  <button id="nextPageBtn" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded disabled:opacity-40">Next</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- QR Form Creation/Edit Modal -->
+    <div id="qrFormModal" class="modal fixed inset-0 bg-gray-700 bg-opacity-50 items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-4xl p-6 relative max-h-[90vh] overflow-y-auto">
+        <button id="closeFormModalBtn" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-2xl"><i class="fas fa-times"></i></button>
+        <h3 class="text-xl font-bold mb-4 text-blue-700 flex items-center"><i class="fas fa-edit mr-2"></i> <span id="formModalTitle">Create New QR Form</span></h3>
+        
+        <form id="qrFormCreateForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Form Name *</label>
+              <input type="text" id="formName" class="w-full border border-gray-300 rounded px-3 py-2" required />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Category *</label>
+              <select id="formCategory" class="w-full border border-gray-300 rounded px-3 py-2" required>
+                <option value="">Select Category</option>
+                <option value="Registration">Registration</option>
+                <option value="Health Screening">Health Screening</option>
+                <option value="Appointments">Appointments</option>
+                <option value="Maternal Care">Maternal Care</option>
+                <option value="Immunization">Immunization</option>
+                <option value="Dental">Dental</option>
+                <option value="Mental Health">Mental Health</option>
+                <option value="Geriatric Care">Geriatric Care</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
+            <textarea id="formDescription" class="w-full border border-gray-300 rounded px-3 py-2" rows="3"></textarea>
+          </div>
+
+          <!-- Form Builder Section -->
+          <div class="border-t pt-4">
+            <h4 class="text-lg font-semibold mb-3">Form Fields</h4>
+            <div class="mb-4">
+              <button type="button" id="addFieldBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+                <i class="fas fa-plus"></i> Add Field
+              </button>
+            </div>
+            <div id="formFields" class="space-y-3">
+              <!-- Dynamic form fields will be added here -->
+            </div>
+          </div>
+
+          <div class="flex justify-end gap-2 pt-4 border-t">
+            <button type="button" id="cancelFormBtn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Cancel</button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <i class="fas fa-save"></i> Save Form
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- QR Link Creation/Edit Modal -->
+    <div id="qrLinkModal" class="modal fixed inset-0 bg-gray-700 bg-opacity-50 items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-2xl p-6 relative">
+        <button id="closeLinkModalBtn" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-2xl"><i class="fas fa-times"></i></button>
+        <h3 class="text-xl font-bold mb-4 text-blue-700 flex items-center"><i class="fas fa-link mr-2"></i> <span id="linkModalTitle">Create New QR Link</span></h3>
+        
+        <form id="qrLinkCreateForm" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Service Name *</label>
+              <input type="text" id="linkName" class="w-full border border-gray-300 rounded px-3 py-2" required />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Department *</label>
+              <input type="text" id="linkDepartment" class="w-full border border-gray-300 rounded px-3 py-2" required />
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">URL *</label>
+            <input type="url" id="linkUrl" class="w-full border border-gray-300 rounded px-3 py-2" required />
+          </div>
+          
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Description</label>
+            <textarea id="linkDescription" class="w-full border border-gray-300 rounded px-3 py-2" rows="3"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Category</label>
+              <select id="linkCategory" class="w-full border border-gray-300 rounded px-3 py-2">
+                <option value="Medical Services">Medical Services</option>
+                <option value="Preventive Care">Preventive Care</option>
+                <option value="Women's Health">Women's Health</option>
+                <option value="Diagnostic Services">Diagnostic Services</option>
+                <option value="Emergency Care">Emergency Care</option>
+                <option value="Documentation">Documentation</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700 mb-1">Contact Info</label>
+              <input type="text" id="linkContact" class="w-full border border-gray-300 rounded px-3 py-2" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-gray-700 mb-1">Operating Hours</label>
+            <input type="text" id="linkHours" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="e.g., Monday-Friday: 8:00 AM - 5:00 PM" />
+          </div>
+
+          <div class="flex justify-end gap-2 pt-4 border-t">
+            <button type="button" id="cancelLinkBtn" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Cancel</button>
+            <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <i class="fas fa-save"></i> Save Link
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- QR Details Modal -->
+    <div id="qrDetailsModal" class="modal fixed inset-0 bg-gray-700 bg-opacity-50 items-center justify-center z-50 hidden">
+      <div class="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 relative max-h-[90vh] overflow-y-auto">
+        <button id="closeDetailsModalBtn" class="absolute top-2 right-2 text-gray-400 hover:text-gray-600 text-2xl"><i class="fas fa-times"></i></button>
+        <div id="qrDetailsContent">
+          <!-- QR details will be loaded here -->
+        </div>
+      </div>
+    </div>
     <script src="../JAVASCRIPT/navigation.js"></script>
+    
+    <style>
+      /* Modal styles */
+      .modal { display: none; }
+      .modal.active { display: flex; }
+      
+      /* Tab styles */
+      .tab-btn.active, .tab-btn.bg-blue-600 { background: #2563eb; color: #fff; }
+      .tab-btn.inactive, .tab-btn.bg-gray-200 { background: #e5e7eb; color: #374151; }
+      
+      /* QR Feed Styles */
+      .qr-feed {
+        margin-top: 1.5rem;
+      }
+      .feed-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding: 1rem 1.5rem;
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      .feed-header h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e40af;
+        margin: 0;
+      }
+      
+      /* QR Card Styles */
+      .qr-card {
+        background: white;
+        border-radius: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        transition: all 0.3s ease;
+        border: 1px solid #e5e7eb;
+      }
+      .qr-card:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+      }
+      
+      .qr-code-display {
+        width: 80px;
+        height: 80px;
+        background: #f3f4f6;
+        border: 2px dashed #d1d5db;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+      }
+      
+      .status-badge {
+        padding: 0.25rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .status-active { background: #dcfce7; color: #166534; }
+      .status-draft { background: #fef3c7; color: #92400e; }
+      .status-inactive { background: #fecaca; color: #dc2626; }
+      
+      .category-badge {
+        background: #dbeafe;
+        color: #1d4ed8;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.375rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+      
+      /* Form Builder Styles */
+      .form-field-item {
+        background: #f9fafb;
+        border: 1px solid #e5e7eb;
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+      
+      .field-controls {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+      
+      /* Toast notification */
+      .toast {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #1f2937;
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+
+    <script>
+      // Data management
+      const FORMS_STORAGE_KEY = 'qrFormsData_v1';
+      const LINKS_STORAGE_KEY = 'qrLinksData_v1';
+      const FORMS_DATA_URL = '../../DATA/qrforms.sample.json';
+      const LINKS_DATA_URL = '../../DATA/qrlinks.sample.json';
+      
+      let qrForms = [];
+      let qrLinks = [];
+      let currentPage = 1;
+      let currentTab = 'forms';
+      
+      // Load data functions
+      async function loadQRForms() {
+        try {
+          const raw = localStorage.getItem(FORMS_STORAGE_KEY);
+          if (raw) return JSON.parse(raw);
+        } catch(e) {}
+        
+        try {
+          const res = await fetch(FORMS_DATA_URL);
+          if (res.ok) return await res.json();
+        } catch(e) {}
+        
+        return [];
+      }
+      
+      async function loadQRLinks() {
+        try {
+          const raw = localStorage.getItem(LINKS_STORAGE_KEY);
+          if (raw) return JSON.parse(raw);
+        } catch(e) {}
+        
+        try {
+          const res = await fetch(LINKS_DATA_URL);
+          if (res.ok) return await res.json();
+        } catch(e) {}
+        
+        return [];
+      }
+      
+      function saveQRForms() {
+        try {
+          localStorage.setItem(FORMS_STORAGE_KEY, JSON.stringify(qrForms));
+        } catch(e) {}
+      }
+      
+      function saveQRLinks() {
+        try {
+          localStorage.setItem(LINKS_STORAGE_KEY, JSON.stringify(qrLinks));
+        } catch(e) {}
+      }
+      
+      // UI Elements
+      const qrFormsTab = document.getElementById('qrFormsTab');
+      const qrLinksTab = document.getElementById('qrLinksTab');
+      const qrFormsSection = document.getElementById('qrFormsSection');
+      const qrLinksSection = document.getElementById('qrLinksSection');
+      const qrFormsContainer = document.getElementById('qrFormsContainer');
+      const qrLinksContainer = document.getElementById('qrLinksContainer');
+      
+      // Filter elements
+      const searchInput = document.getElementById('searchInput');
+      const clearSearchBtn = document.getElementById('clearSearchBtn');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const statusFilter = document.getElementById('statusFilter');
+      const sortSelect = document.getElementById('sortSelect');
+      const pageSizeSelect = document.getElementById('pageSizeSelect');
+      
+      // Pagination elements
+      const prevPageBtn = document.getElementById('prevPageBtn');
+      const nextPageBtn = document.getElementById('nextPageBtn');
+      const pageIndicator = document.getElementById('pageIndicator');
+      const rangeStartEl = document.getElementById('rangeStart');
+      const rangeEndEl = document.getElementById('rangeEnd');
+      const totalItemsEl = document.getElementById('totalItems');
+      
+      // Modal elements
+      const qrFormModal = document.getElementById('qrFormModal');
+      const qrLinkModal = document.getElementById('qrLinkModal');
+      const qrDetailsModal = document.getElementById('qrDetailsModal');
+      
+      // Generate SVG QR Code placeholder
+      function generateQRSVG(size = 80) {
+        return `<svg width="${size}" height="${size}" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="21" height="21" fill="white"/>
+          <rect x="0" y="0" width="7" height="7" fill="black"/>
+          <rect x="14" y="0" width="7" height="7" fill="black"/>
+          <rect x="0" y="14" width="7" height="7" fill="black"/>
+          <rect x="2" y="2" width="3" height="3" fill="white"/>
+          <rect x="16" y="2" width="3" height="3" fill="white"/>
+          <rect x="2" y="16" width="3" height="3" fill="white"/>
+          <rect x="8" y="0" width="1" height="1" fill="black"/>
+          <rect x="10" y="0" width="1" height="1" fill="black"/>
+          <rect x="12" y="0" width="1" height="1" fill="black"/>
+          <rect x="8" y="2" width="1" height="1" fill="black"/>
+          <rect x="10" y="2" width="1" height="1" fill="black"/>
+          <rect x="12" y="2" width="1" height="1" fill="black"/>
+          <rect x="8" y="4" width="5" height="1" fill="black"/>
+          <rect x="8" y="6" width="1" height="1" fill="black"/>
+          <rect x="10" y="6" width="1" height="1" fill="black"/>
+          <rect x="12" y="6" width="1" height="1" fill="black"/>
+          <rect x="8" y="8" width="1" height="5" fill="black"/>
+          <rect x="10" y="8" width="3" height="1" fill="black"/>
+          <rect x="14" y="8" width="1" height="1" fill="black"/>
+          <rect x="16" y="8" width="1" height="1" fill="black"/>
+          <rect x="18" y="8" width="1" height="1" fill="black"/>
+          <rect x="20" y="8" width="1" height="1" fill="black"/>
+        </svg>`;
+      }
+      
+      // Tab switching
+      function switchTab(tabName) {
+        currentTab = tabName;
+        currentPage = 1;
+        
+        if (tabName === 'forms') {
+          qrFormsTab.classList.add('active');
+          qrLinksTab.classList.remove('active');
+          qrFormsSection.style.display = '';
+          qrLinksSection.style.display = 'none';
+        } else {
+          qrLinksTab.classList.add('active');
+          qrFormsTab.classList.remove('active');
+          qrLinksSection.style.display = '';
+          qrFormsSection.style.display = 'none';
+        }
+        
+        updateCategoryFilter();
+        renderCurrentTab();
+      }
+      
+      // Update category filter options
+      function updateCategoryFilter() {
+        const data = currentTab === 'forms' ? qrForms : qrLinks;
+        const categories = [...new Set(data.map(item => item.category))];
+        
+        categoryFilter.innerHTML = '<option value="">All Categories</option>';
+        categories.forEach(cat => {
+          categoryFilter.innerHTML += `<option value="${cat}">${cat}</option>`;
+        });
+      }
+      
+      // Filtering and sorting
+      function getFilteredData() {
+        const data = currentTab === 'forms' ? qrForms : qrLinks;
+        const term = searchInput.value.toLowerCase().trim();
+        
+        let filtered = data.filter(item => {
+          const matchesSearch = !term || 
+            item.name.toLowerCase().includes(term) || 
+            item.description.toLowerCase().includes(term);
+          const matchesCategory = !categoryFilter.value || item.category === categoryFilter.value;
+          const matchesStatus = !statusFilter.value || item.status === statusFilter.value;
+          
+          return matchesSearch && matchesCategory && matchesStatus;
+        });
+        
+        // Sort data
+        const sortBy = sortSelect.value;
+        filtered.sort((a, b) => {
+          switch(sortBy) {
+            case 'newest':
+              return new Date(b.created) - new Date(a.created);
+            case 'oldest':
+              return new Date(a.created) - new Date(b.created);
+            case 'name':
+              return a.name.localeCompare(b.name);
+            case 'popular':
+              const aPopular = currentTab === 'forms' ? (a.submissions || 0) : (a.qrScans || 0);
+              const bPopular = currentTab === 'forms' ? (b.submissions || 0) : (b.qrScans || 0);
+              return bPopular - aPopular;
+            default:
+              return 0;
+          }
+        });
+        
+        return filtered;
+      }
+      
+      // Render QR Forms
+      function renderQRForms(forms) {
+        qrFormsContainer.innerHTML = '';
+        
+        forms.forEach(form => {
+          const card = document.createElement('div');
+          card.className = 'qr-card';
+          card.innerHTML = `
+            <div class="flex items-start justify-between mb-3">
+              <div class="qr-code-display">
+                ${generateQRSVG(60)}
+              </div>
+              <div class="flex flex-col gap-1">
+                <span class="status-badge status-${form.status}">${form.status}</span>
+                <span class="category-badge">${form.category}</span>
+              </div>
+            </div>
+            <h3 class="font-bold text-lg text-gray-800 mb-2">${form.name}</h3>
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">${form.description}</p>
+            <div class="text-xs text-gray-500 mb-3">
+              <div><i class="fas fa-calendar"></i> Created: ${form.created}</div>
+              <div><i class="fas fa-user"></i> By: ${form.creator}</div>
+              <div><i class="fas fa-chart-bar"></i> Submissions: ${form.submissions || 0}</div>
+            </div>
+            <div class="flex gap-2">
+              <button class="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700" onclick="viewQRDetails('form', ${form.id})">
+                <i class="fas fa-eye"></i> View
+              </button>
+              <button class="px-3 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700" onclick="editQR('form', ${form.id})">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+              <button class="px-3 py-2 bg-gray-600 text-white text-sm rounded hover:bg-gray-700" onclick="downloadQR('form', ${form.id})">
+                <i class="fas fa-download"></i>
+              </button>
+              <button class="px-3 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700" onclick="deleteQR('form', ${form.id})">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          `;
+          qrFormsContainer.appendChild(card);
+        });
+      }
+      
+      // Render QR Links
+      function renderQRLinks(links) {
+        qrLinksContainer.innerHTML = '';
+        
+        links.forEach(link => {
+          const card = document.createElement('div');
+          card.className = 'qr-card';
+          card.innerHTML = `
+            <div class="flex items-start justify-between mb-3">
+              <div class="qr-code-display">
+                ${generateQRSVG(60)}
+              </div>
+              <div class="flex flex-col gap-1">
+                <span class="status-badge status-${link.status}">${link.status}</span>
+                <span class="category-badge">${link.category}</span>
+              </div>
+            </div>
+            <h3 class="font-bold text-lg text-gray-800 mb-2">${link.name}</h3>
+            <p class="text-gray-600 text-sm mb-3 line-clamp-2">${link.description}</p>
+            <div class="text-xs text-gray-500 mb-3">
+              <div><i class="fas fa-building"></i> ${link.department}</div>
+              <div><i class="fas fa-chart-line"></i> Scans: ${link.qrScans || 0}</div>
+              <div><i class="fas fa-clock"></i> ${link.operatingHours}</div>
+            </div>
+            <div class="flex gap-2">
+              <button class="flex-1 px-3 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700" onclick="viewQRDetails('link', ${link.id})">
+                <i class="fas fa-eye"></i> View
+              </button>
+              <button class="px-3 py-2 bg-green-600 text-white text-sm rounded hover:bg-green-700" onclick="editQR('link', ${link.id})">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+              <button class="px-3 py-2 bg-gray-600 text-white text-sm rounded hover:bg-gray-700" onclick="downloadQR('link', ${link.id})">
+                <i class="fas fa-download"></i>
+              </button>
+              <button class="px-3 py-2 bg-red-600 text-white text-sm rounded hover:bg-red-700" onclick="deleteQR('link', ${link.id})">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          `;
+          qrLinksContainer.appendChild(card);
+        });
+      }
+      
+      // Render current tab with pagination
+      function renderCurrentTab() {
+        const filtered = getFilteredData();
+        const pageSize = parseInt(pageSizeSelect.value, 10);
+        const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+        
+        if (currentPage > totalPages) currentPage = totalPages;
+        
+        const startIdx = (currentPage - 1) * pageSize;
+        const endIdx = startIdx + pageSize;
+        const pageData = filtered.slice(startIdx, endIdx);
+        
+        if (currentTab === 'forms') {
+          renderQRForms(pageData);
+        } else {
+          renderQRLinks(pageData);
+        }
+        
+        // Update counts
+        document.getElementById('formsCount').textContent = qrForms.length;
+        document.getElementById('linksCount').textContent = qrLinks.length;
+        
+        // Update pagination
+        const total = filtered.length;
+        const rs = total ? startIdx + 1 : 0;
+        const re = Math.min(endIdx, total);
+        
+        rangeStartEl.textContent = rs;
+        rangeEndEl.textContent = re;
+        totalItemsEl.textContent = total;
+        pageIndicator.textContent = `Page ${total ? currentPage : 0} / ${total ? totalPages : 0}`;
+        
+        prevPageBtn.disabled = currentPage === 1;
+        nextPageBtn.disabled = currentPage === totalPages;
+        
+        clearSearchBtn.classList.toggle('hidden', !searchInput.value.trim());
+      }
+      
+      // Action functions
+      function viewQRDetails(type, id) {
+        const data = type === 'form' ? qrForms : qrLinks;
+        const item = data.find(x => x.id === id);
+        
+        if (!item) return;
+        
+        const content = document.getElementById('qrDetailsContent');
+        
+        if (type === 'form') {
+          content.innerHTML = `
+            <h3 class="text-xl font-bold mb-4 text-blue-700">${item.name}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <div class="qr-code-display mx-auto mb-4" style="width: 150px; height: 150px;">
+                  ${generateQRSVG(140)}
+                </div>
+                <div class="text-center">
+                  <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    <i class="fas fa-download"></i> Download QR Code
+                  </button>
+                </div>
+              </div>
+              <div>
+                <div class="space-y-3">
+                  <div><strong>Category:</strong> ${item.category}</div>
+                  <div><strong>Status:</strong> <span class="status-badge status-${item.status}">${item.status}</span></div>
+                  <div><strong>Description:</strong> ${item.description}</div>
+                  <div><strong>Created:</strong> ${item.created}</div>
+                  <div><strong>Creator:</strong> ${item.creator}</div>
+                  <div><strong>Submissions:</strong> ${item.submissions || 0}</div>
+                  <div><strong>Last Updated:</strong> ${item.lastUpdated}</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h4 class="font-bold mb-3">Form Fields (${item.formFields?.length || 0})</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                ${(item.formFields || []).map(field => `
+                  <div class="border border-gray-200 rounded p-3">
+                    <div class="font-semibold">${field.label}</div>
+                    <div class="text-sm text-gray-600">Type: ${field.type}</div>
+                    <div class="text-sm text-gray-600">Required: ${field.required ? 'Yes' : 'No'}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          `;
+        } else {
+          content.innerHTML = `
+            <h3 class="text-xl font-bold mb-4 text-blue-700">${item.name}</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <div class="qr-code-display mx-auto mb-4" style="width: 150px; height: 150px;">
+                  ${generateQRSVG(140)}
+                </div>
+                <div class="text-center">
+                  <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    <i class="fas fa-download"></i> Download QR Code
+                  </button>
+                </div>
+              </div>
+              <div>
+                <div class="space-y-3">
+                  <div><strong>Department:</strong> ${item.department}</div>
+                  <div><strong>Category:</strong> ${item.category}</div>
+                  <div><strong>Status:</strong> <span class="status-badge status-${item.status}">${item.status}</span></div>
+                  <div><strong>URL:</strong> <a href="${item.url}" target="_blank" class="text-blue-600 hover:underline">${item.url}</a></div>
+                  <div><strong>QR Scans:</strong> ${item.qrScans || 0}</div>
+                  <div><strong>Contact:</strong> ${item.contactInfo}</div>
+                  <div><strong>Location:</strong> ${item.location}</div>
+                  <div><strong>Operating Hours:</strong> ${item.operatingHours}</div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-6">
+              <h4 class="font-bold mb-3">Description</h4>
+              <p class="text-gray-700">${item.description}</p>
+              <h4 class="font-bold mb-3 mt-4">Requirements</h4>
+              <p class="text-gray-700">${item.requirements}</p>
+            </div>
+          `;
+        }
+        
+        qrDetailsModal.classList.add('active');
+      }
+      
+      function editQR(type, id) {
+        showToast('Edit functionality will be implemented in the next update');
+      }
+      
+      function downloadQR(type, id) {
+        showToast('QR Code download started');
+      }
+      
+      function deleteQR(type, id) {
+        if (confirm('Are you sure you want to delete this QR code?')) {
+          if (type === 'form') {
+            qrForms = qrForms.filter(x => x.id !== id);
+            saveQRForms();
+          } else {
+            qrLinks = qrLinks.filter(x => x.id !== id);
+            saveQRLinks();
+          }
+          renderCurrentTab();
+          showToast('QR code deleted successfully');
+        }
+      }
+      
+      // Toast notification
+      let toastEl;
+      function showToast(msg) {
+        if (!toastEl) {
+          toastEl = document.createElement('div');
+          toastEl.className = 'toast';
+          document.body.appendChild(toastEl);
+        }
+        toastEl.innerHTML = '<i class="fas fa-info-circle"></i>' + msg;
+        toastEl.classList.add('show');
+        setTimeout(() => toastEl.classList.remove('show'), 3000);
+      }
+      
+      // Event listeners
+      qrFormsTab.addEventListener('click', () => switchTab('forms'));
+      qrLinksTab.addEventListener('click', () => switchTab('links'));
+      
+      searchInput.addEventListener('input', () => { currentPage = 1; renderCurrentTab(); });
+      clearSearchBtn.addEventListener('click', () => { searchInput.value = ''; currentPage = 1; renderCurrentTab(); });
+      categoryFilter.addEventListener('change', () => { currentPage = 1; renderCurrentTab(); });
+      statusFilter.addEventListener('change', () => { currentPage = 1; renderCurrentTab(); });
+      sortSelect.addEventListener('change', () => { currentPage = 1; renderCurrentTab(); });
+      pageSizeSelect.addEventListener('change', () => { currentPage = 1; renderCurrentTab(); });
+      
+      prevPageBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderCurrentTab(); } });
+      nextPageBtn.addEventListener('click', () => { currentPage++; renderCurrentTab(); });
+      
+      // Modal close handlers
+      document.getElementById('closeFormModalBtn').addEventListener('click', () => qrFormModal.classList.remove('active'));
+      document.getElementById('closeLinkModalBtn').addEventListener('click', () => qrLinkModal.classList.remove('active'));
+      document.getElementById('closeDetailsModalBtn').addEventListener('click', () => qrDetailsModal.classList.remove('active'));
+      
+      // Create QR button
+      document.getElementById('createQRBtn').addEventListener('click', () => {
+        if (currentTab === 'forms') {
+          qrFormModal.classList.add('active');
+        } else {
+          qrLinkModal.classList.add('active');
+        }
+      });
+      
+      // Mobile menu functionality
+      const menuButton = document.getElementById('menu-button');
+      const dropdownMenu = document.getElementById('dropdown-menu');
+      
+      if (menuButton && dropdownMenu) {
+        menuButton.addEventListener('click', function() {
+          if (dropdownMenu.classList.contains('scale-y-0')) {
+            dropdownMenu.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+            dropdownMenu.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
+          } else {
+            dropdownMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+            dropdownMenu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+          }
+        });
+      }
+      
+      // Initialize
+      async function init() {
+        qrForms = await loadQRForms();
+        qrLinks = await loadQRLinks();
+        
+        saveQRForms();
+        saveQRLinks();
+        
+        updateCategoryFilter();
+        renderCurrentTab();
+        
+        // Default to forms tab
+        qrFormsTab.classList.add('active');
+        qrLinksTab.classList.remove('active');
+        qrFormsSection.style.display = '';
+        qrLinksSection.style.display = 'none';
+      }
+      
+      document.addEventListener('DOMContentLoaded', init);
+    </script>
   </body>
 </html>
